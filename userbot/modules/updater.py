@@ -106,7 +106,8 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
 
         if BOTLOG:
             await event.client.send_message(
-                BOTLOG_CHATID, "#BOT \n" "`💘L̷L̷O̷V̷E̷-̷U̷S̷E̷R̷B̷O̷💘 Berhasil Di Update`"
+                BOTLOG_CHATID,
+                "#BOT \n" "`💘L̷L̷O̷V̷E̷-̷U̷S̷E̷R̷B̷O̷💘 Berhasil Di Update`",
             )
 
     else:
@@ -134,7 +135,8 @@ async def update(event, repo, ups_rem, ac_br):
 
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#BOT \n" "**💘L̷O̷V̷E̷-̷U̷S̷E̷R̷B̷O̷T̷💘** `Telah Di Perbarui.`"
+            BOTLOG_CHATID,
+            "#BOT \n" "**💘L̷O̷V̷E̷-̷U̷S̷E̷R̷B̷O̷T̷💘** `Telah Di Perbarui.`",
         )
         await asyncio.sleep(100)
         await event.delete()
