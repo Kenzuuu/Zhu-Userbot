@@ -1,18 +1,18 @@
-#     𝐒𝐊𝐘𝐙𝐔  -  𝐔𝐒𝐄𝐑𝐁𝐎𝐓​​ 
+#     ❤️ L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸ ❤️
 
 
 
 </p>
 <p align="center">
-    <a href="https://github.com/Skyzu/skyzu-userbot"> <img src="https://img.shields.io/github/repo-size/noob-kittu/YoneRobot?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/Skyzu/skyzu-userbot/commits"> <img src="https://img.shields.io/github/last-commit/noob-kittu/YoneRobot?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/Skyzu/skyzu-userbot/issues"> <img src="https://img.shields.io/github/issues/noob-kittu/YoneRobot?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/Skyzu/skyzu-userbot/network/members"> <img src="https://img.shields.io/github/forks/noob-kittu/YoneRobot?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
+    <a href="https://github.com/Kenzuuu/Love-Userbot"> <img src="https://img.shields.io/github/repo-size/noob-kittu/YoneRobot?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/Kenzuuu/Love-Userbot/commits"> <img src="https://img.shields.io/github/last-commit/noob-kittu/YoneRobot?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/Kenzuuu/Love-Userbot/issues"> <img src="https://img.shields.io/github/issues/noob-kittu/YoneRobot?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/Kenzuuu/Love-Userbot/network/members"> <img src="https://img.shields.io/github/forks/noob-kittu/YoneRobot?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?color=yellow&label=telethon&logo=python&logoColor=green&style=for-the-badge" /></a>
 </p>
 
 <p align="center">
-  <img src="https://telegra.ph/file/fd08937c4ae6cb1303731.jpg">
+  <img src="https://telegra.ph/file/df7342853ca28e5368b4d.jpg">
 </p>
 
 ## <p align="center">DEPLOY TO HEROKU</p>
@@ -22,7 +22,7 @@
 
 ## Group Support:
 
-   <a href="https://t.me/skyzusupport"><img src="https://img.shields.io/badge/Group%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
+   <a href="https://t.me/narumisupport"><img src="https://img.shields.io/badge/Group%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
 
 
 ## Stay Support 🚀
@@ -34,5 +34,6 @@
 *   [Sendi](https://github.com/SendiAp/Rose-Userbot)   Rose-Userbot
 *   [Risman](https://github.com/mrismanaziz/Man-Userbot)   Man - Userbot
 *   [Skyzu](https://github.com/Skyzu/skyzu-userbot)   skyzu-userbot
+*   [Kenzu](https://github.com/Kenzuuu/Love-Userbot) Love-Userbot
 *   DAN TERIMAKASIH KEPADA USERBOT LAINNYA
 
