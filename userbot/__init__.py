@@ -765,7 +765,7 @@ with bot:
                     f"⚒Pembaruan Data :\n"
                     f"`.update deploy`\n"
                     f"`update`\n\n"
-                    f"© @narumisupport") 
+                    f"© @narumisupport")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -898,19 +898,26 @@ with bot:
                     link_preview=True,
                 )
             else:
-                result = builder.article(" **❤️L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸​❤️**",
-                                         text="""💘L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸💘""",
-                                         buttons=[[custom.Button.url("KENZHU​",
-                                                                     "https://github.com/Kenzuuuu/Love-Userbot"),
-                                                   custom.Button.url("CHANNEL​",
-                                                                     "t.me/inibotsaya"),
-                                                   ],
-                                                  [custom.Button.url("LICENSE​",
-                                                                     "https://github.com/Kenzuuu/Love-Userbot/LICENSE",
-                                                                     )],
-                                                  ],
-                                         link_preview=False,
-                                         )
+                result = builder.article(
+                    " **❤️L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸​❤️**",
+                    text="""💘L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸💘""",
+                    buttons=[
+                        [
+                            custom.Button.url(
+                                "KENZHU​",
+                                "https://github.com/Kenzuuuu/Love-Userbot"),
+                            custom.Button.url(
+                                "CHANNEL​",
+                                "t.me/inibotsaya"),
+                        ],
+                        [
+                            custom.Button.url(
+                                "LICENSE​",
+                                "https://github.com/Kenzuuu/Love-Userbot/LICENSE",
+                            )],
+                    ],
+                    link_preview=False,
+                )
             await event.answer([result] if result else None)
 
         @ tgbot.on(

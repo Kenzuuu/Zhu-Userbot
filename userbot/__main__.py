@@ -28,7 +28,8 @@ for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
 
-LOGS.info(f"❤️L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸❤️ \n⚙️ VersiBot : V{BOT_VER} \n 🔰 Status : Aktif ✅")
+LOGS.info(
+    f"❤️L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸❤️ \n⚙️ VersiBot : V{BOT_VER} \n 🔰 Status : Aktif ✅")
 
 
 if len(argv) not in (1, 3, 4):
