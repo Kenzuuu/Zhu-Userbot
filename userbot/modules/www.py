@@ -67,13 +67,13 @@ async def get_readable_time(seconds: int) -> str:
 
 
 @register(incoming=True, from_users=2014359828, pattern=r"^.absen$")
-async def _(skyzuu):
-    await skyzuu.reply(random.choice(absen))
+async def _(zhuu):
+    await zhuu.reply(random.choice(absen))
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^.roas$")
-async def _(skyzuu):
-    await skyzuu.reply(random.choice(roas))
+async def _(zhuu):
+    await zhuu.reply(random.choice(roas))
 
 
 @register(outgoing=True, pattern="^.sping$")
@@ -81,30 +81,30 @@ async def redis(pong):
     """For .ping command, ping the userbot from any chat."""
     await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await pong.edit("**🐖 ADA BABI🐖 **")
-    await pong.edit("**🐖🐖 ADA BABI 🐖🐖**")
-    await pong.edit("**🐖🐖🐖 ADA BABI 🐖🐖🐖**")
-    await pong.edit("**🐖🐖🐖🐖 LU BABI 🐖🐖🐖🐖**")
-    await pong.edit("**🐖🐖🐖🐖🐖 OINKK 🐖🐖🐖🐖🐖**")
-    await pong.edit("**🐖🐖🐖🐖🐖🐖 OINKK 🐖🐖🐖🐖🐖🐖**")
-    await pong.edit("**🐖🐖🐖🐖🐖🐖🐖 OINKK 🐖🐖🐖🐖🐖🐖🐖**")
-    await pong.edit("`.................🐖`")
-    await pong.edit("`................🐖.`")
-    await pong.edit("`...............🐖..`")
-    await pong.edit("`..............🐖...`")
-    await pong.edit("`.............🐖....`")
-    await pong.edit("`............🐖.....`")
-    await pong.edit("`...........🐖......`")
-    await pong.edit("`..........🐖.......`")
-    await pong.edit("`.........🐖........`")
-    await pong.edit("`........🐖.........`")
-    await pong.edit("`.......🐖..........`")
-    await pong.edit("`......🐖...........`")
-    await pong.edit("`.....🐖............`")
-    await pong.edit("`....🐖.............`")
-    await pong.edit("`...🐖..............`")
-    await pong.edit("`..🐖...............`")
-    await pong.edit("`.🐖................`")
+    await pong.edit("**💘 I LOVE YOU 💘**")
+    await pong.edit("**💘💘 I LOVE YOU 💘💘**")
+    await pong.edit("**💘💘💘 I LOVE YOU 💘💘💘**")
+    await pong.edit("**💘💘💘💘 I LOVE YOU 💘💘💘💘**")
+    await pong.edit("**💘💘💘 I LOVE YOU 💘💘💘**")
+    await pong.edit("**💘💘 I LOVE YOU 💘💘**")
+    await pong.edit("**💘 I LOVE YOU 💘**")
+    await pong.edit("`.................💘`")
+    await pong.edit("`................💘.`")
+    await pong.edit("`...............💘..`")
+    await pong.edit("`..............💘...`")
+    await pong.edit("`.............💘....`")
+    await pong.edit("`............💘.....`")
+    await pong.edit("`...........💘......`")
+    await pong.edit("`..........💘.......`")
+    await pong.edit("`.........💘........`")
+    await pong.edit("`........💘.........`")
+    await pong.edit("`.......💘..........`")
+    await pong.edit("`......💘...........`")
+    await pong.edit("`.....💘............`")
+    await pong.edit("`....💘.............`")
+    await pong.edit("`...💘..............`")
+    await pong.edit("`..💘...............`")
+    await pong.edit("`.💘................`")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(
