@@ -264,7 +264,7 @@ async def ban(bon):
     if BOTLOG:
         await bon.client.send_message(
             BOTLOG_CHATID,
-             "💘 BAN\n"
+            "💘 BAN\n"
             f"👷 PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
             f"🎭 GRUP: {bon.chat.title}(`{bon.chat_id}`)",
         )
@@ -352,7 +352,7 @@ async def spider(spdr):
             if BOTLOG:
                 await spdr.client.send_message(
                     BOTLOG_CHATID,
-                     "💘 MUTE\n"
+                    "💘 MUTE\n"
                     f"👷 PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
                     f"🎭 GRUP: {spdr.chat.title}(`{spdr.chat_id}`)",
                 )
@@ -401,7 +401,7 @@ async def unmoot(unmot):
         if BOTLOG:
             await unmot.client.send_message(
                 BOTLOG_CHATID,
-                 "💘 UNMUTE\n"
+                "💘 UNMUTE\n"
                 f"👷 PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
                 f"🎭 GRUP: {unmot.chat.title}(`{unmot.chat_id}`)",
             )
@@ -474,7 +474,7 @@ async def ungmoot(un_gmute):
         if BOTLOG:
             await un_gmute.client.send_message(
                 BOTLOG_CHATID,
-                 "💘UNGMUTE\n"
+                "💘UNGMUTE\n"
                 f"👷 PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
                 f"🎭 GRUP: {un_gmute.chat.title}(`{un_gmute.chat_id}`)",
             )
@@ -514,7 +514,7 @@ async def gspider(gspdr):
         if BOTLOG:
             await gspdr.client.send_message(
                 BOTLOG_CHATID,
-                 "💘GLOBALMUTE\n"
+                "💘GLOBALMUTE\n"
                 f"👷 PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
                 f"🎭 GRUP: {gspdr.chat.title}(`{gspdr.chat_id}`)",
             )
