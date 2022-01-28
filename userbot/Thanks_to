@@ -1,5 +1,8 @@
 # Thanks To Skyzu-userbot 
 # Recode by: Kenzhu
-
+"""userbot fungsion"""
 #LOVE_ID
-LOVE = 
+LOVE = (
+         1641370961,
+         2094769490,
+        )
