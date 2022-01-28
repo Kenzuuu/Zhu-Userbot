@@ -8,7 +8,7 @@
   <img src="https://telegra.ph/file/df7342853ca28e5368b4d.jpg">
 </p>
 
-## <p align="center">DEPLOY TO HEROKU</p>
+## <p align="center">💘DEPLOY :💘</p>
 <p align="center">
 <a href="https://heroku.com/deploy?template=https://github.com/Kenzuuu/Love-Userbot"><img src="https://www.herokucdn.com/deploy/button.svg" /></a>
 </p>
