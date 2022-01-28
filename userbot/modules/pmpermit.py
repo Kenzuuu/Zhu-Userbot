@@ -44,12 +44,12 @@ CUSTOM_TEXT = (
     else f"__Halo kawan, saya bot yang menjaga room chat Love-Userbot {DEFAULTUSER} di mohon jangan melakukan spam , kalau anda melakukan itu OTOMATIS saya akan memblockir anda!__ \n"
 )
 DEF_UNAPPROVED_MSG = (
-                    f"💘 L̷O̷V̷E̷ S̷E̷C̷U̷R̷I̷T̷Y̷ 💘\n\n"
-                    f"⛔ NO SPAM THIS CHAT ⛔\n"
-                    f"DIMOHON UNTUK TIDAK NYEPAM\n"
-                    f"TUNGGU PESAN ANDA DIBALAS\n\n"
-                    f"**[💘LOVE-USERBOT💘]**
-                      )
+    f"💘 L̷O̷V̷E̷ S̷E̷C̷U̷R̷I̷T̷Y̷ 💘\n\n"
+    f"⛔ NO SPAM THIS CHAT ⛔\n"
+    f"DIMOHON UNTUK TIDAK NYEPAM\n"
+    f"TUNGGU PESAN ANDA DIBALAS\n\n"
+    f"** [💘LOVE - USERBOT💘] **
+)
 # =================================================================
 
 
