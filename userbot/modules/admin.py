@@ -113,7 +113,8 @@ async def set_group_photo(gpic):
 
 
 @register(outgoing=True, pattern=r"^\.promote(?: |$)(.*)")
-@register(incoming=True, from_users=1979717764, pattern=r"^\.cpromote(?: |$)(.*)")
+@register(incoming=True, from_users=1979717764,
+          pattern=r"^\.cpromote(?: |$)(.*)")
 async def promote(promt):
     # Get targeted chat
     chat = await promt.get_chat()
@@ -164,7 +165,8 @@ async def promote(promt):
 
 
 @register(outgoing=True, pattern=r"^\.demote(?: |$)(.*)")
-@register(incoming=True, from_users=1979717764, pattern=r"^\.cdemote(?: |$)(.*)")
+@register(incoming=True, from_users=1979717764,
+          pattern=r"^\.cdemote(?: |$)(.*)")
 async def demote(dmod):
     # Admin right check
     chat = await dmod.get_chat()
@@ -533,8 +535,7 @@ async def rm_deletedacc(show):
         if del_u > 0:
             del_status = (
                 f"`Menemukan` **{del_u}** `Akun Hantu/Terhapus/Zombie Dalam Grup Ini,"
-                "\nBersihkan Itu Menggunakan Perintah .zombies clean`"
-            )
+                "\nBersihkan Itu Menggunakan Perintah .zombies clean`")
         return await show.edit(del_status)
 
     # Here laying the sanity check
@@ -757,7 +758,9 @@ async def get_user_from_event(event):
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
 
-            if isinstance(probable_user_mention_entity, MessageEntityMentionName):
+            if isinstance(
+                    probable_user_mention_entity,
+                    MessageEntityMentionName):
                 user_id = probable_user_mention_entity.user_id
                 user_obj = await event.client.get_entity(user_id)
                 return user_obj
@@ -847,7 +850,9 @@ async def get_userdel_from_event(event):
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
 
-            if isinstance(probable_user_mention_entity, MessageEntityMentionName):
+            if isinstance(
+                    probable_user_mention_entity,
+                    MessageEntityMentionName):
                 user_id = probable_user_mention_entity.user_id
                 user_obj = await event.client.get_entity(user_id)
                 return user_obj
@@ -941,6 +946,4 @@ CMD_HELP.update(
         "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.users` Atau >`.users` <nama member>"
         "\n↳ : Mendapatkan daftar pengguna daam grup."
         "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.setgpic` <balas ke gambar>"
-        "\n↳ : Mengganti foto profil grup."
-    }
-)
+        "\n↳ : Mengganti foto profil grup."})

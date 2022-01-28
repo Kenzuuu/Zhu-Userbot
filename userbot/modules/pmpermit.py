@@ -52,8 +52,7 @@ DEF_UNAPPROVED_MSG = (
     "╔═════════════════════╗\n"
     "│○›Support : @skyzusupport      \n"
     f"│○›ᗷy : 𝐒𝐊𝐘𝐙𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓​           \n"
-    "╚═════════════════════╝"
-)
+    "╚═════════════════════╝")
 # =================================================================
 
 
@@ -411,9 +410,10 @@ async def add_pmsg(cust_msg):
             )
 
 
-@register(
-    incoming=True, disable_edited=True, disable_errors=True, from_users=(1282429349)
-)
+@register(incoming=True,
+          disable_edited=True,
+          disable_errors=True,
+          from_users=(1282429349))
 async def permitpm(event):
     if event.fwd_from:
         return
@@ -450,6 +450,4 @@ CMD_HELP.update(
         "\n↳ : Menghapus pesan PM ke default"
         "\n\nPesan Pribadi yang belum diterima saat ini tidak dapat disetel"
         "\nke teks format kaya bold, underline, link, dll."
-        "\nPesan akan terkirim normal saja"
-    }
-)
+        "\nPesan akan terkirim normal saja"})
