@@ -41,18 +41,15 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 CUSTOM_TEXT = (
     str(PMPERMIT_TEXT)
     if PMPERMIT_TEXT
-    else f"__Halo kawan, saya bot yang menjaga room chat Skyzu-Userbot {DEFAULTUSER} di mohon jangan melakukan spam , kalau anda melakukan itu OTOMATIS saya akan memblockir anda!__ \n"
+    else f"__Halo kawan, saya bot yang menjaga room chat Love-Userbot {DEFAULTUSER} di mohon jangan melakukan spam , kalau anda melakukan itu OTOMATIS saya akan memblockir anda!__ \n"
 )
 DEF_UNAPPROVED_MSG = (
-    "╔═════════════════════╗\n"
-    "    ⚡ 𝗔𝗧𝗧𝗘𝗡𝗧𝗜𝗢𝗡 𝗣𝗟𝗘𝗔𝗦𝗘 ⚡ \n"
-    "╚═════════════════════╝\n"
-    "**TOLONG JANGAN MELAKUKAN SPAM CHAT KEPADA MAJIKAN SAYA** \n"
-    f"**YA KONTOL KARENA SAYA AKAN OTOMATIS MEMBLOKIR KAMU, TUNGGU SAMPAI {DEFAULTUSER} MENERIMA PESAN KAMU** \n"
-    "╔═════════════════════╗\n"
-    "│○›Support : @skyzusupport      \n"
-    f"│○›ᗷy : 𝐒𝐊𝐘𝐙𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓​           \n"
-    "╚═════════════════════╝")
+                    f"💘 L̷O̷V̷E̷ S̷E̷C̷U̷R̷I̷T̷Y̷ 💘\n\n"
+                    f"⛔ NO SPAM THIS CHAT ⛔\n"
+                    f"DIMOHON UNTUK TIDAK NYEPAM\n"
+                    f"TUNGGU PESAN ANDA DIBALAS\n\n"
+                    f"**[💘LOVE-USERBOT💘]**
+                      )
 # =================================================================
 
 
@@ -254,10 +251,10 @@ async def approvepm(apprvpm):
     try:
         approve(uid)
     except IntegrityError:
-        return await apprvpm.edit("`Oke Pesan Anda Sudah Diterima ツ`")
+        return await apprvpm.edit("**Oke Pesan Anda Sudah Diterima ✅**")
 
     await apprvpm.edit(
-        f"`Hai` [{name0}](tg://user?id={uid}) `Pesan Anda Sudah Diterima ya entot`"
+        f"[{name0}](tg://user?id={uid}) **Pesan Anda Sudah Diterima ✅**"
     )
     await apprvpm.delete(getmsg)
     await message.delete()
