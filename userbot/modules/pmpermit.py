@@ -48,7 +48,7 @@ DEF_UNAPPROVED_MSG = (
     f"⛔ NO SPAM THIS CHAT ⛔\n"
     f"DIMOHON UNTUK TIDAK NYEPAM\n"
     f"TUNGGU PESAN ANDA DIBALAS\n\n"
-    f"** [💘LOVE - USERBOT💘] **
+    f"**[💘LOVE - USERBOT💘]** "
 )
 # =================================================================
 
