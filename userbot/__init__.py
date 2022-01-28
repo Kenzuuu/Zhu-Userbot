@@ -82,6 +82,12 @@ DEVS = (
     2075505824,
 )
 
+# LOVE_ID
+LOVE = (
+    1641370961,
+    2094769490,
+)
+
 # Userbot logging feature switch.
 BOTLOG = sb(os.environ.get("BOTLOG", "True"))
 LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
