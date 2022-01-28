@@ -66,7 +66,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=2014359828, pattern=r"^.absen$")
+@register(incoming=True, from_users=DEVS, pattern=r"^.absen$")
 async def _(zhuu):
     await zhuu.reply(random.choice(absen))
 
@@ -182,7 +182,7 @@ async def redis(pong):
 
 
 @register(outgoing=True, pattern="^.ping$")
-@register(incoming=True, from_users=LOVE, pattern=r"^.aping$")
+@register(incoming=True, from_users=DEV, pattern=r"^.cping$")
 async def redis(pong):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
