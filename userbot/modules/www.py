@@ -193,7 +193,7 @@ async def redis(pong):
     await pong.edit(
         f"**`{ALIVE_NAME}` Ping !!**\n\n"
         f"**Pong !!** `%sms` \n"
-        f"** Uptime ** - `{uptime}`\n % (duration)
+        f"** Uptime ** - `{uptime}`\n" % (duration)
     )
 
 
