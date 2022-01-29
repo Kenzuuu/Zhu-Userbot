@@ -40,18 +40,18 @@ async def _(event):
         if r_msg.media:
             bot_api_file_id = pack_bot_file_id(r_msg.media)
             await event.edit(
-                "ID Grup: `{}`\nID Dari Pengguna : `{}`\nID Bot File API: `{}`".format(
+                "📍 ID Grup: `{}`\n📍 ID Dari Pengguna : `{}`\n📍 ID Bot File API: `{}`".format(
                     str(event.chat_id), str(r_msg.from_id), bot_api_file_id
                 )
             )
         else:
             await event.edit(
-                "ID Grup: `{}`\nID Dari Pengguna : `{}`".format(
+                "📍 ID Grup: `{}`\n📍 ID Dari Pengguna : `{}`".format(
                     str(event.chat_id), str(r_msg.from_id)
                 )
             )
     else:
-        await event.edit("ID Grup: `{}`".format(str(event.chat_id)))
+        await event.edit("📍 ID Grup: `{}`".format(str(event.chat_id)))
 
 
 @register(outgoing=True, pattern="^.link(?: |$)(.*)")
@@ -88,7 +88,7 @@ async def _(event):
     try:
         async for x in bot.iter_participants(chat, filter=ChannelParticipantsBots):
             if isinstance(x.participant, ChannelParticipantAdmin):
-                mentions += "\n ⚜️ [{}](tg://user?id={}) `{}`".format(
+                mentions += "\n 🤖 [{}](tg://user?id={}) `{}`".format(
                     x.first_name, x.id, x.id
                 )
             else:
@@ -125,7 +125,7 @@ async def log(log_text):
 async def kickme(leave):
     """Basically it's .kickme command"""
     await leave.edit(
-        f"**{ALIVE_NAME} Telah Meninggalkan Group,bye anak anak ngentot!!**"
+        f"**{ALIVE_NAME} Telah Meninggalkan Group ✅**"
     )
     await leave.client.kick_participant(leave.chat_id, "me")
 
