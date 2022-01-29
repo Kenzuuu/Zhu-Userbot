@@ -229,13 +229,17 @@ async def upstream(event):
         )
     else:
         await event.edit("**Proses Update 💘L̷O̷V̷E̷-̷U̷S̷E̷R̷B̷O̷T̷💘**​\n\n`Mengecek Versi`")
+        await asyncio.sleep(2)
         await event.edit("**Proses Update 💘L̷O̷V̷E̷-̷U̷S̷E̷R̷B̷O̷T̷💘​**\n\n`Menguduh Modul`")
+        await asyncio.sleep(2)
         await event.edit("**Proses Update 💘L̷O̷V̷E̷-̷U̷S̷E̷R̷B̷O̷T̷💘**\n\n`Mengekstrak Modul`")
+        await asyncio.sleep(4)
         await event.edit("**Proses Update 💘L̷O̷V̷E̷-̷U̷S̷E̷R̷B̷O̷T̷💘**\n\n`Menginstal Modul`")
+        await asyncio.sleep(3)
         await event.edit("**Proses Update 💘L̷O̷V̷E̷-̷U̷S̷E̷R̷B̷O̷T̷💘**\n\n`Instal Selesai`")
-        await event.edit(
-            "**Proses Update 💘L̷O̷V̷E̷-̷U̷S̷E̷R̷B̷O̷T̷💘​**\n\n`Mohon Tunggu`"
-        )
+        await asyncio.sleep(1)
+        await event.edit("**Proses Update 💘L̷O̷V̷E̷-̷U̷S̷E̷R̷B̷O̷T̷💘​**\n\n`Mohon Tunggu`")
+        await asyncio.sleep(2)
 
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
