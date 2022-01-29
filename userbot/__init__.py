@@ -379,9 +379,8 @@ with bot:
 async def check_alive():
     await bot.send_message(
         BOTLOG_CHATID,
-        "**Userbot telah aktif**\n━━━━━━━━━━━━━━━\n❃ **Branch :** `Love-Userbot`\n❃ **BotVer :** `8.0.0`\n━━━━━━━━━━━━━━━\n❃ **Support :** [LOVE](https://t.me/narumisupport)\n━━━━━━━━━━━━━━━")
+        "**✅ Userbot Telah aktif.\n)
     return
-
 
 with bot:
     try:
