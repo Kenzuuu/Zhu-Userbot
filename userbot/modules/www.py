@@ -191,10 +191,9 @@ async def redis(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(
-        f"**Hasil Ping 💘**\n\n"
-        f"**Pong !!** `%sms` \n"
-        f"**Uptime ** - `{uptime}`\n" % (duration)
-    )
+                   f"**Pong !!** `%sms` \n"
+                   f"**Uptime ** - `{uptime}`\n" % (duration)
+                   )
 
 
 @register(outgoing=True, pattern="^.kecepatan$")
