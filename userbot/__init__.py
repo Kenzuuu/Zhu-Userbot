@@ -378,7 +378,7 @@ with bot:
 
 async def check_alive():
     await bot.send_message(
-        BOTLOG_CHATID, "**✅ Userbot Telah aktif.\n)
+        BOTLOG_CHATID, "**✅ Userbot Telah aktif !**")
     return
 
 with bot:
