@@ -351,8 +351,8 @@ async def spider(spdr):
 
     # If everything goes well, do announcing and mute
     await spdr.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) 🔇 Anda telah Dibisukan dari group ini\n"
-        )
+        f"[{user.first_name}](tg://user?id={user.id}) 🔇 Anda telah Dibisukan dari group ini\n"
+    )
     if mute(spdr.chat_id, user.id) is False:
         return await spdr.edit(
             f"⛔ Kesalahan ! [{user.first_name}](tg://user?id={user.id}) Sudah Dibisukan di Group ini \n"
