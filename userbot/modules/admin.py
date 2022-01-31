@@ -350,9 +350,13 @@ async def spider(spdr):
         )
 
     # If everything goes well, do announcing and mute
-    await spdr.edit("[{user.first_name}](tg://user?id={user.id}) 🔇 Anda telah Dibisukan dari group ini")
+    await spdr.edit(
+            f"[{user.first_name}](tg://user?id={user.id}) 🔇 Anda telah Dibisukan dari group ini\n"
+        )
     if mute(spdr.chat_id, user.id) is False:
-        return await spdr.edit("⛔ Kesalahan ! [{user.first_name}](tg://user?id={user.id}) Sudah Dibisukan di Group ini")
+        return await spdr.edit(
+            f"⛔ Kesalahan ! [{user.first_name}](tg://user?id={user.id}) Sudah Dibisukan di Group ini \n"
+        )
     else:
         try:
             await spdr.client(EditBannedRequest(spdr.chat_id, user.id, MUTE_RIGHTS))
@@ -361,7 +365,7 @@ async def spider(spdr):
             if reason:
                 await spdr.edit(f"[{user.first_name}](tg://user?id={user.id}) 🔇 Telah Dibisukan di group ini ** Karena :** {reason}")
             else:
-                await spdr.edit("[{user.first_name}](tg://user?id={user.id}) 🔇 Telah Dibisukan di group ini")
+                await spdr.edit(f"[{user.first_name}](tg://user?id={user.id}) 🔇 Telah Dibisukan di group ini")
 
             # Announce to logging group
             if BOTLOG:
@@ -406,7 +410,7 @@ async def unmoot(unmot):
         try:
             await unmot.client(EditBannedRequest(unmot.chat_id, user.id, UNBAN_RIGHTS))
             await unmot.edit(
-                "[{user.first_name}](tg://user?id={user.id}) 🔇 Sudah Tidak Lagi Dibisukan di group ini "
+                f"[{user.first_name}](tg://user?id={user.id}) 🔇 Sudah Tidak Lagi Dibisukan di group ini \n"
             )
             await sleep(3)
             await unmot.delete()
