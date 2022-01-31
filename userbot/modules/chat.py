@@ -42,19 +42,17 @@ async def _(event):
             await event.edit(
                 f"🆔 ID Grup: `{}`\n"
                 f"🆔 ID Dari Pengguna : `{}`\n"
-                f"🆔 ID Bot File API: `{}`\n".format(
-                    str(event.chat_id), str(r_msg.from_id), bot_api_file_id
-                )
+                f"🆔 ID Bot File API: `{}`".format(
+                    str(event.chat_id), str(r_msg.from_id), bot_api_file_id )
             )
         else:
             await event.edit(
                 f"🆔 ID Grup: `{}`\n"
-                f"🆔 ID Dari Pengguna : `{}`\n".format(
-                    str(event.chat_id), str(r_msg.from_id)
-                )
+                f"🆔 ID Dari Pengguna : `{}`.format(
+                    str(event.chat_id), str(r_msg.from_id))\n"
             )
     else:
-        await event.edit("📍 ID Grup: `{}`".format(str(event.chat_id)))
+        await event.edit("🆔 ID Grup: `{}`".format(str(event.chat_id)))
 
 
 @register(outgoing=True, pattern="^.link(?: |$)(.*)")
