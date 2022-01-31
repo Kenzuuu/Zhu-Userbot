@@ -40,13 +40,16 @@ async def _(event):
         if r_msg.media:
             bot_api_file_id = pack_bot_file_id(r_msg.media)
             await event.edit(
-                "📍 ID Grup: `{}`\n📍 ID Dari Pengguna : `{}`\n📍 ID Bot File API: `{}`".format(
+                f"🆔 ID Grup: `{}`\n"
+                f"🆔 ID Dari Pengguna : `{}`\n"
+                f"🆔 ID Bot File API: `{}`".format(
                     str(event.chat_id), str(r_msg.from_id), bot_api_file_id
                 )
             )
         else:
             await event.edit(
-                "📍 ID Grup: `{}`\n📍 ID Dari Pengguna : `{}`".format(
+                f"🆔 ID Grup: `{}`\n"
+                f"🆔 ID Dari Pengguna : `{}`".format(
                     str(event.chat_id), str(r_msg.from_id)
                 )
             )
