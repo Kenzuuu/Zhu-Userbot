@@ -145,8 +145,8 @@ async def promote(promt):
     # Try to promote if current user is admin or creator
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await promt.edit("✅ Berhasil Mempromosikan [{user.first_name}](tg://user?id={user.id}) Sebagai Admin!")
-        await sleep(5)
+        await promt.edit("👷 Pengguna : [{user.first_name}](tg://user?id={user.id}) \n🆔 ID : {str(user.id)}\n📍 Aksi : Promosi Admin")
+        await sleep(20)
         await promt.delete()
 
     # If Telethon spit BadRequestError, assume
