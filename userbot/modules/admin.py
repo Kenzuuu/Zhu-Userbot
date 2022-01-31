@@ -149,9 +149,9 @@ async def promote(promt):
         await promt.edit(
             f"**ADMIN BARU**\n\n"
             f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
-            f"════════════════\n"
+            f"══════════════\n"
             f"🆔 **ID :** {str(user.id)}\n"
-            f"════════════════\n"
+            f"══════════════\n"
             f"🤴 **Status :** Sukses ✅ \n"
         )
         await sleep(20)
