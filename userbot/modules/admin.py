@@ -135,7 +135,7 @@ async def promote(promt):
         pin_messages=True,
     )
 
-    await promt.edit("💘 Promosikan[{name}](tg://user?id={user.id}) Sebagai Admin... Mohon Menunggu !")
+    await promt.edit("💘 Promosikan[{mention}](tg://user?id={user.id}) Sebagai Admin... Mohon Menunggu !")
     user, rank = await get_user_from_event(promt)
     if not rank:
         rank = "Admin"  # Just in case.
