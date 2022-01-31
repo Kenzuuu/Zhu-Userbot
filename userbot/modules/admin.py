@@ -352,7 +352,8 @@ async def spider(spdr):
     # If everything goes well, do announcing and mute
     await spdr.edit(
         f"[{user.first_name}](tg://user?id={user.id}) 🔇 Anda telah Dibisukan dari group ini\n"
-    )
+       )
+    await sleep(20)
     if mute(spdr.chat_id, user.id) is False:
         return await spdr.edit(
             f"⛔ Kesalahan ! [{user.first_name}](tg://user?id={user.id}) Sudah Dibisukan di Group ini \n"
@@ -364,8 +365,10 @@ async def spider(spdr):
             # Announce that the function is done
             if reason:
                 await spdr.edit(f"[{user.first_name}](tg://user?id={user.id}) 🔇 Telah Dibisukan di group ini ** Karena :** {reason}")
+                await sleep(20)
             else:
                 await spdr.edit(f"[{user.first_name}](tg://user?id={user.id}) 🔇 Telah Dibisukan di group ini")
+                await sleep(20)
 
             # Announce to logging group
             if BOTLOG:
@@ -412,7 +415,7 @@ async def unmoot(unmot):
             await unmot.edit(
                 f"[{user.first_name}](tg://user?id={user.id}) 🔇 Sudah Tidak Lagi Dibisukan di group ini \n"
             )
-            await sleep(3)
+            await sleep(20)
             await unmot.delete()
         except UserIdInvalidError:
             return await unmot.edit("⛔ Terjadi Kesalahan!")
