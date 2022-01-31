@@ -42,14 +42,14 @@ async def _(event):
             await event.edit(
                 f"🆔 ID Grup: `{}`\n"
                 f"🆔 ID Dari Pengguna : `{}`\n"
-                f"🆔 ID Bot File API: `{}`".format(
+                f"🆔 ID Bot File API: `{}`\n".format(
                     str(event.chat_id), str(r_msg.from_id), bot_api_file_id
                 )
             )
         else:
             await event.edit(
                 f"🆔 ID Grup: `{}`\n"
-                f"🆔 ID Dari Pengguna : `{}`".format(
+                f"🆔 ID Dari Pengguna : `{}`\n".format(
                     str(event.chat_id), str(r_msg.from_id)
                 )
             )
