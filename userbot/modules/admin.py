@@ -209,8 +209,15 @@ async def demote(dmod):
     # Assume we don't have permission to demote
     except BadRequestError:
         return await dmod.edit(NO_PERM)
-    await dmod.edit("`Admin Berhasil Dilepas!`")
-    await sleep(5)
+    await dmod.edit(
+            f"**LEPAS ADMIN**\n\n"
+            f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
+            f"══════════════\n"
+            f"🆔 **ID :** {str(user.id)}\n"
+            f"══════════════\n"
+            f"🤴 **Status :** Sukses ✅ \n"
+             )
+    await sleep(20)
     await dmod.delete()
 
     # Announce to the logging group if we have demoted successfully
@@ -261,11 +268,11 @@ async def ban(bon):
     # Shout out the ID, so that fedadmins can fban later
     if reason:
         await bon.edit(
-            f"👷 `PENGGUNA:` [{user.first_name}](tg://user?id={user.id})\n🎖️ `ID:` `{str(user.id)}` Telah Di Banned !!\n📍 `Alasan:` {reason}"
+            f"👷 PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n🆔 ID: {str(user.id)} Telah Di Banned !!\n📍 Alasan: {reason}"
         )
     else:
         await bon.edit(
-            f"👷 `PENGGUNA:` [{user.first_name}](tg://user?id={user.id})\n🎖️ `ID:` `{str(user.id)}`Si Jamet Telah Terbanned ✅"
+            f"👷 PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n🆔 ID: `{str(user.id)}`Si Jamet Telah Terbanned ✅"
         )
     # Announce to the logging group if we have banned the person
     # successfully!
@@ -290,7 +297,7 @@ async def nothanos(unbon):
         return await unbon.edit(NO_ADMIN)
 
     # If everything goes well...
-    await unbon.edit("💘 `Sedang Melakukan Unban...`")
+    await unbon.edit("💘 Sedang Melakukan Unban...")
 
     user = await get_user_from_event(unbon)
     user = user[0]
@@ -339,22 +346,22 @@ async def spider(spdr):
 
     if user.id == self_user.id:
         return await spdr.edit(
-            "🚫 `Tangan Terlalu Pendek, Tidak Bisa Membisukan Diri Sendiri...\n(ヘ･_･)ヘ┳━┳`"
+            "⛔ Tidak dapat memban diri sendiri  "
         )
 
     # If everything goes well, do announcing and mute
-    await spdr.edit("`Telah Dibisukan 🔇`")
+    await spdr.edit("[{user.first_name}](tg://user?id={user.id}) 🔇 Anda telah Dibisukan dari group ini")
     if mute(spdr.chat_id, user.id) is False:
-        return await spdr.edit("🚫 `Error! Si Jamet Sudah Dibisukan 🔇`")
+        return await spdr.edit("⛔ Kesalahan ! [{user.first_name}](tg://user?id={user.id}) Sudah Dibisukan di Group ini")
     else:
         try:
             await spdr.client(EditBannedRequest(spdr.chat_id, user.id, MUTE_RIGHTS))
 
             # Announce that the function is done
             if reason:
-                await spdr.edit(f"**👷 Telah Dibisukan! 🔇**\n**📍 Alasan:** `{reason}`")
+                await spdr.edit(f"[{user.first_name}](tg://user?id={user.id}) 🔇 Telah Dibisukan di group ini ** Karena :** {reason}")
             else:
-                await spdr.edit("`Si Jamet Telah Dibisukan!`")
+                await spdr.edit("[{user.first_name}](tg://user?id={user.id}) 🔇 Telah Dibisukan di group ini")
 
             # Announce to logging group
             if BOTLOG:
@@ -365,7 +372,7 @@ async def spider(spdr):
                     f"🎭 GRUP: {spdr.chat.title}(`{spdr.chat_id}`)",
                 )
         except UserIdInvalidError:
-            return await spdr.edit("`Terjadi Kesalahan!`")
+            return await spdr.edit("⛔ Terjadi Kesalahan!")
 
 
 @register(outgoing=True, pattern=r"^\.unmute(?: |$)(.*)")
@@ -393,18 +400,18 @@ async def unmoot(unmot):
         return
 
     if unmute(unmot.chat_id, user.id) is False:
-        return await unmot.edit("`Kesalahan! Pengguna Sudah Tidak Dibisukan 🔇`")
+        return await unmot.edit("⛔ Kesalahan! [{user.first_name}](tg://user?id={user.id}) 🔇 Pengguna Sudah Tidak Dibisukan ")
     else:
 
         try:
             await unmot.client(EditBannedRequest(unmot.chat_id, user.id, UNBAN_RIGHTS))
             await unmot.edit(
-                "```Berhasil Melakukan Unmute! Si Jamet Sudah Tidak Lagi Dibisukan``` 🔇"
+                "[{user.first_name}](tg://user?id={user.id}) 🔇 Sudah Tidak Lagi Dibisukan di group ini "
             )
             await sleep(3)
             await unmot.delete()
         except UserIdInvalidError:
-            return await unmot.edit("`Terjadi Kesalahan!`")
+            return await unmot.edit("⛔ Terjadi Kesalahan!")
 
         if BOTLOG:
             await unmot.client.send_message(
@@ -555,9 +562,9 @@ async def rm_deletedacc(show):
 
     # Well
     if not admin and not creator:
-        return await show.edit("⛔ `Mohon Maaf, Bukan Admin Disini!`")
+        return await show.edit("⛔ Mohon Maaf, Bukan Admin di Group ini!")
 
-    await show.edit("⚙️`Menghapus Akun Terhapus...\nMohon Menunggu Sedang Dalam Proses`")
+    await show.edit("⚙️ Menghapus Akun Terhapus...\nMohon Menunggu Sedang Dalam Proses")
     del_u = 0
     del_a = 0
 
@@ -581,7 +588,7 @@ async def rm_deletedacc(show):
     if del_a > 0:
         del_status = (
             f"Membersihkan **{del_u}** Akun Terhapus "
-            f"\n**{del_a}**⛔ `Admin Akun Terhapus Tidak Bisa Dihapus.`"
+            f"\n**{del_a}**⛔ Admin Akun Terhapus Tidak Bisa Dihapus."
         )
     await show.edit(del_status)
     await sleep(2)
