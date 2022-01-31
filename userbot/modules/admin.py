@@ -146,7 +146,7 @@ async def promote(promt):
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
         await promt.edit(
-            f"**  # PROMOTE** \n\n
+            f"**  # PROMOTE** \n\n"
             f"👷 Pengguna : [{user.first_name}](tg://user?id={user.id}) \n🆔 ID : {str(user.id)}\n📍 Aksi : Promosi Admin"
         )
         await sleep(20)
