@@ -135,7 +135,8 @@ async def promote(promt):
         pin_messages=True,
     )
 
-    await promt.edit("💘 Promosikan[{mention}](tg://user?id={user.id}) Sebagai Admin... Mohon Menunggu !")
+    await promt.edit("💞")
+    await sleep(3)
     user, rank = await get_user_from_event(promt)
     if not rank:
         rank = "Admin"  # Just in case.
@@ -146,9 +147,13 @@ async def promote(promt):
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
         await promt.edit(
-            f"**  # PROMOTE** \n\n"
-            f"👷 Pengguna : [{user.first_name}](tg://user?id={user.id}) \n🆔 ID : {str(user.id)}\n📍 Aksi : Promosi Admin"
-        )
+              f"**ADMIN BARU**\n\n"
+              f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
+              f"════════════════\n"
+              f"🆔 **ID :** {str(user.id)}\n"
+              f"════════════════\n"
+              f"🤴 **Status :** Sukses ✅ \n" 
+              )
         await sleep(20)
         await promt.delete()
 
