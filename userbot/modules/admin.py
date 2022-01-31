@@ -147,13 +147,13 @@ async def promote(promt):
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
         await promt.edit(
-              f"**ADMIN BARU**\n\n"
-              f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
-              f"════════════════\n"
-              f"🆔 **ID :** {str(user.id)}\n"
-              f"════════════════\n"
-              f"🤴 **Status :** Sukses ✅ \n" 
-              )
+            f"**ADMIN BARU**\n\n"
+            f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
+            f"════════════════\n"
+            f"🆔 **ID :** {str(user.id)}\n"
+            f"════════════════\n"
+            f"🤴 **Status :** Sukses ✅ \n"
+        )
         await sleep(20)
         await promt.delete()
 
