@@ -118,27 +118,9 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """For .repo command, just returns the repo URL."""
     await wannasee.edit(
-        f"[REPO​](https://github.com/Kenzuuu/LLove-Userbot) [OWNER](t.me/triplenineee)\n"
-    )
-      if ALIVE_LOGO:
-           try:
-                logo = ALIVE_LOGO
-                await alive.delete()
-                msg = await bot.send_file(alive.chat_id, logo, caption=output)
-                await asyncio.sleep(500)
-                await msg.delete()
-            except BaseException:
-                await alive.edit(
-                    output + "\n\n *`Logo Yang Disediakan Tidak Valid."
-                    "\nPastikan Tautan Yang Anda Gunakan Valid`"
-                )
-                await asyncio.sleep(100)
-                await alive.delete()
-    else:
-        await alive.edit(output)
-        await asyncio.sleep(100)
-        await alive.delete()
-
+        f"**REPOSITORY**"\n
+        f"💞 **[[[R̸E̸P̸O̸​](https://github.com/Kenzuuu/LLove-Userbot)]]** 💞 **[[[O̸W̸N̸E̸R̸](t.me/triplenineee)]]** 💞\n"
+         )
 
 @register(outgoing=True, pattern="^.raw$")
 async def raw(event):
