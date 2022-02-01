@@ -42,7 +42,7 @@ async def randomise(items):
     index = randint(1, len(itemo) - 1)
     await items.edit(
         "**Query: **\n`" + items.text[8:] +
-            "`\n**Output: **\n`" + itemo[index] + "`"
+        "`\n**Output: **\n`" + itemo[index] + "`"
     )
 
 
@@ -120,7 +120,8 @@ async def repo_is_here(wannasee):
     await wannasee.edit(
         f"**REPOSITORY**"\n
         f"💞 **[[[R̸E̸P̸O̸​](https://github.com/Kenzuuu/LLove-Userbot)]]** 💞 **[[[O̸W̸N̸E̸R̸](t.me/triplenineee)]]** 💞\n"
-         )
+    )
+
 
 @register(outgoing=True, pattern="^.raw$")
 async def raw(event):
