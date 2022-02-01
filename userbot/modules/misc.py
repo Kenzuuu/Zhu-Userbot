@@ -75,12 +75,12 @@ async def killdabot(event):
 
 @register(outgoing=True, pattern="^.restart$")
 async def killdabot(event):
-    await event.edit("**Restarting Skyzu-Userbot...**")
+    await event.edit("**Userbot Sedang direstart...**")
     await asyncio.sleep(10)
     await event.delete()
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#RESTARTBOT \n" "`Userbot Telah Di Restart`"
+            BOTLOG_CHATID, "#RESTARTBOT \n" "Userbot Telah Di Restart"
         )
     await bot.disconnect()
     # Spin a new instance of bot
@@ -117,11 +117,9 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """For .repo command, just returns the repo URL."""
     await wannasee.edit(
-        "**Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ**\n"
-        "𝗥𝗲𝗽𝗼 🇮🇩\n"
-        "╰⎆ [💘L̷O̷V̷E̷-̷U̷S̷E̷R̷B̷O̷T̷💘​](https://github.com/Kenzuuu/Love-Userbot)\n"
-        "❏ **Oᴡɴᴇʀ​** ⎆ [Kenzu](t.me/triplenineee)\n"
-        "❏ **Sᴜᴘᴘᴏʀᴛ**​ ⎆ [groups](t.me/narumisupport)\n"
+        "**{ALIVE_NAME}**\n"
+        "https://telegra.ph/file/2c253a95bf7d9e53e7bf5.jpg\n"
+        "[REPO​](https://github.com/Kenzuuu/LLove-Userbot) [OWNER](t.me/triplenineee)\n"
     )
 
 
