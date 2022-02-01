@@ -12,7 +12,7 @@ import requests
 from bs4 import BeautifulSoup
 from PIL import Image
 
-from userbot import ALIVE_NAME, ALIVE_LOGO, BOTLOG, BOTLOG_CHATID, CMD_HELP, UPSTREAM_REPO_URL, bot
+from userbot import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, CMD_HELP, UPSTREAM_REPO_URL, bot
 from userbot.events import register
 from userbot.utils import time_formatter
 
