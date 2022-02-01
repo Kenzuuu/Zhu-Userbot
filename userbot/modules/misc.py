@@ -41,7 +41,8 @@ async def randomise(items):
         return
     index = randint(1, len(itemo) - 1)
     await items.edit(
-        "**Query: **\n`" + items.text[8:] + "`\n**Output: **\n`" + itemo[index] + "`"
+        "**Query: **\n`" + items.text[8:] +
+            "`\n**Output: **\n`" + itemo[index] + "`"
     )
 
 
@@ -117,26 +118,27 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """For .repo command, just returns the repo URL."""
     await wannasee.edit(
-                       f"[REPO​](https://github.com/Kenzuuu/LLove-Userbot) [OWNER](t.me/triplenineee)\n"
-                       )
-     if ALIVE_LOGO:
-        try:
-            logo = ALIVE_LOGO
-            await alive.delete()
-            msg = await bot.send_file(alive.chat_id, logo, caption=output)
-            await asyncio.sleep(500)
-            await msg.delete()
-        except BaseException:
-            await alive.edit(
-                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
-                "\nPastikan Tautan Yang Anda Gunakan Valid`"
-            )
-            await asyncio.sleep(100)
-            await alive.delete()
+        f"[REPO​](https://github.com/Kenzuuu/LLove-Userbot) [OWNER](t.me/triplenineee)\n"
+    )
+      if ALIVE_LOGO:
+           try:
+                logo = ALIVE_LOGO
+                await alive.delete()
+                msg = await bot.send_file(alive.chat_id, logo, caption=output)
+                await asyncio.sleep(500)
+                await msg.delete()
+            except BaseException:
+                await alive.edit(
+                    output + "\n\n *`Logo Yang Disediakan Tidak Valid."
+                    "\nPastikan Tautan Yang Anda Gunakan Valid`"
+                )
+                await asyncio.sleep(100)
+                await alive.delete()
     else:
         await alive.edit(output)
         await asyncio.sleep(100)
         await alive.delete()
+
 
 @register(outgoing=True, pattern="^.raw$")
 async def raw(event):
