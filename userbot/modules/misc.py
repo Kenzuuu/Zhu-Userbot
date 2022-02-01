@@ -12,7 +12,7 @@ import requests
 from bs4 import BeautifulSoup
 from PIL import Image
 
-from userbot import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, CMD_HELP, UPSTREAM_REPO_URL, bot
+from userbot import ALIVE_NAME, ALIVE_LOGO, BOTLOG, BOTLOG_CHATID, CMD_HELP, UPSTREAM_REPO_URL, bot
 from userbot.events import register
 from userbot.utils import time_formatter
 
@@ -117,11 +117,26 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """For .repo command, just returns the repo URL."""
     await wannasee.edit(
-        "**{ALIVE_NAME}**\n"
-        "https://telegra.ph/file/2c253a95bf7d9e53e7bf5.jpg\n"
-        "[REPO​](https://github.com/Kenzuuu/LLove-Userbot) [OWNER](t.me/triplenineee)\n"
-    )
-
+                       f"[REPO​](https://github.com/Kenzuuu/LLove-Userbot) [OWNER](t.me/triplenineee)\n"
+                       )
+     if ALIVE_LOGO:
+        try:
+            logo = ALIVE_LOGO
+            await alive.delete()
+            msg = await bot.send_file(alive.chat_id, logo, caption=output)
+            await asyncio.sleep(500)
+            await msg.delete()
+        except BaseException:
+            await alive.edit(
+                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
+                "\nPastikan Tautan Yang Anda Gunakan Valid`"
+            )
+            await asyncio.sleep(100)
+            await alive.delete()
+    else:
+        await alive.edit(output)
+        await asyncio.sleep(100)
+        await alive.delete()
 
 @register(outgoing=True, pattern="^.raw$")
 async def raw(event):
