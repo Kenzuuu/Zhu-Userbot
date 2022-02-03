@@ -18,11 +18,11 @@ LOVE_IMG = os.environ.get(
 
 @register(outgoing=True, pattern="^.aping$")
 @register(incoming=True, from_users=DEVS, pattern=r"^.cping$")
-async def redis(event):
+async def redis(pong):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await event.edit("💝")
+    await pong.edit("💝")
     await asyncio.sleep(3)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
@@ -31,5 +31,5 @@ async def redis(event):
             f"**Pong !!** `%sms` \n"
             f"**Uptime **- `{uptime}`\n" % (duration)
         )
-    await event.edit(LOVE_IMG, caption=Love_caption)
-    await event.delete()
+    await pong.edit(LOVE_IMG, caption=Love_caption)
+    await pong.delete()
