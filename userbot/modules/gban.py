@@ -34,7 +34,7 @@ async def get_full_user(event):
             user_obj = await event.client.get_entity(user)
         except Exception as err:
             return await event.edit(
-                "`Terjadi Kesalahan... Mohon Lapor Ke Grup` @skyzusupport", str(err)
+                "`Terjadi Kesalahan... Mohon Lapor Ke Grup` @kenzusupport", str(err)
             )
     return user_obj, extra
 
@@ -132,11 +132,11 @@ async def gben(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, view_messages=False)
                 a += 1
-                await dark.edit(f"`Global Banned Si Jamet Aktif Tuan✅`")
+                await dark.edit(f"Global Banned Diaktifkan")
             except BaseException:
                 b += 1
     else:
-        await dark.edit(f"`Mohon Balas Ke Pesan`")
+        await dark.edit(f"Mohon Balas Ke Pesan")
     try:
         if gmute(user.id) is False:
             return await dark.edit(
@@ -145,8 +145,13 @@ async def gben(userbot):
     except BaseException:
         pass
     return await dark.edit(
-        f"**Perintah:** `{ALIVE_NAME}`\n**Pengguna:** [{user.first_name}](tg://user?id={user.id})\n**Aksi:** `Global Banned`"
-    )
+        f"**PEINTAH** `{ALIVE_NAME}`\n\n"
+            f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
+            f"══════════════\n"
+            f"🆔 **ID :** {str(user.id)}\n"
+            f"══════════════\n"
+            f"🤴 **Aksi :** Ban Global  ✅ \n"
+            )
 
 
 @register(outgoing=True, pattern="^.ungban(?: |$)(.*)")
@@ -156,12 +161,12 @@ async def gunben(userbot):
     sender = await dc.get_sender()
     me = await dc.client.get_me()
     if not sender.id == me.id:
-        dark = await dc.reply("`Membatalkan Perintah Global Banned Pengguna Ini`")
+        dark = await dc.reply("Membatalkan Perintah Global Banned Pengguna Ini")
     else:
-        dark = await dc.edit("`Membatalkan Perintah Global Banned`")
+        dark = await dc.edit("Membatalkan Perintah Global Banned")
     me = await userbot.client.get_me()
     await dark.edit(
-        f"`Memulai Membatalkan Perintah Global Banned, Jangan Jadi Jamet Lagi Ya!!!`"
+        f"Memulai Membatalkan Perintah Global Banned, Jangan Jadi Jamet Lagi Ya!!!"
     )
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
@@ -216,9 +221,13 @@ async def gunben(userbot):
     except BaseException:
         pass
     return await dark.edit(
-        f"**Perintah :** `{ALIVE_NAME}`\n**Pengguna:** [{user.first_name}](tg://user?id={user.id})\n**Aksi:** `Membatalkan Global Banned`"
-    )
-
+            f"**PERINTAH** `{ALIVE_NAME}`\n\n"
+            f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
+            f"══════════════\n"
+            f"🆔 **ID :** {str(user.id)}\n"
+            f"══════════════\n"
+            f"🤴 **Aksi :** Melepas Ban ✅ \n"
+        )
 
 CMD_HELP.update(
     {
