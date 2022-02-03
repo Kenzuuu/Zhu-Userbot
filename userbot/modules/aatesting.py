@@ -27,11 +27,9 @@ async def redis(event):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     if LOVE_IMG:
-       Love_caption = (
-        f"**Pong !!** `%sms` \n"
-        f"**Uptime **- `{uptime}`\n" % (duration)
+        Love_caption = (
+            f"**Pong !!** `%sms` \n"
+            f"**Uptime **- `{uptime}`\n" % (duration)
         )
     await event.edit(LOVE_IMG, caption=Love_caption)
     await event.delete()
-
-
