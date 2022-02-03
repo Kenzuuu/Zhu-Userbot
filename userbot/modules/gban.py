@@ -146,12 +146,12 @@ async def gben(userbot):
         pass
     return await dark.edit(
         f"**PEINTAH** `{ALIVE_NAME}`\n\n"
-            f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
-            f"══════════════\n"
-            f"🆔 **ID :** {str(user.id)}\n"
-            f"══════════════\n"
-            f"🤴 **Aksi :** Ban Global  ✅ \n"
-            )
+        f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
+        f"══════════════\n"
+        f"🆔 **ID :** {str(user.id)}\n"
+        f"══════════════\n"
+        f"🤴 **Aksi :** Ban Global  ✅ \n"
+    )
 
 
 @register(outgoing=True, pattern="^.ungban(?: |$)(.*)")
@@ -221,13 +221,13 @@ async def gunben(userbot):
     except BaseException:
         pass
     return await dark.edit(
-            f"**PERINTAH** `{ALIVE_NAME}`\n\n"
-            f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
-            f"══════════════\n"
-            f"🆔 **ID :** {str(user.id)}\n"
-            f"══════════════\n"
-            f"🤴 **Aksi :** Melepas Ban ✅ \n"
-        )
+        f"**PERINTAH** `{ALIVE_NAME}`\n\n"
+        f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
+        f"══════════════\n"
+        f"🆔 **ID :** {str(user.id)}\n"
+        f"══════════════\n"
+        f"🤴 **Aksi :** Melepas Ban ✅ \n"
+    )
 
 CMD_HELP.update(
     {
