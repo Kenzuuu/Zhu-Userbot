@@ -268,12 +268,27 @@ async def ban(bon):
     # Shout out the ID, so that fedadmins can fban later
     if reason:
         await bon.edit(
-            f"👷 PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n🆔 ID: {str(user.id)} Telah Di Banned !!\n📍 Alasan: {reason}"
-        )
+            f"**BAN USER**\n\n"
+            f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
+            f"══════════════\n"
+            f"🆔 **ID :** {str(user.id)}\n"
+            f"══════════════\n"
+            f"🤴 **Alasan :** {reason} \n"
+        )    
+        await sleep(20)
+        await bon.delete()
     else:
         await bon.edit(
-            f"👷 PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n🆔 ID: `{str(user.id)}`Si Jamet Telah Terbanned ✅"
-        )
+            f"**BAN USER**\n\n"
+            f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
+            f"══════════════\n"
+            f"🆔 **ID :** {str(user.id)}\n"
+            f"══════════════\n"
+            f"🤴 **Status :** Sukses ✅ \n"
+            )           
+        await sleep(20)
+        await bon.delete()
+
     # Announce to the logging group if we have banned the person
     # successfully!
     if BOTLOG:
@@ -306,8 +321,15 @@ async def nothanos(unbon):
 
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await unbon.edit("```Si Jamat Berhasil Di Unban ✅```")
-        await sleep(3)
+        await unbon.edit(
+                f"**UNBAN USER**\n\n"
+                f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
+                f"══════════════\n"
+                f"🆔 **ID :** {str(user.id)}\n"
+                f"══════════════\n"
+                f"🤴 **Status :** Sukses ✅ \n"
+               )
+        await sleep(10)
         await unbon.delete()
 
         if BOTLOG:
