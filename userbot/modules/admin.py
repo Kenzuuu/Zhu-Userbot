@@ -274,7 +274,7 @@ async def ban(bon):
             f"🆔 **ID :** {str(user.id)}\n"
             f"══════════════\n"
             f"🤴 **Alasan :** {reason} \n"
-        )    
+        )
         await sleep(20)
         await bon.delete()
     else:
@@ -285,7 +285,7 @@ async def ban(bon):
             f"🆔 **ID :** {str(user.id)}\n"
             f"══════════════\n"
             f"🤴 **Status :** Sukses ✅ \n"
-            )           
+        )
         await sleep(20)
         await bon.delete()
 
@@ -322,13 +322,13 @@ async def nothanos(unbon):
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
         await unbon.edit(
-                f"**UNBAN USER**\n\n"
-                f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
-                f"══════════════\n"
-                f"🆔 **ID :** {str(user.id)}\n"
-                f"══════════════\n"
-                f"🤴 **Status :** Sukses ✅ \n"
-               )
+            f"**UNBAN USER**\n\n"
+            f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
+            f"══════════════\n"
+            f"🆔 **ID :** {str(user.id)}\n"
+            f"══════════════\n"
+            f"🤴 **Status :** Sukses ✅ \n"
+        )
         await sleep(10)
         await unbon.delete()
 
