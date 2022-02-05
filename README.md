@@ -6,9 +6,9 @@
 </p>
 
 ## Group Support:
-
-   <a href="https://t.me/narumisupport"><img src="https://img.shields.io/badge/Group%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
-
+<p align="center">
+<a href="https://t.me/Kenzusupport"><img src="https://img.shields.io/badge/Group%20-Support-green?&style=flat-square?&logo=telegram" width=220px></a></p>
+</p>
 
 ## Stay Support 🚀
 ❁   [LonamiWebs](https://github.com/LonamiWebs/) and [Telethon](https://github.com/LonamiWebs/Telethon)
