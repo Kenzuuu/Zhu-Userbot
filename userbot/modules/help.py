@@ -35,7 +35,7 @@ async def help(event):
             string += "`" + str(i)
             string += "`\t ❉  "
         await event.edit(
-            "**💘L̷O̷V̷E̷-̷U̷S̷E̷R̷B̷O̷T̷💘**\n\n"
+            "**⛔ ZHU-USERBOT ⛔**\n\n"
             f"**◉ Bᴏᴛ ᴏꜰ {DEFAULTUSER}**\n**◉ Mᴏᴅᴜʟᴇꜱ : {len(modules)}**\n\n"
             "**• Mᴀɪɴ Mᴇɴᴜ :**\n"
             f"◉ {string}◉\n\n✐ **ɴᴏᴛᴇꜱ :**  `.help animasi`\n✐  Branch : @triplenineee"
