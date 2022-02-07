@@ -1,3 +1,9 @@
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.d (the "License");
+# you may not use this file except in compliance with the License
+""" Userbot module containing commands related to the \
+    Information Superhighway (yes, Internet). """
 
 
 async def get_readable_time(seconds: int) -> str:
@@ -26,8 +32,7 @@ async def get_readable_time(seconds: int) -> str:
 
     return up_time
 
-
 @register(outgoing=True, pattern=r"^\.(?:alive|on)\s?(.)?")
 async def redis(alive):
-    await bot.get_me()
+    user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
