@@ -1,6 +1,5 @@
 
 
-
 async def get_readable_time(seconds: int) -> str:
     count = 0
     up_time = ""
@@ -27,7 +26,8 @@ async def get_readable_time(seconds: int) -> str:
 
     return up_time
 
+
 @register(outgoing=True, pattern=r"^\.(?:alive|on)\s?(.)?")
 async def redis(alive):
-    user = await bot.get_me()
+    await bot.get_me()
     await get_readable_time((time.time() - StartTime))
