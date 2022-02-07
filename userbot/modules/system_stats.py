@@ -173,8 +173,8 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         await event.edit(
-            "**⚜-**💘L̷O̷V̷E̷-̷U̷S̷E̷R̷B̷O̷T̷💘 Versi:** \n "
-            f"heads/Love-Userbot-0-x634i7u1"
+            "**⚜-**⛔ZHU-USERBOT⛔ Versi:** \n "
+            f"heads/Zhu-Userbot-0-x634i7u1"
             "\n**⚜-**Revisi:**\n "
             f"{revout}"
         )
@@ -237,7 +237,7 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"💝 Z̸H̸U̸-̸A̸L̸I̸V̸E̸ 💝\n\n"
+        f"⛔Z̸H̸U̸-̸A̸L̸I̸V̸E̸⛔\n\n"
         f"\n__**{ROSE_TEKS_KUSTOM}**__\n\n\n"
         f"╭✠╼━━━━━━━━━━━━━━━✠╮\n"
         f"➥ **Name** : `{DEFAULTUSER}` \n"
@@ -247,7 +247,7 @@ async def amireallyalive(alive):
         f"➥ **Bot Ver**  : `{BOT_VER}` \n"
         f"➥ **Modules**  : `{len(modules)}` \n"
         f"╰✠╼━━━━━━━━━━━━━━━✠╯\n"
-        f"[ɢʀᴏᴜᴘꜱ](https://t.me/narumisupport) | [ʙᴏᴛᴏꜰ](https://t.me/{user.username}) | [ɢɪᴛʜᴜʙ](https://github.com/Kenzuuu/Love-Userbot)"
+        f"[ɢʀᴏᴜᴘꜱ](https://t.me/Kenzusupport) | [ʙᴏᴛᴏꜰ](https://t.me/{user.username}) | [ɢɪᴛʜᴜʙ](https://github.com/Kenzuuu/Zhu-Userbot)"
     )
     if ALIVE_LOGO:
         try:
@@ -325,9 +325,9 @@ async def redis(alive):
         f"┃✧ **Branch   :** {UPSTREAM_REPO_BRANCH} \n"
         f"┃✧ **Bot Ver  :** {BOT_VER} \n"
         f"┃✧ **Modules  :** {len(modules)} Modules \n"
-        f"┃✧ **GitHub   :** [UserBot](https://github.com/Kenzuuu/Love-Userbot) \n"
+        f"┃✧ **GitHub   :** [UserBot](https://github.com/Kenzuuu/Zhu-Userbot) \n"
         f"┃✧ **Owner    :** [Kenzhu](https://t.me/triplenineee) \n"
-        f"┃✧ **support  :** [groups](https://t.me/narumisupport) \n"
+        f"┃✧ **support  :** [groups](https://t.me/kenzusupport) \n"
         f"╰✠╼━━━━━━━━━━━━━━━━✠╯")
     if ALIVE_LOGO:
         try:
