@@ -21,7 +21,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 REPOLINK = (
     str(UPSTREAM_REPO_URL)
     if UPSTREAM_REPO_URL
-    else "https://github.com/Kenzuuu/Love-Userbot"
+    else "https://github.com/Kenzuuu/Zhu-Userbot"
 )
 # ============================================
 
@@ -64,7 +64,7 @@ async def sleepybot(time):
 @register(outgoing=True, pattern="^.shutdown$")
 async def killdabot(event):
     """For .shutdown command, shut the bot down."""
-    await event.edit("**Mematikan Love-Userbot....**")
+    await event.edit("**Mematikan Zhu-Userbot....**")
     await asyncio.sleep(7)
     await event.delete()
     if BOTLOG:
@@ -81,7 +81,7 @@ async def killdabot(event):
     await event.delete()
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#RESTARTBOT \n" "Userbot Telah Di Restart"
+            BOTLOG_CHATID, "**RESTART** \n" "**Userbot Telah Di Restart** ✅"
         )
     await bot.disconnect()
     # Spin a new instance of bot
@@ -94,7 +94,7 @@ async def killdabot(event):
 async def reedme(e):
     await e.edit(
         "Here's Something for You to Read :\n"
-        "\n[💘 Love-UserBot Repo](https://github.com/Kenzuuu/Kenzhu/blob/Love-UserBot/README.md)"
+        "\n[Zhu-UserBot Repo](https://github.com/Kenzuuu/Kenzhu/blob/Love-UserBot/README.md)"
         "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
         "\n[Special - Note](https://telegra.ph/Special-Note-11-02)"
     )
