@@ -8,11 +8,9 @@
 import time
 
 from userbot import (
-    ALIVE_LOGO,
-    ALIVE_NAME,
     StartTime,
     bot,
-     )
+)
 from userbot.events import register
 
 
