@@ -26,3 +26,8 @@ async def get_readable_time(seconds: int) -> str:
     up_time += ":".join(time_list)
 
     return up_time
+
+@register(outgoing=True, pattern=r"^\.(?:alive|on)\s?(.)?")
+async def redis(alive):
+    user = await bot.get_me()
+    await get_readable_time((time.time() - StartTime))
