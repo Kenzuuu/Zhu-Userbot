@@ -103,7 +103,7 @@ PM_LIMIT = int(os.environ.get("PM_LIMIT", 6))
 # Custom Pmpermit pic
 PMPERMIT_PIC = (
     os.environ.get("PMPERMIT_PIC", None)
-    or "https://telegra.ph/file/46421e53310e0369ff62c.jpg"
+    or "https://telegra.ph/file/111c4fcb06e9dee2a9c75.jpg"
 )
 
 # Bleep Blop, this is a bot ;)
@@ -128,7 +128,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL", "https://github.com/Kenzuuu/Love-Userbot"
+    "UPSTREAM_REPO_URL", "https://github.com/Kenzuuu/Zhu-Userbot"
 )
 UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "Kenzhu")
 
@@ -231,14 +231,14 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = (os.environ.get("ALIVE_LOGO")
-              or "https://telegra.ph/file/eba4a8e16be4d789d1991.jpg")
+              or "https://telegra.ph/file/111c4fcb06e9dee2a9c75.jpg")
 
 # Default .helpme Logo
 INLINE_PIC = (os.environ.get("INLINE_PIC")
-              or "https://telegra.ph/file/eba4a8e16be4d789d1991.jpg")
+              or "https://telegra.ph/file/111c4fcb06e9dee2a9c75.jpg")
 
 # Default emoji help
-EMOJI_HELP = os.environ.get("EMOJI_HELP") or "✗"
+EMOJI_HELP = os.environ.get("EMOJI_HELP") or "⚙️"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -467,7 +467,7 @@ with bot:
                 tgbotusername = BOT_USERNAME
                 if tgbotusername is not None:
                     results = await event.client.inline_query(
-                        tgbotusername, "@narumisupport"
+                        tgbotusername, "@Kenzusupport"
                     )
                     await results[0].click(
                         event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
@@ -547,7 +547,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 buttons = paginate_help(0, dugmeler, "helpme")
-                text = f"Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ\n\n❥ **ʙᴏᴛ ᴏꜰ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ @narumisupport "
+                text = f"Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ\n\n❥ **ʙᴏᴛ ᴏꜰ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ @Kenzusupport "
                 await event.edit(
                     text,
                     file=roselogo,
@@ -583,7 +583,7 @@ with bot:
                     f"❁ __Saya Adalah Love Userbot Yang Digunakan Banyak User Telegram__.\n\n"
                     f"❁ __Saya Dibuat Hanya Untuk Bersenang Senang Ditelegram__.\n\n"
                     f"❁ __Kelebihan Saya Banyak, Saya Mempunyai 180 Modules__.\n\n"
-                    f"© @narumisupport")
+                    f"© @Kenzusupport")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -593,7 +593,7 @@ with bot:
                     ],
                 )
             else:
-                reply_pop_up_alert = f"🤴 Name : {DEFAULTUSER}\n🤖 Bot Ver : 5.0\n🛠 Modules : {len(plugins)}\n⚙️ Branch : Love-Userbot"
+                reply_pop_up_alert = f"🤴 Name : {DEFAULTUSER}\n🤖 Bot Ver : 5.0\n🛠 Modules : {len(plugins)}\n⚙️ Branch : Zhu-Userbot"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -659,7 +659,7 @@ with bot:
                     f"°__Mengubah Foto Alive Kamu, Yang Kamu Inginkan__.\n\n"
                     f"× `.set var LOVE_TEKS_KUSTOM` [**TEKS**]\n"
                     f"°__Mengganti Teks Yang Ada Command zhualive__.\n\n"
-                    f"© @narumisupport"
+                    f"© @Kenzusupport"
                 )
                 await event.edit(
                     text,
@@ -689,7 +689,7 @@ with bot:
                     f"°__Mengaktifkan Pmpermit Kalian Atau Disebut Pesan Otomatis__.\n\n"
                     f"× `.set pm_msg` [**REPLYCHAT**]\n"
                     f"°__Mengganti Teks Pmpermit Selera Kamu__.\n\n"
-                    f"© @narumisupport")
+                    f"© @Kenzusupport")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -718,7 +718,7 @@ with bot:
                     f"°__Mengubah Emoji Inline Yang Ada Dicomand__ `.helpme`\n\n"
                     f"× `.set var INLINE_PIC` [**LINK**]\n"
                     f"°__Mengubah Foto Yang Ada Dicomand__ `.helpme`\n\n"
-                    f"© @narumisupport")
+                    f"© @kenzusupport")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -745,7 +745,7 @@ with bot:
                     f"Modules Name **pmbot**\n\n"
                     f"× `.set var START_WELCOME` [**TEKS**] \n"
                     f"°__Kamu Juga Bisa Mengubah Start Welcome Untuk Bot Kamu Yang Ini, Dengan Cara Diatas Dan Kata Kata Bebas__.\n\n"
-                    f"© @narumisupport")
+                    f"© @Kenzusupport")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -774,7 +774,7 @@ with bot:
                     f"⚒Pembaruan Data :\n"
                     f"`.update deploy`\n"
                     f"`update`\n\n"
-                    f"© @narumisupport")
+                    f"© @Kenzusupport")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -836,7 +836,7 @@ with bot:
                     f" ✠➲ **ʙᴏᴛ ᴏꜰ :** {ALIVE_NAME}  "
                     "\n╚════════════════════╝"
                     f"✥ **Sisa Dyno Heroku** `{day}` **Hari Lagi**"
-                    f"© @narumisupport"
+                    f"© @Kenzusupport"
                 )
                 await event.edit(
                     text,
@@ -857,7 +857,7 @@ with bot:
         )
         async def killdabot(event):
             if event.query.user_id == uid:
-                text = f"**❤️ Love-userbot sedang direstart**..."
+                text = f"**Zhu-userbot sedang direstart**..."
                 await event.edit(
                     text,
                     file=roselogo,
@@ -894,27 +894,27 @@ with bot:
                 result = builder.photo(
                     file=roselogo,
                     link_preview=False,
-                    text=f"Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ\n\n❥ **ʙᴏᴛ ᴏꜰ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ @narumisupport".format(
+                    text=f"Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ\n\n❥ **ʙᴏᴛ ᴏꜰ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ @kenzusupport".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Bantuan Dari **❤️L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸❤️**",
+                    "Bantuan Dari **⛔ZHU-USERBOT⛔**",
                     text="Daftar Plugins",
                     buttons=[],
                     link_preview=True,
                 )
             else:
                 result = builder.article(
-                    " **❤️L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸​❤️**",
-                    text="""💘L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸💘""",
+                    " **⛔L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸​⛔**",
+                    text="""⛔L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸⛔""",
                     buttons=[
                         [
                             custom.Button.url(
                                 "KENZHU​",
-                                "https://github.com/Kenzuuuu/Love-Userbot"),
+                                "https://github.com/Kenzuuuu/Zhu-Userbot"),
                             custom.Button.url(
                                 "CHANNEL​",
                                 "t.me/inibotsaya"),
@@ -922,7 +922,7 @@ with bot:
                         [
                             custom.Button.url(
                                 "LICENSE​",
-                                "https://github.com/Kenzuuu/Love-Userbot/LICENSE",
+                                "https://github.com/Kenzuuu/Zhu-Userbot/LICENSE",
                             )],
                     ],
                     link_preview=False,
@@ -961,7 +961,7 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("❈ꜱᴜᴘᴘᴏʀᴛ❈", "t.me/narumisupport"),
+                            Button.url("❈ꜱᴜᴘᴘᴏʀᴛ❈", "t.me/kenzusupport"),
                             Button.url("❈ᴄʜᴀɴɴᴇʟ❈", "t.me/inibotsaya"),
                         ],
                         [custom.Button.inline(
