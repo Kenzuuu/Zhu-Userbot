@@ -94,7 +94,7 @@ async def killdabot(event):
 async def reedme(e):
     await e.edit(
         "Here's Something for You to Read :\n"
-        "\n[Zhu-UserBot Repo](https://github.com/Kenzuuu/Kenzhu/blob/Love-UserBot/README.md)"
+        "\n[Zhu-UserBot Repo](https://github.com/Kenzuuu/Kenzhu/blob/Zhu-UserBot/README.md)"
         "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
         "\n[Special - Note](https://telegra.ph/Special-Note-11-02)"
     )
@@ -114,7 +114,7 @@ async def repeat(rep):
     await rep.edit(replyText)
 
 
-@register(outgoing=True, pattern="^.crepo$")
+@register(outgoing=True, pattern="^.repo$")
 async def repo_is_here(wannasee):
     """For .repo command, just returns the repo URL."""
     await wannasee.edit(
