@@ -109,11 +109,11 @@ async def gben(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await dark.edit(f"`Terjadi Kesalahan`")
+        return await dark.edit(f"⛔ **Nama Pengguna atau ID tidak ditemukan mohon periksa kembali**")
     if user:
         if user.id in DEVS:
             return await dark.edit(
-                f"`Anda Tidak Bisa Melakukan Global Banned, Karena dia pembuatku 🤪`"
+                f"❌ Anda Tidak Bisa Melakukan Global Banned, Karena dia pembuatku"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
@@ -147,9 +147,9 @@ async def gben(userbot):
     return await dark.edit(
         f"**PEINTAH** `{ALIVE_NAME}`\n\n"
         f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
-        f"══════════════\n"
+        f"═════════════\n"
         f"🆔 **ID :** {str(user.id)}\n"
-        f"══════════════\n"
+        f"═════════════\n"
         f"🤴 **Aksi :** Ban Global  ✅ \n"
     )
 
