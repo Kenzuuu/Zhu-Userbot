@@ -5,9 +5,13 @@
 """ Userbot module containing commands related to the \
     Information Superhighway (yes, Internet). """
 
+import asyncio
+import random
 import time
+from datetime import datetime
 
 from userbot import (
+    ALIVE_LOGO,
     StartTime,
     bot,
 )
