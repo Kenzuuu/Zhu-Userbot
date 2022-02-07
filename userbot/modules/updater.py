@@ -155,7 +155,7 @@ async def upstream(event):
     off_repo = UPSTREAM_REPO_URL
     force_update = False
     try:
-        txt = "`Mohon Maaf, Pembaruan Tidak Dapat Di Lanjutkan Karna "
+        txt = "Mohon Maaf, Pembaruan Tidak Dapat Di Lanjutkan Karna "
         txt += "Beberapa Masalah Terjadi`\n\n**LOGTRACE:**\n"
         repo = Repo()
     except NoSuchPathError as error:
@@ -167,7 +167,7 @@ async def upstream(event):
     except InvalidGitRepositoryError as error:
         if conf is None:
             return await event.edit(
-                f"`Sayangnya, Directory {error} Tampaknya Bukan Dari Repo."
+                f"Sayangnya, Directory {error} Tampaknya Bukan Dari Repo."
                 "\nTapi Kita Bisa Memperbarui Paksa Userbot Menggunakan .update now.`"
             )
         repo = Repo.init()
