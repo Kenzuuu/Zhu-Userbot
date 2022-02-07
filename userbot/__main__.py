@@ -29,7 +29,7 @@ for module_name in ALL_MODULES:
 
 
 LOGS.info(
-    f"❤️L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸❤️ \n⚙️ VersiBot : V{BOT_VER} \n 🔰 Status : Aktif ✅")
+    f"import Zhu modules \n import all modules \n ⛔ZHU-USERBOT⛔ \n ⚙️ VersiBot : V{BOT_VER} \n 🔰 Status : Aktif ✅")
 
 
 if len(argv) not in (1, 3, 4):
