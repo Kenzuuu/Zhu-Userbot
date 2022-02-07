@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://telegra.ph/file/df7342853ca28e5368b4d.jpg">
+  <img src="https://telegra.ph/file/111c4fcb06e9dee2a9c75.jpg">
 </p>
 <p align="center">
 <a href="https://heroku.com/deploy?template=https://github.com/Kenzuuu/Love-Userbot"><img src="https://www.herokucdn.com/deploy/button.svg" /></a>
@@ -7,7 +7,7 @@
 
 ## Group Support:
 <p align="center">
-<a href="https://t.me/Kenzusupport"><img src="https://img.shields.io/badge/Group%20-Support-green?&style=flat-square?&logo=telegram" width=220px></a></p>
+<a href="https://t.me/Kenzusupport"><img src="https://img.shields.io/badge/Group%20-Support-magenta?&style=flat-square?&logo=telegram" width=220px></a></p>
 </p>
 
 ## Stay Support 🚀
