@@ -1,7 +1,7 @@
 {
-  "name": "❤️ LOVE-USERBOT ❤️",
-  "description": "💘Love-Userbot💘 USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
-  "logo": "https://telegra.ph/file/45818bdc8a8aa1dc77a81.jpg",
+  "name": "⛔ZHU-USERBOT⛔",
+  "description": "ZHU-USERBOT ADALAH USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
+  "logo": "https://telegra.ph/file/111c4fcb06e9dee2a9c75.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -9,9 +9,9 @@
     "modular",
     "productivity"
 ],
-  "repository": "https://github.com/Kenzuuu/Love-Userbot",
+  "repository": "https://github.com/Kenzuuu/Zhu-Userbot",
   "telegram": "https://t.me/triplenineee",
-  "success_url": "https://t.me/narumisupport",
+  "success_url": "https://t.me/Kenzusupport",
   "stack": "container",
   "env": {
     "API_KEY": {
