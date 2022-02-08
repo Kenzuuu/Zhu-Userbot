@@ -364,18 +364,18 @@ async def spider(spdr):
 
     if user.id == self_user.id:
         return await spdr.edit(
-            "⛔ Tidak dapat membisukan diri sendiri  "
+            "⛔ Tidak dapat membisukan diri sendiri"
         )
 
     # If everything goes well, do announcing and mute
     await spdr.edit(
         f"[{user.first_name}](tg://user?id={user.id}) Telah melanggar peraturan \n"
-        f"**Aksi: ** Saya membisukan dia 🔇 di {promt.chat.title} \n"
+        f"**Aksi: ** Saya membisukan dia 🔇 \n"
     )
     await sleep(20)
     if mute(spdr.chat_id, user.id) is False:
         return await spdr.edit(
-            f"⛔ Kesalahan ! [{user.first_name}](tg://user?id={user.id}) Telah dibisukan 🔇 di {promt.chat.title} \n"
+            f"⛔ Kesalahan ! [{user.first_name}](tg://user?id={user.id}) Telah dibisukan 🔇 \n"
         )
     else:
         try:
@@ -383,10 +383,10 @@ async def spider(spdr):
 
             # Announce that the function is done
             if reason:
-                await spdr.edit(f"[{user.first_name}](tg://user?id={user.id}) Telah Dibisukan di {promt.chat.title} ** Karena :** {reason}")
+                await spdr.edit(f"[{user.first_name}](tg://user?id={user.id}) Telah Dibisukanl ** Karena :** {reason}")
                 await sleep(50)
             else:
-                await spdr.edit(f"[{user.first_name}](tg://user?id={user.id}) 🔇 Telah Dibisukan di {promt.chat.title} ")
+                await spdr.edit(f"[{user.first_name}](tg://user?id={user.id}) 🔇 Telah Dibisukan")
                 await sleep(50)
 
             # Announce to logging group
@@ -432,7 +432,7 @@ async def unmoot(unmot):
         try:
             await unmot.client(EditBannedRequest(unmot.chat_id, user.id, UNBAN_RIGHTS))
             await unmot.edit(
-                f"[{user.first_name}](tg://user?id={user.id}) 🔇 Sudah Tidak Lagi Dibisukan di {promt.chat.title} \n"
+                f"[{user.first_name}](tg://user?id={user.id}) 🔇 Sudah Tidak Lagi Dibisukan\n"
             )
             await sleep(20)
             await unmot.delete()
