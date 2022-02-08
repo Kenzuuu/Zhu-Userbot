@@ -9,7 +9,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern="^.deploy ?(.*)")
+@register(outgoing=True, pattern="^.adeploy ?(.*)")
 async def _(event):
 
     if event.fwd_from:
@@ -25,7 +25,7 @@ async def _(event):
     await event.edit("Deploying...")
 
     animation_chars = [
-        "Heroku Connecting To Latest Github Build (Kenzuuu/Love-Userbot)",
+        "Heroku Connecting To Latest Github Build (Kenzuuu/Zhu-Userbot)",
         f"Build started by user `{DEFAULTUSER}`",
         f"Deploy `535a74f0` by user `{DEFAULTUSER}`",
         "`Restarting Heroku Server...`",
@@ -42,10 +42,10 @@ async def _(event):
         "telethon.network.mtprotosender -\nINFO - Connecting to 91.108.56.146:443/TcpFull...",
         "telethon.network.mtprotosender -\nINFO - Connection to 91.108.56.146:443/TcpFull complete!",
         "telethon.network.mtprotosender -\nINFO - Received response without parent request",
-        "INFO - Skyzu-Userbot: Logged in as 557667062",
-        "INFO - Skyzu-Userbot: Successfully...",
+        "INFO - Zhu-Userbot: Logged in as 557667062",
+        "INFO - Zhu-Userbot: Successfully...",
         "919852+00:00 app[worker.1]: 919 - Love-Userbot -",
-        "INFO - 💘 Love-Userbot 💘 ⚙️ V5.0 [TELAH DIAKTIFKAN!]",
+        "INFO - ⛔ Zhu-Userbot ⛔ ⚙️ V5.0 [TELAH DIAKTIFKAN!]",
         "**Build Succeeded**",
     ]
 
@@ -56,5 +56,5 @@ async def _(event):
         await event.edit(animation_chars[i % 22])
 
 
-CMD_HELP.update({"deploy": ": `.deploy`"
+CMD_HELP.update({"deploy": ": `.adeploy`"
                  "\n↳ : Untuk Deploy ke Heroku.. <Animasi> :v haha"})
