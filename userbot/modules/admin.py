@@ -135,7 +135,7 @@ async def promote(promt):
         pin_messages=True,
     )
 
-    await promt.edit("💞")
+    await promt.edit("💥")
     await sleep(3)
     user, rank = await get_user_from_event(promt)
     if not rank:
@@ -150,7 +150,7 @@ async def promote(promt):
             f"👱 **Nama:** [{user.first_name}](tg://user?id={user.id})\n"
             f"🆔 **ID:** {str(user.id)}\n"
             f"👀 **Situasi:** Admin \n"
-            f"👩‍💻 **Group:** {promt.chat.title}(`{promt.chat_id}`)\n"
+            f"👩‍💻 **Group:** {promt.chat.title}\n"
         )
         await sleep(50)
         await promt.delete()
