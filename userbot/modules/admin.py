@@ -147,6 +147,7 @@ async def promote(promt):
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
         await promt.edit(
+            f"**Tambah Admin** \n\n"
             f"👱 **Nama:** [{user.first_name}](tg://user?id={user.id})\n"
             f"🆔 **ID:** {str(user.id)}\n"
             f"👀 **Situasi:** Admin \n"
@@ -165,8 +166,8 @@ async def promote(promt):
         await promt.client.send_message(
             BOTLOG_CHATID,
             "**#PROMOSI**\n"
-            f"PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
-            f"GRUP: {promt.chat.title}(`{promt.chat_id}`)",
+            f"**PENGGUNA:** [{user.first_name}](tg://user?id={user.id})\n"
+            f"**GRUP:** {promt.chat.title}(`{promt.chat_id}`)",
         )
 
 
@@ -208,12 +209,11 @@ async def demote(dmod):
     except BadRequestError:
         return await dmod.edit(NO_PERM)
     await dmod.edit(
-        f"**LEPAS ADMIN**\n\n"
-        f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
-        f"══════════════\n"
-        f"🆔 **ID :** {str(user.id)}\n"
-        f"══════════════\n"
-        f"🤴 **Status :** Sukses ✅ \n"
+            f"**Lepas Admin** \n\n"
+            f"👱 **Nama:** [{user.first_name}](tg://user?id={user.id})\n"
+            f"🆔 **ID:** {str(user.id)}\n"
+            f"👀 **Situasi:** Admin \n"
+            f"👩‍💻 **Group:** {promt.chat.title}\n"
     )
     await sleep(20)
     await dmod.delete()
@@ -222,9 +222,9 @@ async def demote(dmod):
     if BOTLOG:
         await dmod.client.send_message(
             BOTLOG_CHATID,
-            "💘**MENURUNKAN**💘\n"
-            f"💘 PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
-            f"💘 GRUP: {dmod.chat.title}(`{dmod.chat_id}`)",
+            "**MENURUNKAN**\n"
+            f"**PENGGUNA:** [{user.first_name}](tg://user?id={user.id})\n"
+            f"**GRUP:** {dmod.chat.title}(`{dmod.chat_id}`)",
         )
 
 
@@ -266,12 +266,12 @@ async def ban(bon):
     # Shout out the ID, so that fedadmins can fban later
     if reason:
         await bon.edit(
-            f"**BAN USER**\n\n"
-            f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
-            f"══════════════\n"
-            f"🆔 **ID :** {str(user.id)}\n"
-            f"══════════════\n"
-            f"🤴 **Alasan :** {reason} \n"
+            f"**Blok Pengguna** \n\n"
+            f"👱 **Nama:** [{user.first_name}](tg://user?id={user.id})\n"
+            f"🆔 **ID:** {str(user.id)}\n"
+            f"👀 **Situasi:** Blok \n"
+            f"👩‍💻 **Group:** {promt.chat.title}\n"
+            f"⛔ **Alasan:** {reason}
         )
         await sleep(20)
         await bon.delete()
