@@ -369,7 +369,7 @@ async def spider(spdr):
 
     # If everything goes well, do announcing and mute
     await spdr.edit(
-        f"[{user.first_name}](tg://user?id={user.id}) Telah melanggar peraturan \n"**Aksi :** Saya membisukan dia 🔇 di {promt.chat.title}\n"
+        f"[{user.first_name}](tg://user?id={user.id}) Telah melanggar peraturan \n"**Aksi: ** Saya membisukan dia 🔇 di {promt.chat.title}\n"
     )
     await sleep(20)
     if mute(spdr.chat_id, user.id) is False:
