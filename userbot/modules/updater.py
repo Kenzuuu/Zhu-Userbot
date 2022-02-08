@@ -182,7 +182,7 @@ async def upstream(event):
     if ac_br != UPSTREAM_REPO_BRANCH:
         await event.edit(
             "**[UPDATER]:**\n"
-            f"`Looks like you are using your own custom branch ({ac_br}). "
+            f"Looks like you are using your own custom branch ({ac_br}). "
             "in that case, Updater is unable to identify "
             "which branch is to be merged. "
             "please checkout to any official branch`"
@@ -259,6 +259,6 @@ CMD_HELP.update(
         "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.update now`"
         "\n• : Memperbarui Zhu-Userbot."
         "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.update deploy`"
-        "\n• : Memperbarui Love-Userbot Dengan Cara Men-Deploy Ulang."
+        "\n• : Memperbarui Zhu-Userbot Dengan Cara Men-Deploy Ulang."
     }
 )
