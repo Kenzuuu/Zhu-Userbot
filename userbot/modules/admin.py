@@ -209,11 +209,11 @@ async def demote(dmod):
     except BadRequestError:
         return await dmod.edit(NO_PERM)
     await dmod.edit(
-            f"**Lepas Admin** \n\n"
-            f"👱 **Nama:** [{user.first_name}](tg://user?id={user.id})\n"
-            f"🆔 **ID:** {str(user.id)}\n"
-            f"👀 **Situasi:** Admin \n"
-            f"👩‍💻 **Group:** {promt.chat.title}\n"
+        f"**Lepas Admin** \n\n"
+        f"👱 **Nama:** [{user.first_name}](tg://user?id={user.id})\n"
+        f"🆔 **ID:** {str(user.id)}\n"
+        f"👀 **Situasi:** Admin \n"
+        f"👩‍💻 **Group:** {promt.chat.title}\n"
     )
     await sleep(20)
     await dmod.delete()
@@ -271,7 +271,7 @@ async def ban(bon):
             f"🆔 **ID:** {str(user.id)}\n"
             f"👀 **Situasi:** Blok \n"
             f"👩‍💻 **Group:** {promt.chat.title}\n"
-            f"⛔ **Alasan:** {reason}
+            f"⛔ ** Alasan: ** {reason}
         )
         await sleep(20)
         await bon.delete()
