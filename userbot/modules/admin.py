@@ -147,14 +147,12 @@ async def promote(promt):
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
         await promt.edit(
-            f"**ADMIN BARU**\n\n"
-            f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
-            f"══════════════\n"
-            f"🆔 **ID :** {str(user.id)}\n"
-            f"══════════════\n"
-            f"🤴 **Status :** Sukses ✅ \n"
-        )
-        await sleep(20)
+            f"👱 **Nama:** [{user.first_name}](tg://user?id={user.id})\n"
+            f"🆔 **ID:** {str(user.id)}\n"     
+            f"👀 **Situasi:** Admin \n"
+            f"👩‍💻 **Group:** {promt.chat.title}(`{promt.chat_id}`)\n" 
+            )
+        await sleep(50)
         await promt.delete()
 
     # If Telethon spit BadRequestError, assume
