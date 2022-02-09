@@ -19,6 +19,6 @@
 *   [Sendi](https://github.com/SendiAp/Rose-Userbot)   Rose-Userbot
 *   [Risman](https://github.com/mrismanaziz/Man-Userbot)   Man - Userbot
 *   [Skyzu](https://github.com/Skyzu/skyzu-userbot)   skyzu-userbot
-*   [Kenzu](https://github.com/Kenzuuu/Love-Userbot) Love-Userbot
+*   [Kenzu](https://github.com/Kenzuuu/Zhu-Userbot) Zhu-Userbot
 *   DAN TERIMAKASIH KEPADA USERBOT LAINNYA
 
