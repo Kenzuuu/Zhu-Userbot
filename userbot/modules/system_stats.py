@@ -274,14 +274,14 @@ async def amireallyalive(alive):
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"●▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬● \n"
+        f"●▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬● \n"
         f"✾ 🤴 • `ᴏᴡɴᴇʀ :`[Zhu](t.me/triplenineee)             ㅤ \n"
         f"✾ 🖥️ • `ꜱʏꜱᴛᴇᴍ. :`Ubuntu 20.10            \n"
         f"✾ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ :`v.{version.__version__}                ㅤㅤ  \n"
         f"✾ 🐍 • `ᴘʏᴛʜᴏɴ. :`v.{python_version()} ㅤㅤ\n"
         f"✾ 👾 • `ʙᴏᴛ :`v.{BOT_VER}                ㅤㅤㅤ \n"
         f"✾ 📂 • `ᴍᴏᴅᴜʟᴇ :`{len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   \n"
-        f"●▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬●"
+        f"●▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬●"
     )
     if ALIVE_LOGO:
         try:
@@ -307,28 +307,21 @@ async def amireallyalive(alive):
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("__Sedang Memuat.__")
-    await alive.edit("__Sedang Memuat..__")
-    await alive.edit("__Sedang Memuat.__")
-    await alive.edit("__Sedang Memuat..__")
-    await alive.edit("__Sedang Memuat...__")
-    await alive.edit("__Sedang Memuat..__")
-    await alive.edit("__Sedang Memuat...__")
-    await alive.edit("💝")
+    await alive.edit("💥")
     await asyncio.sleep(2)
     output = (
-        f"╭✠╼━━━━━━━━━━━━━━━━✠╮\n"
-        f"┃✧ **Name     :** {DEFAULTUSER} \n"
-        f"┃✧ **Username :** @{user.username} \n"
-        f"┃✧ **Telethon :** Ver {version.__version__} \n"
-        f"┃✧ **Python   :** Ver {python_version()} \n"
-        f"┃✧ **Branch   :** {UPSTREAM_REPO_BRANCH} \n"
-        f"┃✧ **Bot Ver  :** {BOT_VER} \n"
-        f"┃✧ **Modules  :** {len(modules)} Modules \n"
-        f"┃✧ **GitHub   :** [UserBot](https://github.com/Kenzuuu/Zhu-Userbot) \n"
-        f"┃✧ **Owner    :** [Kenzhu](https://t.me/triplenineee) \n"
-        f"┃✧ **support  :** [groups](https://t.me/kenzusupport) \n"
-        f"╰✠╼━━━━━━━━━━━━━━━━✠╯")
+        f"╭✠╼━━━━━━━━━━━━✠╮\n"
+        f"★**Name     :** {DEFAULTUSER} \n"
+        f"★**Username :** @{user.username} \n"
+        f"★**Telethon :** Ver {version.__version__} \n"
+        f"★**Python   :** Ver {python_version()} \n"
+        f"★**Branch   :** {UPSTREAM_REPO_BRANCH} \n"
+        f"★**Bot Ver  :** {BOT_VER} \n"
+        f"★**Modules  :** {len(modules)} Modules \n"
+        f"★**GitHub   :** [GITHUB](https://github.com/Kenzuuu/Zhu-Userbot) \n"
+        f"★**Owner    :** [KENZU](https://t.me/triplenineee) \n"
+        f"★**support  :** [GROUP](https://t.me/kenzusupport) \n"
+        f"╰✠╼━━━━━━━━━━━━✠╯")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
