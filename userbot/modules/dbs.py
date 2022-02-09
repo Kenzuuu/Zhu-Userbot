@@ -29,6 +29,6 @@ async def amireallydbs(dbs):
         ""
         f"**User :** `{DEFAULTUSER}` \n"
         f"**Status Database:** `{db}`\n"
-        f"**Rose-Userbot :** `{BOT_VER}`"
+        f"**Zhu-Userbot :** `{BOT_VER}`"
         ""
     )
