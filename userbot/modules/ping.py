@@ -42,11 +42,11 @@ async def get_readable_time(seconds: int) -> str:
 
 @register(outgoing=True, pattern="^.ping$")
 @register(incoming=True, from_users=DEVS, pattern=r"^.cping$")
-async def redis(pong):
+async def redis(ping):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await pong.edit("💝")
+    await ping.edit("💝")
     await asyncio.sleep(3)
     end = datetime.now()
     output = (
@@ -57,19 +57,19 @@ async def redis(pong):
     if PING_LOGO:
         try:
             logo = PING_LOGO
-            await pong.delete()
-            msg = await bot.send_file(pong.chat_id, logo, caption=output)
+            await ping.delete()
+            msg = await bot.send_file(ping.chat_id, logo, caption=output)
             await asyncio.sleep(500)
             await msg.delete()
         except BaseException:
-            await pong.edit(
+            await ping.edit(
                 output + "\n\n *Logo Yang Disediakan Tidak Valid."
                 "\nPastikan Tautan Yang Anda Gunakan Valid"
             )
             await asyncio.sleep(100)
-            await pong.delete()
+            await ping.delete()
     else:
-        await pong.edit(output)
+        await ping.edit(output)
         await asyncio.sleep(100)
-        await pong.delete()
+        await ping.delete()
      
