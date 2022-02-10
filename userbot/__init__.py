@@ -2,7 +2,9 @@
 
 import logging
 import os
+import random
 import re
+import sys
 import time
 from datetime import datetime
 from distutils.util import strtobool as sb
@@ -10,15 +12,19 @@ from logging import DEBUG, INFO, basicConfig, getLogger
 from math import ceil
 from sys import version_info
 
+import pybase64
 import redis
 from dotenv import load_dotenv
 from pylast import LastFMNetwork, md5
 from pymongo import MongoClient
 from pySmartDL import SmartDL
 from redis import StrictRedis
-from telethon import Button, events
+from requests import get
+from telethon import Button, events, functions, types
+from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from telethon.sync import TelegramClient, custom, events
+from telethon.tl.functions.channels import JoinChannelRequest as GetSec
 from telethon.utils import get_display_name
 
 redis_db = None
@@ -43,8 +49,8 @@ if CONSOLE_LOGGER_VERBOSE:
     )
 else:
     basicConfig(
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-        level=INFO)
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=INFO
+    )
 LOGS = getLogger(__name__)
 
 if version_info[0] < 3 or version_info[1] < 8:
@@ -54,16 +60,17 @@ if version_info[0] < 3 or version_info[1] < 8:
     )
     quit(1)
 
+# Check if the config was edited by using the already used variable.
+# Basically, its the 'virginity check' for the config file ;)
+CONFIG_CHECK = os.environ.get(
+    "___________PLOX_______REMOVE_____THIS_____LINE__________", None
+)
 
-# Telegram App KEY and HASH
-API_KEY = int(os.environ.get("API_KEY") or None)
-API_HASH = str(os.environ.get("API_HASH") or None)
-
-# Userbot Session String
-STRING_SESSION = os.environ.get("STRING_SESSION", "")
-
-# Logging channel/group ID configuration.
-BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
+if CONFIG_CHECK:
+    LOGS.info(
+        "Please remove the line mentioned in the first hashtag from the config.env file"
+    )
+    quit(1)
 
 # DEVS
 DEVS = (
