@@ -62,7 +62,7 @@ async def redis(ping):
     duration = (end - start).microseconds / 1000
     output = (
         f"**★ Pong !!** `%sms` \n"
-        f"**★ Uptime !!** {uptime} \n"
+        f"**★ Uptime !!** `{uptime}` \n"
         f"**★ Bot of :** {ALIVE_NAME} \n" % (duration))
     if PING_LOGO:
         try:
