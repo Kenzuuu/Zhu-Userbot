@@ -50,6 +50,7 @@ async def redis(pong):
     await asyncio.sleep(3)
     end = datetime.now()
     output = (
+         f"duration = (end - start).microseconds / 1000 \n"
          f"**Pong !!** `%sms` \n"
          f"**Uptime **- `{uptime}`\n" % (duration)
           ) 
@@ -57,7 +58,6 @@ async def redis(pong):
         try:
             logo = PING_LOGO
             await pong.delete()
-            duration = (end - start).microseconds / 1000
             msg = await bot.send_file(pong.chat_id, logo, caption=output)
             await asyncio.sleep(500)
             await msg.delete()
