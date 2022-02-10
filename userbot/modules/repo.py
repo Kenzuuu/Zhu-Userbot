@@ -21,7 +21,7 @@ import psutil
 from telethon import __version__, version
 
 from userbot import (
-    REPO_LOGO,
+    ZHU_LOGO,
     ALIVE_NAME,
     CMD_HELP,
     StartTime,
@@ -70,9 +70,9 @@ async def redis(repo):
         f"**★ BRANCH : [KENZU](https://t.me/triplenineee)**\n"
         f"**★ Bot of :** {ALIVE_NAME} \n"
          )
-    if REPO_LOGO:
+    if ZHU_LOGO:
         try:
-            logo = REPO_LOGO
+            logo = ZHU_LOGO
             await repo.delete()
             msg = await bot.send_file(repo.chat_id, logo, caption=output)
             await asyncio.sleep(500)
