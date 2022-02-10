@@ -17,6 +17,35 @@ from speedtest import Speedtest
 from userbot import ALIVE_NAME, CMD_HELP, DEVS, PING_PIC, StartTime
 from userbot.events import register
 
+@register(outgoing=True, pattern=r"^\.repo$")
+async def redis(repo):
+    user = await bot.get_me()
+    await get_readable_time((time.time() - StartTime))
+    await repo.edit("💥")
+    await asyncio.sleep(2)
+    output = (
+        f"**[★ REPO ★](https://github.com/kenzuuu/Zhu-Userbot)**\n"
+        f"**[★ BRANCH ★](https://t.me/triplenineee)**\n"
+        f"**Bot of :** {ALIVE_NAME} \n"
+         )
+    if REPO_LOGO:
+        try:
+            logo = REPO_LOGO
+            await repo.delete()
+            msg = await bot.send_file(repo.chat_id, logo, caption=output)
+            await asyncio.sleep(500)
+            await msg.delete()
+        except BaseException:
+            await repo.edit(
+                output + "\n\n *Logo Yang Disediakan Tidak Valid."
+                "\nPastikan Tautan Yang Anda Gunakan Valid"
+            )
+            await asyncio.sleep(100)
+            await repo.delete()
+    else:
+        await repo.edit(output)
+        await asyncio.sleep(100)
+        await repo.delete()
 
 @register(outgoing=True, pattern="^.ping$")
 @register(incoming=True, from_users=DEVS, pattern=r"^.cping$")
