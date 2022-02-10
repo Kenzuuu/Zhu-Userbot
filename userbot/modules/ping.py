@@ -50,10 +50,8 @@ async def redis(ping):
     await asyncio.sleep(3)
     end = datetime.now()
     output = (
-         f"duration = (end - start).microseconds / 1000 \n"
-         f"**Pong !!** `%sms` \n"
-         f"**Uptime **- `{uptime}`\n" % (duration)
-          ) 
+           f"**Pong !!** `%sms` \n"
+           ) 
     if PING_LOGO:
         try:
             logo = PING_LOGO
