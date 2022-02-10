@@ -21,7 +21,7 @@ import psutil
 from telethon import __version__, version
 
 from userbot import (
-    PING_LOGO,
+    REPO_LOGO,
     ALIVE_NAME,
     CMD_HELP,
     StartTime,
@@ -60,30 +60,30 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 @register(outgoing=True, pattern=r"^\.repo$")
-async def redis(alive):
+async def redis(repo):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("💥")
+    await repo.edit("💥")
     await asyncio.sleep(2)
     output = (
         f"**[★ REPO ★](https://github.com/kenzuuu/Zhu-Userbot)**\n"
         f"**[★ BRANCH ★](https://t.me/triplenineee)**\n"
         f"**Bot of : {ALIVE_NAME}
-    if ALIVE_LOGO:
+    if REPO_LOGO:
         try:
-            logo = PING_LOGO
-            await alive.delete()
-            msg = await bot.send_file(alive.chat_id, logo, caption=output)
+            logo = REPO_LOGO
+            await repo.delete()
+            msg = await bot.send_file(repo.chat_id, logo, caption=output)
             await asyncio.sleep(500)
             await msg.delete()
         except BaseException:
-            await alive.edit(
+            await repo.edit(
                 output + "\n\n *Logo Yang Disediakan Tidak Valid."
                 "\nPastikan Tautan Yang Anda Gunakan Valid"
             )
             await asyncio.sleep(100)
-            await alive.delete()
+            await repo.delete()
     else:
-        await alive.edit(output)
+        await repo.edit(output)
         await asyncio.sleep(100)
-        await alive.delete()
+        await repo.delete()
