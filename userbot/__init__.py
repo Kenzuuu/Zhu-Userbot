@@ -234,8 +234,9 @@ ALIVE_LOGO = (os.environ.get("ALIVE_LOGO")
               or "https://telegra.ph/file/111c4fcb06e9dee2a9c75.jpg")
 
 # Default .repo
-REPO_LOGO = (os.environ.get(
+REPO_LOGO = os.environ.get(
       "REPO_LOGO", "https://telegra.ph/file/bab9f4fbc7b1412e674df.jpg"
+)
 
 # Default .helpme Logo
 INLINE_PIC = (os.environ.get("INLINE_PIC")
