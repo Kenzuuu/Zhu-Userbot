@@ -11,7 +11,7 @@ import time
 from datetime import datetime
 
 from userbot import (
-    PING_LOGO,
+    ZHU_LOGO,
     DEVS,
     ALIVE_NAME,
     CMD_HELP,
@@ -64,9 +64,9 @@ async def redis(ping):
         f"**★ Pong !!** `%sms` \n"
         f"**★ Uptime !!** `{uptime}` \n"
         f"**★ Bot of :** {ALIVE_NAME} \n" % (duration))
-    if PING_LOGO:
+    if ZHU_LOGO:
         try:
-            logo = PING_LOGO
+            logo = ZHU_LOGO
             await ping.delete()
             msg = await bot.send_file(ping.chat_id, logo, caption=output)
             await asyncio.sleep(500)
