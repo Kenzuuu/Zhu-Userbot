@@ -1,18 +1,36 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
-#klo fork atau clone gausah hapus atau ganti credit
-#credit by Kenzuuu/Zhu-Usebot
+# Upload by Kenzuuu/Zhu-Userbot
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License
-""" Userbot module containing commands related to the \
-    Information Superhighway (yes, Internet). """
+# you may not use this file except in compliance with the License.
+#
+""" Userbot module for getting information about the server. """
+
 
 import asyncio
-import random
+import platform
+import sys
 import time
+from asyncio import create_subprocess_exec as asyncrunapp
+from asyncio.subprocess import PIPE as asyncPIPE
 from datetime import datetime
+from os import remove
+from platform import python_version, uname
+from shutil import which
 
-from userbot import ALIVE_NAME, CMD_HELP, DEVS, PING_LOGO, StartTime
+import psutil
+from telethon import __version__, version
+
+from userbot import (
+    REPO_LOGO,
+    ALIVE_NAME,
+    CMD_HELP,
+    StartTime,
+    bot,
+)
 from userbot.events import register
+
+modules = CMD_HELP
+
 
 async def get_readable_time(seconds: int) -> str:
     count = 0
@@ -32,6 +50,7 @@ async def get_readable_time(seconds: int) -> str:
 
     for x in range(len(time_list)):
         time_list[x] = str(time_list[x]) + time_suffix_list[x]
+
     if len(time_list) == 4:
         up_time += time_list.pop() + ", "
 
@@ -40,14 +59,16 @@ async def get_readable_time(seconds: int) -> str:
 
     return up_time
 
-@register(outgoing=True, pattern="^.ping$")
-@register(incoming=True, from_users=DEVS, pattern=r"^.cping$")
+@register(outgoing=True, pattern=r"^\.ping$")
 async def redis(ping):
-    await ping.edit("💝")
-    await asyncio.sleep(3)
+    user = await bot.get_me()
+    await get_readable_time((time.time() - StartTime))
+    await ping.edit("💥")
+    await asyncio.sleep(2)
     output = (
-           f"**Pong !!** `%sms` \n"
-           ) 
+        f"**★ PONG !!** `sms` \n"
+        f"**Bot of :** {ALIVE_NAME} \n"
+         )
     if PING_LOGO:
         try:
             logo = PING_LOGO
@@ -66,4 +87,3 @@ async def redis(ping):
         await ping.edit(output)
         await asyncio.sleep(100)
         await ping.delete()
-     
