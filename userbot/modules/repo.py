@@ -21,20 +21,13 @@ import psutil
 from telethon import __version__, version
 
 from userbot import (
-    ALIVE_LOGO,
+    PING_LOGO,
     ALIVE_NAME,
-    BOT_VER,
     CMD_HELP,
-    UPSTREAM_REPO_BRANCH,
     StartTime,
     bot,
 )
 from userbot.events import register
-
-# ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-# ============================================
-
 
 modules = CMD_HELP
 
@@ -73,29 +66,20 @@ async def redis(alive):
     await alive.edit("💥")
     await asyncio.sleep(2)
     output = (
-        f"╭✠╼━━━━━━━━━━━━✠╮\n"
-        f"★**Name     :** {DEFAULTUSER} \n"
-        f"★**Username :** @{user.username} \n"
-        f"★**Telethon :** Ver {version.__version__} \n"
-        f"★**Python   :** Ver {python_version()} \n"
-        f"★**Branch   :** {UPSTREAM_REPO_BRANCH} \n"
-        f"★**Bot Ver  :** {BOT_VER} \n"
-        f"★**Modules  :** {len(modules)} Modules \n"
-        f"★**GitHub   :** [GITHUB](https://github.com/Kenzuuu/Zhu-Userbot) \n"
-        f"★**Owner    :** [KENZU](https://t.me/triplenineee) \n"
-        f"★**support  :** [GROUP](https://t.me/kenzusupport) \n"
-        f"╰✠╼━━━━━━━━━━━━✠╯")
+        f"**[★ REPO ★](https://github.com/kenzuuu/Zhu-Userbot)**\n"
+        f"**[★ BRANCH ★](https://t.me/triplenineee)**\n"
+        f"**Bot of : {ALIVE_NAME}
     if ALIVE_LOGO:
         try:
-            logo = ALIVE_LOGO
+            logo = PING_LOGO
             await alive.delete()
             msg = await bot.send_file(alive.chat_id, logo, caption=output)
             await asyncio.sleep(500)
             await msg.delete()
         except BaseException:
             await alive.edit(
-                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
-                "\nPastikan Tautan Yang Anda Gunakan Valid`"
+                output + "\n\n *Logo Yang Disediakan Tidak Valid."
+                "\nPastikan Tautan Yang Anda Gunakan Valid"
             )
             await asyncio.sleep(100)
             await alive.delete()
