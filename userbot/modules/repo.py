@@ -68,7 +68,8 @@ async def redis(repo):
     output = (
         f"**[★ REPO ★](https://github.com/kenzuuu/Zhu-Userbot)**\n"
         f"**[★ BRANCH ★](https://t.me/triplenineee)**\n"
-        f"**Bot of : {ALIVE_NAME}
+        f"**Bot of :** {ALIVE_NAME} \n"
+         )
     if REPO_LOGO:
         try:
             logo = REPO_LOGO
