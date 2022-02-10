@@ -152,9 +152,9 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL", "https://github.com/Skyzu/skyzu-userbot"
+    "UPSTREAM_REPO_URL", "https://github.com/Kenzuuu/Zhu"
 )
-UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "Skyzuu-Userbot")
+UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "Kenzhu")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -226,7 +226,7 @@ YOUTUBE_API_KEY = (
 )
 
 # Untuk Perintah .skyalive
-SKYZU_TEKS_KUSTOM = os.environ.get("SKYZU_TEKS_KUSTOM", "I'am Using Skyzu-Userbot⚡")
+ROSE_TEKS_KUSTOM = os.environ.get("ZHU_TEKS_KUSTOM", "I'am Using Zhu-Userbot")
 
 # Untuk Mengubah Pesan Welcome
 START_WELCOME = os.environ.get("START_WELCOME", None)
@@ -248,7 +248,7 @@ ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
 BITLY_TOKEN = os.environ.get("BITLY_TOKEN") or "o_1fpd9299vp"
 
 # Bot Name
-TERM_ALIAS = os.environ.get("TERM_ALIAS", "Skyzu-Userbot")
+TERM_ALIAS = os.environ.get("TERM_ALIAS", "Zhu-Userbot")
 
 # Bot Version
 BOT_VER = os.environ.get("BOT_VER", "7.0")
@@ -263,6 +263,12 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 ALIVE_LOGO = (
     os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/fd08937c4ae6cb1303731.jpg"
 )
+
+# Default .Zhu Logo
+ZHU_LOGO = os.environ.get(
+    "ZHU_LOGO", "https://telegra.ph/file/fd08937c4ae6cb1303731.jpg"
+)
+
 # Default .helpme Logo
 INLINE_PIC = (
     os.environ.get("INLINE_PIC") or "https://telegra.ph/file/fd08937c4ae6cb1303731.jpg"
