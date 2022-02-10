@@ -21,7 +21,7 @@ import psutil
 from telethon import __version__, version
 
 from userbot import (
-    REPO_LOGO,
+    PING_LOGO,
     ALIVE_NAME,
     CMD_HELP,
     StartTime,
