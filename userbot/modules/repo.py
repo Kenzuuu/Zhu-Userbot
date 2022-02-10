@@ -66,9 +66,9 @@ async def redis(repo):
     await repo.edit("💥")
     await asyncio.sleep(2)
     output = (
-        f"**[★ REPO ★](https://github.com/kenzuuu/Zhu-Userbot)**\n"
-        f"**[★ BRANCH ★](https://t.me/triplenineee)**\n"
-        f"**Bot of :** {ALIVE_NAME} \n"
+        f"**★ REPO : [GIT](https://github.com/kenzuuu/Zhu-Userbot)**\n"
+        f"**★ BRANCH : [KENZU](https://t.me/triplenineee)**\n"
+        f"**★ Bot of :** {ALIVE_NAME} \n"
          )
     if REPO_LOGO:
         try:
