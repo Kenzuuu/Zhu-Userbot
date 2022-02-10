@@ -14,7 +14,7 @@ from datetime import datetime
 import redis
 from speedtest import Speedtest
 
-from userbot import ALIVE_NAME, CMD_HELP, DEVS, PING_PIC, StartTime
+from userbot import ALIVE_NAME, CMD_HELP, DEVS, PING_LOGO, StartTime
 from userbot.events import register
 
 async def get_readable_time(seconds: int) -> str:
@@ -57,7 +57,7 @@ async def redis(pong):
          f"**Pong !!** `%sms` \n"
          f"**Uptime **- `{uptime}`\n" % (duration)
           ) 
-      if PING_LOGO:
+    if PING_LOGO:
         try:
             logo = PING_LOGO
             await pong.delete()
@@ -71,7 +71,7 @@ async def redis(pong):
             )
             await asyncio.sleep(100)
             await pong.delete()
-      else:
+    else:
         await pong.edit(output)
         await asyncio.sleep(100)
         await pong.delete()
