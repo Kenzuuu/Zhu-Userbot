@@ -66,7 +66,7 @@ async def redis(ping):
     await ping.edit("💥")
     await asyncio.sleep(2)
     output = (
-        f"**★ PONG !!** `sms` \n"
+        f"**★ PONG !!** `%sms` \n"
         f"**Bot of :** {ALIVE_NAME} \n"
          )
     if PING_LOGO:
