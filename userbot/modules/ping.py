@@ -11,9 +11,6 @@ import random
 import time
 from datetime import datetime
 
-import redis
-from speedtest import Speedtest
-
 from userbot import ALIVE_NAME, CMD_HELP, DEVS, PING_LOGO, StartTime
 from userbot.events import register
 
