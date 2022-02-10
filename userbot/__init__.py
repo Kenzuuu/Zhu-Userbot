@@ -235,12 +235,17 @@ ALIVE_LOGO = (os.environ.get("ALIVE_LOGO")
 
 # Default .repo
 REPO_LOGO = os.environ.get(
-      "REPO_LOGO", "https://telegra.ph/file/bab9f4fbc7b1412e674df.jpg"
+      "REPO_LOGO", "https://telegra.ph/file/e97a693e8ff23d2b99405.jpg"
 )
 
 # Default .ping
 PING_LOGO = os.environ.get(
-      "PING_LOGO", "https://telegra.ph/file/bab9f4fbc7b1412e674df.jpg"
+      "PING_LOGO", "https://telegra.ph/file/e97a693e8ff23d2b99405.jpg"
+)
+
+# Zhu Credit
+ZHU_LOGO = os.environ.get(
+      "ZHU_LOGO", "https://telegra.ph/file/e97a693e8ff23d2b99405.jpg"
 )
 
 # Default .helpme Logo
