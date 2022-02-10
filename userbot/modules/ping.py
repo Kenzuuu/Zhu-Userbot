@@ -12,6 +12,7 @@ from datetime import datetime
 
 from userbot import (
     PING_LOGO,
+    DEVS,
     ALIVE_NAME,
     CMD_HELP,
     StartTime,
