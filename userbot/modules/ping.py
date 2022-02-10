@@ -52,13 +52,16 @@ async def get_readable_time(seconds: int) -> str:
 @register(outgoing=True, pattern=r"^\.ping$")
 async def redis(ping):
     user = await bot.get_me()
-    await get_readable_time((time.time() - StartTime))
+    uptime = await get_readable_time((time.time() - StartTime)) 
+    start = datetime.now()
     await ping.edit("💥")
     await asyncio.sleep(2)
+    end = datetime.now()
+    duration = (end - start).microseconds / 1000
     output = (
-        f"**★ PONG !!** `%sms` \n"
-        f"**Bot of :** {ALIVE_NAME} \n"
-         )
+        f"**★ Pong !!** `%sms` \n"
+        f"**★ Uptime !!** {uptime} \n"
+        f"**★ Bot of :** {ALIVE_NAME} \n" % (duration))
     if PING_LOGO:
         try:
             logo = PING_LOGO
