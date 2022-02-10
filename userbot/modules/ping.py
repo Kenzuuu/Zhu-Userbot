@@ -43,12 +43,9 @@ async def get_readable_time(seconds: int) -> str:
 @register(outgoing=True, pattern="^.ping$")
 @register(incoming=True, from_users=DEVS, pattern=r"^.cping$")
 async def redis(ping):
-    """For .ping command, ping the userbot from any chat."""
-    uptime = await get_readable_time((time.time() - StartTime))
-    start = datetime.now()
+    user = await bot.get_me()
     await ping.edit("💝")
     await asyncio.sleep(3)
-    end = datetime.now()
     output = (
            f"**Pong !!** `%sms` \n"
            ) 
