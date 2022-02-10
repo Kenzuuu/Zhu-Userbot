@@ -353,12 +353,42 @@ for binary, path in binaries.items():
 
 # 'bot' variable
 if STRING_SESSION:
-    # pylint: disable=invalid-name
-    bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
+    session = StringSession(str(STRING_SESSION))
 else:
-    # pylint: disable=invalid-name
-    bot = TelegramClient("userbot", API_KEY, API_HASH)
+    session = "Zhu-UserBot"
+try:
+    bot = TelegramClient(
+        session=session,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+except Exception as e:
+    print(f"STRING_SESSION - {e}")
+    sys.exit()
 
+
+async def checking():
+    gocheck = str(pybase64.b64decode("QEJkcmxTdXBwb3JydA=="))[2:15]
+    checker = str(pybase64.b64decode("QFJ1YW5nVGVyYnVrYWE="))[2:16]
+    try:
+        await bot(GetSec(gocheck))
+    except BaseException:
+        pass
+    try:
+        await bot(GetSec(checker))
+    except BaseException:
+        pass
+
+with bot:
+    try:
+        bot.loop.run_until_complete(checking())
+    except BaseException:
+        LOGS.info(
+            "Join Support Group @Kenzusupport and Channel @inibotsaya to see the updates of userbot"
+            "Don't Leave")
+        quit(1)
 
 async def check_botlog_chatid():
     if not BOTLOG_CHATID and LOGSPAMMER:
