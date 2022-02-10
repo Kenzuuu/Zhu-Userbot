@@ -53,7 +53,7 @@ async def redis(pong):
     await asyncio.sleep(3)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    ouput = (
+    output = (
          f"**Pong !!** `%sms` \n"
          f"**Uptime **- `{uptime}`\n" % (duration)
           ) 
