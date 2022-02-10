@@ -21,7 +21,7 @@ import psutil
 from telethon import __version__, version
 
 from userbot import (
-    REPO_LOGO,
+    ZHU_LOGO,
     BOT_VER,
     CMD_HELP,
     StartTime,
@@ -70,9 +70,9 @@ async def redis(ver):
              f"★ **ʙᴏᴛ :** `v.{BOT_VER}` \n"
              f"★ **ᴍᴏᴅᴜʟᴇ :** `{len(modules)}` \n"
               )
-    if REPO_LOGO:
+    if ZHU_LOGO:
         try:
-            logo = REPO_LOGO
+            logo = ZHU_LOGO
             await ver.delete()
             msg = await bot.send_file(ver.chat_id, logo, caption=output)
             await asyncio.sleep(500)
