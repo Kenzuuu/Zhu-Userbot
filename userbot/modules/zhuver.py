@@ -28,3 +28,12 @@ from userbot import (
     bot,
 )
 from userbot.events import register
+
+
+        f"★ **ᴏᴡɴᴇʀ :** [Kenzhu](t.me/triplenineee) \n"
+        f"★ **ꜱʏꜱᴛᴇᴍ :** `Ubuntu 20.10` \n"
+        f"★ **ᴛᴇʟᴇᴛʜᴏɴ :** `v.{version.__version__}` \n"
+        f"★ **ᴘʏᴛʜᴏɴ. :** `v.{python_version()}` \n"
+        f"★ **ʙᴏᴛ :** `v.{BOT_VER}` \n"
+        f"★ **ᴍᴏᴅᴜʟᴇ :** `{len(modules)}` \n"
+        )
