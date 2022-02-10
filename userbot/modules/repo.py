@@ -73,3 +73,41 @@ async def repo_is_here(wannasee):
         f"**REPOSITORY**\n"
         f"💞 **[[[R̸E̸P̸O̸​](https://github.com/Kenzuuu/Zhu-Userbot)]]** 💞 **[[[O̸W̸N̸E̸R̸](t.me/triplenineee)]]** 💞\n"
     )
+
+@register(outgoing=True, pattern=r"^\.(?:alive|on)\s?(.)?")
+async def redis(alive):
+    user = await bot.get_me()
+    await get_readable_time((time.time() - StartTime))
+    await alive.edit("💥")
+    await asyncio.sleep(2)
+    output = (
+        f"╭✠╼━━━━━━━━━━━━✠╮\n"
+        f"★**Name     :** {DEFAULTUSER} \n"
+        f"★**Username :** @{user.username} \n"
+        f"★**Telethon :** Ver {version.__version__} \n"
+        f"★**Python   :** Ver {python_version()} \n"
+        f"★**Branch   :** {UPSTREAM_REPO_BRANCH} \n"
+        f"★**Bot Ver  :** {BOT_VER} \n"
+        f"★**Modules  :** {len(modules)} Modules \n"
+        f"★**GitHub   :** [GITHUB](https://github.com/Kenzuuu/Zhu-Userbot) \n"
+        f"★**Owner    :** [KENZU](https://t.me/triplenineee) \n"
+        f"★**support  :** [GROUP](https://t.me/kenzusupport) \n"
+        f"╰✠╼━━━━━━━━━━━━✠╯")
+    if ALIVE_LOGO:
+        try:
+            logo = ALIVE_LOGO
+            await alive.delete()
+            msg = await bot.send_file(alive.chat_id, logo, caption=output)
+            await asyncio.sleep(500)
+            await msg.delete()
+        except BaseException:
+            await alive.edit(
+                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
+                "\nPastikan Tautan Yang Anda Gunakan Valid`"
+            )
+            await asyncio.sleep(100)
+            await alive.delete()
+    else:
+        await alive.edit(output)
+        await asyncio.sleep(100)
+        await alive.delete()
