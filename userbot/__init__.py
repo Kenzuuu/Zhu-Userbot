@@ -2,7 +2,9 @@
 
 import logging
 import os
+import random
 import re
+import sys
 import time
 from datetime import datetime
 from distutils.util import strtobool as sb
@@ -10,15 +12,19 @@ from logging import DEBUG, INFO, basicConfig, getLogger
 from math import ceil
 from sys import version_info
 
+import pybase64
 import redis
 from dotenv import load_dotenv
 from pylast import LastFMNetwork, md5
 from pymongo import MongoClient
 from pySmartDL import SmartDL
 from redis import StrictRedis
-from telethon import Button, events
+from requests import get
+from telethon import Button, events, functions, types
+from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from telethon.sync import TelegramClient, custom, events
+from telethon.tl.functions.channels import JoinChannelRequest as GetSec
 from telethon.utils import get_display_name
 
 redis_db = None
