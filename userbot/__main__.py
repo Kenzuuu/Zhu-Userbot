@@ -27,7 +27,7 @@ async def userbot_on():
         if BOTLOG_CHATID != 0:
             await bot.send_message(
                 BOTLOG_CHATID,
-                f"**⚙️ Zhu-Userbot Berhasil Diaktfikan**,
+                f"**⚙️ Zhu-Userbot Berhasil Diaktfikan**",
             )
     except Exception as e:
         LOGS.info(str(e))
