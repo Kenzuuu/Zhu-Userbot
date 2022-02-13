@@ -1,7 +1,7 @@
 {
-  "name": "⚡Skyzu-Userbot⚡",
-  "description": "🚫Skyzu-Userbot🚫 USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
-  "logo": "https://telegra.ph/file/fd08937c4ae6cb1303731.jpg",
+  "name": "⛔ ZHU-USERBOT ⛔",
+  "description": "⚙️ Zhu-Userbot USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
+  "logo": "https://telegra.ph/file/111c4fcb06e9dee2a9c75.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -9,9 +9,9 @@
     "modular",
     "productivity"
 ],
-  "repository": "https://github.com/Skyzu/skyzu-userbot",
-  "telegram": "https://t.me/skyzu",
-  "success_url": "https://t.me/skyzusupport",
+  "repository": "https://github.com/Kenzuuu/Zhu-Userbot",
+  "telegram": "https://t.me/triplenineee",
+  "success_url": "https://t.me/kenzusupport",
   "stack": "container",
   "env": {
     "API_KEY": {
@@ -24,11 +24,11 @@
     },
     "ALIVE_LOGO": {
       "description": "Gambar dalam module .alive",
-      "value": "https://telegra.ph/file/fd08937c4ae6cb1303731.jpg",
+      "value": "https://telegra.ph/file/111c4fcb06e9dee2a9c75.jpg",
       "required": false
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya ke @skyzuuuu di telegram",
+      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya ke @triplenineee di telegram",
       "required": true
     },
     "HEROKU_APP_NAME": {
@@ -37,7 +37,6 @@
     },
     "HEROKU_API_KEY": {
       "description": "Heroku API KEY mu, dapatkan dari web 'https://dashboard.heroku.com/account'",
-      "value": "Check Di Heroku Dashboard Mu",
       "required": true
     },
     "BOTLOG_CHATID": {
