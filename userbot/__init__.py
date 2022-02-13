@@ -106,6 +106,10 @@ BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
 BOTLOG = sb(os.environ.get("BOTLOG", "True"))
 LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 
+# Handler Userbot
+CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
+SUDO_HANDLER = os.environ.get("SUDO_HANDLER") or "$"
+
 # Custom Pmpermit text
 PMPERMIT_TEXT = os.environ.get("PMPERMIT_TEXT", None)
 PM_LIMIT = int(os.environ.get("PM_LIMIT", 6))
