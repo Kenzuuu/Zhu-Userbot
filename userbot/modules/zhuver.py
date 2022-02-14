@@ -52,7 +52,6 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 @register(outgoing=True, pattern=r"^\.versi$")
-@register(incoming=True, from_users=DEVS, pattern=r"^!ping$")
 async def redis(versi):
     user = await bot.get_me()
     uptime = await get_readable_time((time.time() - StartTime)) 
