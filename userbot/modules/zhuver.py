@@ -51,35 +51,34 @@ async def get_readable_time(seconds: int) -> str:
 
     return up_time
 
-@register(outgoing=True, pattern=r"^\.ping$")
+@register(outgoing=True, pattern=r"^\.versi$")
 @register(incoming=True, from_users=DEVS, pattern=r"^!ping$")
-async def redis(ping):
+async def redis(versi):
     user = await bot.get_me()
     uptime = await get_readable_time((time.time() - StartTime)) 
     start = datetime.now()
-    await ping.edit("💥")
+    await versi.edit("💥")
     await asyncio.sleep(2)
     end = datetime.now()
-    duration = (end - start).microseconds / 1000
     output = (
-        f"**★ Pong !!** `%sms` \n"
-        f"**★ Uptime !!** `{uptime}` \n"
-        f"**★ Bot of :** {ALIVE_NAME} \n" % (duration))
+        f"**★ Bot :** ZHU-USERBOT \n"
+        f"**★ Versi :** `{BOT_VER}` \n"
+        f"**★ Bot of :** {ALIVE_NAME} \n")
     if ZHU_LOGO:
         try:
             logo = ZHU_LOGO
-            await ping.delete()
-            msg = await bot.send_file(ping.chat_id, logo, caption=output)
+            await versi.delete()
+            msg = await bot.send_file(versi.chat_id, logo, caption=output)
             await asyncio.sleep(500)
             await msg.delete()
         except BaseException:
-            await ping.edit(
+            await versi.edit(
                 output + "\n\n *Logo Yang Disediakan Tidak Valid."
                 "\nPastikan Tautan Yang Anda Gunakan Valid"
             )
             await asyncio.sleep(100)
-            await ping.delete()
+            await versi.delete()
     else:
-        await ping.edit(output)
+        await versi.edit(output)
         await asyncio.sleep(100)
-        await ping.delete()
+        await versi.delete()
