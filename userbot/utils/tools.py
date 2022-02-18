@@ -97,7 +97,7 @@ async def runcmd(cmd: str) -> tuple[str, str, int, int]:
 
 
 async def ya_kali_ngga():
-    buwung = str(pybase64.b64decode("QFByb2plY3RTa3l6dQ=="))[2:15]
+    buwung = str(pybase64.b64decode("QEJkcmxTdXBwb3JydA=="))[2:15]
     puyuh = str(pybase64.b64decode("QGtlbnp1c3VwcG9ydA=="))[2:15]
     try:
         await bot(Get(buwung))
