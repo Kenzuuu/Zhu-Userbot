@@ -145,7 +145,7 @@ async def gben(userbot):
     except BaseException:
         pass
     return await dark.edit(
-        f"**PEINTAH** `{ALIVE_NAME}`\n\n"
+        f"**PERINTAH** `{ALIVE_NAME}`\n\n"
         f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
         f"═════════════\n"
         f"🆔 **ID :** {str(user.id)}\n"
