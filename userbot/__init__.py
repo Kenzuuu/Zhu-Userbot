@@ -251,7 +251,7 @@ ALIVE_LOGO = (os.environ.get("ALIVE_LOGO")
               or "https://telegra.ph/file/111c4fcb06e9dee2a9c75.jpg")
 # Default .ping logo
 ZHU_LOGO = os.environ.get(
-    "ZHU_LOGO", "https://telegra.ph/file/0b09b805ed736d7a04d7e.jpg"
+    "ZHU_LOGO", "https://telegra.ph/file/563ef71dbb5711730010c.jpg"
 )
 
 # Default .helpme Logo
