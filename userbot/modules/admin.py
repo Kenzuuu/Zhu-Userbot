@@ -369,7 +369,7 @@ async def spider(spdr):
 
     # If everything goes well, do announcing and mute
     await spdr.edit(
-        f"[{user.first_name}](tg://user?id={user.id}) Telah dibisukan 🔇
+        f"[{user.first_name}](tg://user?id={user.id}) Telah dibisukan 🔇 \n"
     )
     await sleep(20)
     if mute(spdr.chat_id, user.id) is False:
