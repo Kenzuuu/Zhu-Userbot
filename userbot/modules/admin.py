@@ -147,10 +147,10 @@ async def promote(promt):
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
         await promt.edit(
-            f"**Tambah Admin** \n\n"
+            f"𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n"
             f"👱 **Nama:** [{user.first_name}](tg://user?id={user.id})\n"
             f"🆔 **ID:** {str(user.id)}\n"
-            f"👀 **Situasi:** Admin \n"
+            f"⚙️ **Aksi:** Tambah Admin \n"
             f"👩‍💻 **Group:** {promt.chat.title}\n"
         )
         await sleep(50)
@@ -209,7 +209,7 @@ async def demote(dmod):
     except BadRequestError:
         return await dmod.edit(NO_PERM)
     await dmod.edit(
-        f"**🐺 ZHU-USERBOT 🐺** \n\n"
+        f"𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n"
         f"👱 **Nama:** [{user.first_name}](tg://user?id={user.id})\n"
         f"🆔 **ID:** {str(user.id)}\n"
         f"⚙️ **Aksi:** Melepas Admin \n"
