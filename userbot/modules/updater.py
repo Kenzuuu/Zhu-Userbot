@@ -102,7 +102,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 "𝖅𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Telah Berhasil di Update"
             )
             await asyncio.sleep(2)
-            await event.edit("𝖅𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 sedang restart mohon tunggu"
+            await event.edit("𝖅𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 sedang restart mohon tunggu")
             await event.delete()
 
         if BOTLOG:
