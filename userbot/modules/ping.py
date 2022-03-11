@@ -56,14 +56,12 @@ async def redis(ping):
     user = await bot.get_me()
     uptime = await get_readable_time((time.time() - StartTime)) 
     start = datetime.now()
-    await ping.edit("💥")
-    await asyncio.sleep(2)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     output = (
-        f"**★ Pong !!** `%sms` \n"
-        f"**★ Uptime !!** `{uptime}` \n"
-        f"**★ Bot of :** {ALIVE_NAME} \n" % (duration))
+        f"𝕻𝖔𝖓𝖌 : `%sms` \n"
+        f"𝖀𝖕𝖙𝖎𝖒𝖊 : `{uptime}` \n"
+        f"𝕭𝖔𝖙 𝕹𝖆𝖒𝖊 : 𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙 \n" % (duration))
     if ZHU_LOGO:
         try:
             logo = ZHU_LOGO
