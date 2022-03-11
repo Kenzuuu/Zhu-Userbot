@@ -310,7 +310,7 @@ async def redis(alive):
     await alive.edit("💥")
     await asyncio.sleep(2)
     output = (
-        f"╭✠╼━━━━━━━━━━━━✠╮\n"
+        f"╭✠╼━━━━━━━━━━━✠╮\n"
         f"★**Name     :** {DEFAULTUSER} \n"
         f"★**Username :** @{user.username} \n"
         f"★**Telethon :** Ver {version.__version__} \n"
@@ -318,10 +318,10 @@ async def redis(alive):
         f"★**Branch   :** {UPSTREAM_REPO_BRANCH} \n"
         f"★**Bot Ver  :** {BOT_VER} \n"
         f"★**Modules  :** {len(modules)} Modules \n"
-        f"★**GitHub   :** [GITHUB](https://github.com/Kenzuuu/Zhu-Userbot) \n"
-        f"★**Owner    :** [KENZU](https://t.me/triplenineee) \n"
-        f"★**support  :** [GROUP](https://t.me/kenzusupport) \n"
-        f"╰✠╼━━━━━━━━━━━━✠╯")
+        f"★**GitHub   :** [𝕲𝖎𝖙𝖍𝖚𝖇](https://github.com/Kenzuuu/Zhu-Userbot) \n"
+        f"★**Owner    :** [𝐙𝖍𝖚](https://t.me/triplenineee) \n"
+        f"★**support  :** [𝕲𝖗𝖔𝖚𝖕](https://t.me/kenzusupport) \n"
+        f"╰✠╼━━━━━━━━━━━✠╯")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
