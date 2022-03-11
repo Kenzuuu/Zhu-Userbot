@@ -56,8 +56,8 @@ async def redis(ping):
     user = await bot.get_me()
     uptime = await get_readable_time((time.time() - StartTime)) 
     start = datetime.now()
-    await ping.edit("💫")
-    await asyincio.sleep(3)
+    await ping.edit("💥")
+    await asyncio.sleep(2)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     output = (
