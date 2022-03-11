@@ -99,15 +99,16 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             return await event.delete()
         else:
             await event.edit(
-                "**⛔ZHU-USERBOT⛔** Berhasil DiUpdate,Restart Tunggu Sebentar"
+                "𝖅𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Telah Berhasil di Update"
             )
-            await asyncio.sleep(15)
+            await asyncio.sleep(2)
+            await event.edit("𝖅𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 sedang restart mohon tunggu"
             await event.delete()
 
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                "#BOT \n" "**⛔ZHU-USERBOT⛔** Berhasil Di Update",
+                "#BOT \n" "𝖅𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Berhasil Di Update",
             )
 
     else:
@@ -125,18 +126,18 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit("**⛔ZHU-USERBOT⛔**\n\nBerhasil Di Update!")
-    await asyncio.sleep(1)
-    await event.edit("**⛔ZHU-USERBOT⛔**\n\nRestart")
-    await asyncio.sleep(1)
-    await event.edit("Mohon Menunggu Beberapa Detik.")
+    await event.edit("𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Berhasil Di Update!")
+    await asyncio.sleep(3)
+    await event.edit("𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Sedang Restart")
+    await asyncio.sleep(3)
+    await event.edit("𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Sedang proses mohon tunggu")
     await asyncio.sleep(10)
     await event.delete()
 
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
-            "#BOT \n" "**⛔ZHU-USERBOT⛔**\n\nTelah Di Perbarui.",
+            "#BOT \n" "𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Telah di perbarui.",
         )
         await asyncio.sleep(100)
         await event.delete()
@@ -148,6 +149,7 @@ async def update(event, repo, ups_rem, ac_br):
 
 
 @register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
+@register(incoming=True, pattern=r"^.update(?: |$)(now|deploy)?")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     await event.edit("**Mengecek Pembaruan, Silakan Menunggu....**")
@@ -199,13 +201,13 @@ async def upstream(event):
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
 
     if changelog == "" and force_update is False:
-        await event.edit(f"\n**⛔ZHU-USERBOT⛔**\n\nSudah Versi Terbaru\n")
+        await event.edit(f"𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Sudah versi Terbaru")
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f"**⛔ZHU-USERBOT⛔** :\n\n⚒️ Pembaruan Data :\n`{changelog}`"
+        changelog_str = f"𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙 :\n\n⚒️ Pembaruan Data :\n`{changelog}`"
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
             file = open("output.txt", "w+")
@@ -220,7 +222,7 @@ async def upstream(event):
         else:
             await event.edit(changelog_str)
         return await event.respond(
-            "**Perintah Untuk Update, Sebagai Berikut.**\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.update now`\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.update deploy`\n\nUntuk Meng Update Fitur Terbaru Dari **⛔ZHU-USERBOT⛔**"
+            "**Perintah Untuk Update, Sebagai Berikut.**\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.update now`\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.update deploy`"
         )
 
     if force_update:
@@ -228,18 +230,10 @@ async def upstream(event):
             "`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`"
         )
     else:
-        await event.edit("**Proses Update ⛔ZHU-USERBOT⛔**​\n\nMengecek Versi")
-        await asyncio.sleep(2)
-        await event.edit("**Proses Update ⛔ZHU-USERBOT⛔**\n\nMenguduh Modul")
-        await asyncio.sleep(2)
-        await event.edit("**Proses Update ⛔ZHU-USERBOT⛔**\n\nMengekstrak Modul")
-        await asyncio.sleep(4)
-        await event.edit("**Proses Update ⛔ZHU-USERBOT⛔**\n\nMenginstal Modul")
+        await event.edit("𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙​\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 mengecek Versi")
         await asyncio.sleep(3)
-        await event.edit("**Proses Update ⛔ZHU-USERBOT⛔**\n\nInstal Selesai")
-        await asyncio.sleep(1)
-        await event.edit("**Proses Update ⛔ZHU-USERBOT⛔**\n\nMohon Tunggu")
-        await asyncio.sleep(2)
+        await event.edit("𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 mengupdate Versi")
+        await asyncio.sleep(3)
 
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
