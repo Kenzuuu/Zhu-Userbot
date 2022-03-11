@@ -59,7 +59,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if HEROKU_APP_NAME is None:
             await event.edit(
                 "[HEROKU]: Harap Siapkan Variabel **HEROKU_APP_NAME** "
-                " untuk dapat deploy perubahan terbaru dari **⛔ZHU-USERBOT⛔**."
+                " untuk dapat deploy perubahan terbaru dari 𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙."
             )
             repo.__del__()
             return
@@ -69,7 +69,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f"{txt}\nKredensial Heroku tidak valid untuk deploy **⛔ZHU-USERBOT⛔** dyno."
+                f"{txt}\nKredensial Heroku tidak valid untuk deploy 𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙 dyno."
             )
             return repo.__del__()
         await event.edit(
@@ -99,16 +99,16 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             return await event.delete()
         else:
             await event.edit(
-                "𝖅𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Telah Berhasil di Update"
+                "𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Telah Berhasil di Update"
             )
             await asyncio.sleep(2)
-            await event.edit("𝖅𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 sedang restart mohon tunggu")
+            await event.edit("𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 sedang restart mohon tunggu")
             await event.delete()
 
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                "#BOT \n" "𝖅𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Berhasil Di Update",
+                "#BOT \n" "𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Berhasil Di Update",
             )
 
     else:
