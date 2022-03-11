@@ -35,7 +35,7 @@ from userbot.events import register
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "**Gambar Terlalu Kecil**"
 PP_ERROR = "**Gagal Memproses Gambar**"
-NO_ADMIN = "Perintah Gagal saya bukan **ADMIN**"
+NO_ADMIN = "Maaf saya bukan **ADMIN**"
 NO_PERM = "**Gagal Memproses anda tidak memiliki izin**"
 NO_SQL = "☣️ `Berjalan Pada Mode Non-SQL`"
 
@@ -266,7 +266,7 @@ async def ban(bon):
     # Shout out the ID, so that fedadmins can fban later
     if reason:
         await bon.edit(
-            f"**🐺 ZHU-USERBOT 🐺** \n\n"
+            f"𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙 \n\n"
             f"👱 **Nama:** [{user.first_name}](tg://user?id={user.id})\n"
             f"🆔 **ID:** {str(user.id)}\n"
             f"⚙️ **Aksi:** Blokir \n"
@@ -277,7 +277,7 @@ async def ban(bon):
         await bon.delete()
     else:
         await bon.edit(
-            f"**🐺 ZHU-USERBOT 🐺** \n\n"
+            f"𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n"
             f"👱 **Nama:** [{user.first_name}](tg://user?id={user.id})\n"
             f"🆔 **ID:** {str(user.id)}\n"
             f"⚙️ **Aksi:** Blokir \n"
@@ -319,7 +319,7 @@ async def nothanos(unbon):
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
         await unbon.edit(
-            f"**🐺 ZHU-USERBOT 🐺** \n\n"
+            f"𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n"
             f"👱 **Nama:** [{user.first_name}](tg://user?id={user.id})\n"
             f"🆔 **ID:** {str(user.id)}\n"
             f"⚙️ **Aksi:** Unblokir \n"
