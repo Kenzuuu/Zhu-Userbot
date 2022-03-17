@@ -27,7 +27,7 @@ async def userbot_on():
         if BOTLOG_CHATID != 0:
             await bot.send_message(
                 BOTLOG_CHATID,
-                f"**👩‍💻 ZHU-USERBOT** Berhasil Diaktfikan\n\n**🧰 BOT VERSI :** {BOT_VER} ZHU\n**👩‍💻 OWNER BOT :** [𝗭𝗛𝗨](https://t.me/TripleNineee\n🏷️** SUPPORT :** [𝗚𝗥𝗢𝗨𝗣](https://t.me/Kenzusupport)\n**🔗 CHANNEL :** [𝗖𝗛𝗔𝗡𝗡𝗘𝗟](https://t.me/inibotsaya)",
+                f"**👩‍💻 ZHU-USERBOT** Berhasil Diaktfikan\n\n**🧰 BOT VERSI :** {BOT_VER} ZHU\n**👩‍💻 OWNER BOT :** [𝗭𝗛𝗨](https://t.me/TripleNineee)\n🏷️** SUPPORT :** [𝗚𝗥𝗢𝗨𝗣](https://t.me/Kenzusupport)\n**🔗 CHANNEL :** [𝗖𝗛𝗔𝗡𝗡𝗘𝗟](https://t.me/inibotsaya)",
             )
     except Exception as e:
         LOGS.info(str(e))
