@@ -586,7 +586,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"❁ __Saya Adalah Love Userbot Yang Digunakan Banyak User Telegram__.\n\n"
+                    f"❁ __Saya Adalah Zhu Userbot Yang Digunakan Banyak User Telegram__.\n\n"
                     f"❁ __Saya Dibuat Hanya Untuk Bersenang Senang Ditelegram__.\n\n"
                     f"❁ __Kelebihan Saya Banyak, Saya Mempunyai 180 Modules__.\n\n"
                     f"© @Kenzusupport")
@@ -776,7 +776,7 @@ with bot:
             if event.query.user_id == uid:
                 text = (
                     f"Modules Name **Pembaruan**\n\n"
-                    f"× **Pembaruan Data Untuk L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸  ​, Command Untuk Pembaruan**.\n"
+                    f"× **Pembaruan Data Untuk ZHU-USERBOT ​, Command Untuk Pembaruan**.\n"
                     f"⚒Pembaruan Data :\n"
                     f"`.update deploy`\n"
                     f"`update`\n\n"
@@ -907,15 +907,15 @@ with bot:
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Bantuan Dari **⛔ZHU-USERBOT⛔**",
+                    "Bantuan Dari **ZHU-USERBOT**",
                     text="Daftar Plugins",
                     buttons=[],
                     link_preview=True,
                 )
             else:
                 result = builder.article(
-                    " **⛔L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸​⛔**",
-                    text="""⛔L̸O̸V̸E̸-̸U̸S̸E̸R̸B̸O̸T̸⛔""",
+                    " **ZHU-USERBOT**",
+                    text="""ZHU-USERBOT""",
                     buttons=[
                         [
                             custom.Button.url(
