@@ -14,9 +14,10 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from userbot.events import register
 
 
-@kyy_cmd(pattern="info(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.info(?: |$)(.*)")
 async def who(event):
 
     x = await edit_or_reply(event,
@@ -146,6 +147,6 @@ async def fetch_info(replied_user, event):
 
 CMD_HELP.update({
     "info":
-    f">`{cmd}info` <username> Atau Balas Ke Pesan Pengguna"
+    f">`.info` <username> Atau Balas Ke Pesan Pengguna"
     "\nUsage: Mendapatkan Informasi Pengguna."
 })
