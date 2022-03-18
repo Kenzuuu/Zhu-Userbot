@@ -54,15 +54,12 @@ async def get_readable_time(seconds: int) -> str:
 @register(outgoing=True, pattern=r"^\.versi$")
 async def redis(versi):
     user = await bot.get_me()
-    uptime = await get_readable_time((time.time() - StartTime)) 
-    start = datetime.now()
-    await versi.edit("💥")
-    await asyncio.sleep(2)
-    end = datetime.now()
     output = (
-        f"**★ Bot :** ZHU-USERBOT \n"
-        f"**★ Versi :** `{BOT_VER}` \n"
-        f"**★ Bot of :** {ALIVE_NAME} \n")
+        f"★ REPO ZHU-USERBOT :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://github.com/Kenzuuu/Zhu-Userbot) \n\n"
+        f"★ DEPLOY VIA BOT :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://telegram.dog/XTZ_HerokuBot?start=S2VuenV1dS9aaHUtVXNlcmJvdCBLZW56aHU)\n\n"
+        f"★ DEPLOY VIA BOT :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](heroku.com/deploy?template=https://github.com/Kenzuuu/Zhu-Userbot)\n\n"
+        f"★ AMBIL API KEY :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://t.me/ZhuXScrapperBot)\n\n"
+        f"★ AMBIL STRING :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://t.me/ZhuXSessionBot)\n"
     if ZHU_LOGO:
         try:
             logo = ZHU_LOGO
