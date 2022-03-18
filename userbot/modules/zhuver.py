@@ -51,7 +51,7 @@ async def get_readable_time(seconds: int) -> str:
 
     return up_time
 
-@register(outgoing=True, pattern=r"^\.versi$")
+@register(outgoing=True, pattern=r"^\.userbot$")
 async def redis(versi):
     user = await bot.get_me()
     output = (
