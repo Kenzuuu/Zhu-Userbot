@@ -54,6 +54,11 @@ async def get_readable_time(seconds: int) -> str:
 @register(outgoing=True, pattern=r"^\.userbot$")
 async def redis(versi):
     user = await bot.get_me()
+    uptime = await get_readable_time((time.time() - StartTime)) 
+    start = datetime.now()
+    await versi.edit("😡")
+    await asyncio.sleep(2)
+    end = datetime.now()
     output = (
         f"★ REPO ZHU-USERBOT :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://github.com/Kenzuuu/Zhu-Userbot) \n\n"
         f"★ DEPLOY VIA BOT :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://telegram.dog/XTZ_HerokuBot?start=S2VuenV1dS9aaHUtVXNlcmJvdCBLZW56aHU)\n\n"
