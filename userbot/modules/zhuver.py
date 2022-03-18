@@ -65,6 +65,7 @@ async def redis(versi):
         f"★ DEPLOY VIA WEB :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](heroku.com/deploy?template=https://github.com/Kenzuuu/Zhu-Userbot)\n\n"
         f"★ AMBIL API KEY :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://t.me/ZhuXScrapperBot)\n\n"
         f"★ AMBIL STRING :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://t.me/ZhuXSessionBot)\n"
+        )
     if ZHU_LOGO:
         try:
             logo = ZHU_LOGO
