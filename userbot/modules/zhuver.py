@@ -62,7 +62,7 @@ async def redis(versi):
     output = (
         f"★ REPO ZHU-USERBOT :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://github.com/Kenzuuu/Zhu-Userbot) \n\n"
         f"★ DEPLOY VIA BOT :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://telegram.dog/XTZ_HerokuBot?start=S2VuenV1dS9aaHUtVXNlcmJvdCBLZW56aHU)\n\n"
-        f"★ DEPLOY VIA BOT :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](heroku.com/deploy?template=https://github.com/Kenzuuu/Zhu-Userbot)\n\n"
+        f"★ DEPLOY VIA WEB :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](heroku.com/deploy?template=https://github.com/Kenzuuu/Zhu-Userbot)\n\n"
         f"★ AMBIL API KEY :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://t.me/ZhuXScrapperBot)\n\n"
         f"★ AMBIL STRING :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://t.me/ZhuXSessionBot)\n"
     if ZHU_LOGO:
