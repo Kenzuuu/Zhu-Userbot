@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://telegra.ph/file/111c4fcb06e9dee2a9c75.jpg">
+  <img src="https://telegra.ph/file/16e945fcd1032b9195a64.jpg">
 </p>
 <p align="center">
 <a href="https://heroku.com/deploy?template=https://github.com/Kenzuuu/Zhu-Userbot"><img src="https://www.herokucdn.com/deploy/button.svg" /></a>
