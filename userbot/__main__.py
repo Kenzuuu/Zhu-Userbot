@@ -16,9 +16,9 @@ try:
     for module_name in ALL_MODULES:
         imported_module = import_module("userbot.modules." + module_name)
     bot.start()
-    LOGS.info(f"👩‍💻ZHU-USERBOT👩‍💻  [ TELAH DIAKTIFKAN! ] ⚙️ V{BOT_VER}")
-    LOGS.info(f"👩‍💻ZHU-USERBOT👩‍💻  [ TELAH DIAKTIFKAN! ] ⚙️ V{BOT_VER}")
-    LOGS.info(f"👩‍💻ZHU-USERBOT👩‍💻  [ TELAH DIAKTIFKAN! ] ⚙️ V{BOT_VER}")
+    LOGS.info(f"🧿 『𝐙𝐇𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 🧿 𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝚞𝚙")
+    LOGS.info(f"🧿 『𝐙𝐇𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 🧿 𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝚞𝚙")
+    LOGS.info(f"🧿 『𝐙𝐇𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 🧿 [ 💢TELAH DIAKTIFKAN💢 ] ⚙️ V{BOT_VER}")
 except BaseException as e:
     LOGS.info(str(e), exc_info=True)
     sys.exit(1)
@@ -29,7 +29,7 @@ async def userbot_on():
         if BOTLOG_CHATID != 0:
             await bot.send_message(
                 BOTLOG_CHATID,
-                f"**👩‍💻 ZHU-USERBOT** Berhasil Diaktfikan\n\n**🧰 BOT VERSI :** {BOT_VER} ZHU\n**👩‍💻 OWNER BOT :** [𝗭𝗛𝗨](https://t.me/TripleNineee)\n🏷️** SUPPORT :** [𝗚𝗥𝗢𝗨𝗣](https://t.me/Kenzusupport)\n**🔗 CHANNEL :** [𝗖𝗛𝗔𝗡𝗡𝗘𝗟](https://t.me/inibotsaya)",
+                f"🧿 『𝐙𝐇𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 🧿 Diaktfikan\n\n**🧰 BOT VERSI :** {BOT_VER} ZHU\n**👩‍💻 OWNER BOT :** [𝗭𝗛𝗨](https://t.me/TripleNineee)\n🏷️** SUPPORT :** [𝗚𝗥𝗢𝗨𝗣](https://t.me/Kenzusupport)\n**🔗 CHANNEL :** [𝗖𝗛𝗔𝗡𝗡𝗘𝗟](https://t.me/inibotsaya)",
             )
     except Exception as e:
         LOGS.info(str(e))
