@@ -59,7 +59,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if HEROKU_APP_NAME is None:
             await event.edit(
                 "[HEROKU]: Harap Siapkan Variabel **HEROKU_APP_NAME** "
-                " untuk dapat deploy perubahan terbaru dari 𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙."
+                " untuk dapat deploy perubahan terbaru dari 🧿『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』🧿."
             )
             repo.__del__()
             return
@@ -69,7 +69,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f"{txt}\nKredensial Heroku tidak valid untuk deploy 𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙 dyno."
+                f"{txt}\nKredensial Heroku tidak valid untuk deploy 🧿『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』🧿 dyno."
             )
             return repo.__del__()
         await event.edit(
@@ -99,17 +99,17 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             return await event.delete()
         else:
             await event.edit(
-                "𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Telah Berhasil di Update"
+                "🧿『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』🧿\n\n『𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 Telah Berhasil di Update"
             )
             await asyncio.sleep(2)
-            await event.edit("𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 sedang restart mohon tunggu")
+            await event.edit("🧿『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』🧿\n\n『𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 sedang restart mohon tunggu")
             await asyncio.sleep(10)
             await event.delete()
 
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                "#BOT \n" "𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Berhasil Di Update",
+                "🧿『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』🧿\n\n『𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 Berhasil Di Update",
             )
 
     else:
@@ -127,18 +127,18 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit("𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Berhasil Di Update!")
+    await event.edit("🧿『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』🧿\n\n『𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 Berhasil Di Update!")
     await asyncio.sleep(3)
-    await event.edit("𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Sedang Restart")
+    await event.edit("🧿『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』🧿\n\n『𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 Sedang Restart")
     await asyncio.sleep(3)
-    await event.edit("𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Sedang proses mohon tunggu")
+    await event.edit("🧿『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』🧿\n\n『𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 Sedang proses mohon tunggu")
     await asyncio.sleep(10)
     await event.delete()
 
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
-            "#BOT \n" "𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Telah di perbarui.",
+            "#BOT \n" "🧿『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』🧿\n\n『𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 Telah di perbarui.",
         )
         await asyncio.sleep(100)
         await event.delete()
@@ -201,13 +201,13 @@ async def upstream(event):
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
 
     if changelog == "" and force_update is False:
-        await event.edit(f"𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 Sudah versi Terbaru")
+        await event.edit(f"🧿『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』🧿\n\n『𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 Sudah versi Terbaru")
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f"𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙 :\n\n⚒️ Pembaruan Data :\n`{changelog}`"
+        changelog_str = f"🧿『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』🧿 :\n\n⚒️ Pembaruan Data :\n`{changelog}`"
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
             file = open("output.txt", "w+")
@@ -230,9 +230,9 @@ async def upstream(event):
             "`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`"
         )
     else:
-        await event.edit("𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙​\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 mengecek Versi")
+        await event.edit("💢『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』💢\n\n『𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 mengecek Versi")
         await asyncio.sleep(3)
-        await event.edit("𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙\n\n𝖀𝖘𝖊𝖗𝖇𝖔𝖙 mengupdate Versi")
+        await event.edit("💢『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』💢\n\n『𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 mengupdate Versi")
         await asyncio.sleep(3)
 
     if conf == "now":
