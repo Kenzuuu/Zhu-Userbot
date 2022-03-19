@@ -17,26 +17,26 @@ from userbot import (
     ALIVE_NAME,
     BOT_VER,
     CMD_HELP,
-    UPSTREAM_REPO_BRANCH,
     StartTime,
     bot,
 )
 from userbot.events import register
 
-
-
+# ================= CONSTANT =================
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+# ============================================
 
 @register(outgoing=True, pattern=r"^\.(?:alive)\s?(.)?")
 async def amireallyalive(alive):
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"• ᴏᴡɴᴇʀ : [Zhu](t.me/triplenineee)             ㅤ \n"
-        f"• ꜱʏꜱᴛᴇᴍ. : Ubuntu 20.10            \n"
-        f"• ᴛᴇʟᴇᴛʜᴏɴ : v.{version.__version__}                ㅤㅤ  \n"
-        f"• ᴘʏᴛʜᴏɴ. : v.{python_version()} ㅤㅤ\n"
-        f"• ʙᴏᴛ : v.{BOT_VER}                ㅤㅤㅤ \n"
-        f"• ᴍᴏᴅᴜʟᴇ : {len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   \n"
+        f"💢 ᴏᴡɴᴇʀ : [Zhu](t.me/triplenineee)             ㅤ \n"
+        f"💢 ꜱʏꜱᴛᴇᴍ. : Ubuntu 20.10            \n"
+        f"💢 ᴛᴇʟᴇᴛʜᴏɴ : v.{version.__version__}                ㅤㅤ  \n"
+        f"💢 ᴘʏᴛʜᴏɴ. : v.{python_version()} ㅤㅤ\n"
+        f"💢 ʙᴏᴛ : v.{BOT_VER}                ㅤㅤㅤ \n"
+        f"💢 ᴍᴏᴅᴜʟᴇ : {len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   \n"
     )
     if ALIVE_LOGO:
         try:
@@ -56,3 +56,33 @@ async def amireallyalive(alive):
         await alive.edit(output)
         await asyncio.sleep(100)
         await alive.delete()
+
+@register(outgoing=True, pattern="^.aliveu")
+async def amireallyaliveuser(username):
+    """For .aliveu command, change the username in the .alive command."""
+    message = username.text
+    output = ".aliveu [new username] tidak boleh kosong"
+    if not (message == ".aliveu" and message[7:8] != " "):
+        newuser = message[8:]
+        global DEFAULTUSER  # global statement
+        DEFAULTUSER = username
+        output = "Successfully changed user to " + newuser + "!"
+    await username.edit("`" f"{output}" "`")
+
+
+@register(outgoing=True, pattern=r"^\.resetalive$")
+async def amireallyalivereset(ureset):
+    global DEFAULTUSER  # global statement
+    DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+    await ureset.edit("`" "Successfully reset user for alive!" "`")
+
+
+
+CMD_HELP.update(
+    {
+        "alive": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.alive` or `.on` or `zhu`"
+        "\n↳ : To see whether your bot is working or not."
+        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.aliveu` <text>"
+        "\n↳ : Changes the 'user' in alive to the text you want."
+        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.restalive`"
+        "\n↳ : Resets the user to default."
