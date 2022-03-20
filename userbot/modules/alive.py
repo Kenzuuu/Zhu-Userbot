@@ -90,19 +90,6 @@ async def amireallyalive(alive):
         await asyncio.sleep(100)
         await alive.delete()
 
-@register(outgoing=True, pattern="^.aliveu")
-async def amireallyaliveuser(username):
-    """For .aliveu command, change the username in the .alive command."""
-    message = username.text
-    output = ".aliveu [new username] tidak boleh kosong"
-    if not (message == ".aliveu" and message[7:8] != " "):
-        newuser = message[8:]
-        global DEFAULTUSER  # global statement
-        DEFAULTUSER = username
-        output = "Successfully changed user to " + newuser + "!"
-    await username.edit("`" f"{output}" "`")
-
-
 @register(outgoing=True, pattern=r"^\.resetalive$")
 async def amireallyalivereset(ureset):
     global DEFAULTUSER  # global statement
@@ -115,8 +102,6 @@ CMD_HELP.update(
     {
         "alive": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.alive`"
         "\n↳ : To see whether your bot is working or not."
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.aliveu` <text>"
-        "\n↳ : Changes the 'user' in alive to the text you want."
         "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.restalive`"
         "\n↳ : Resets the user to default."
      }
