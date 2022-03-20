@@ -10,7 +10,7 @@ cping = [
     "**Hadir bang** `𓆩79.08𓆪` ",
     "**Hadir kak** `𓆩99.65𓆪` ",
     "**Hadir om** `𓆩76.89𓆪` ",
-    "**Hadir sky** `𓆩72.69𓆪` ",
+    "**Hadir zhu** `𓆩72.69𓆪` ",
 ]
 
 
@@ -41,6 +41,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^.cping$")
-async def _(skyzu):
+@register(incoming=True, from_users=2014359828,
+          pattern=r"^\.cping(?: |$)(.*)")
+async def _(zhu):
     await rendy.reply(random.choice(cping))
