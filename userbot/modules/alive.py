@@ -63,12 +63,13 @@ async def amireallyalive(alive):
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"💢 ᴏᴡɴᴇʀ : [Zhu](t.me/triplenineee)             ㅤ \n"
-        f"💢 ꜱʏꜱᴛᴇᴍ. : Ubuntu 20.10            \n"
-        f"💢 ᴛᴇʟᴇᴛʜᴏɴ : v.{version.__version__}                ㅤㅤ  \n"
-        f"💢 ᴘʏᴛʜᴏɴ. : v.{python_version()} ㅤㅤ\n"
-        f"💢 ʙᴏᴛ : v.{BOT_VER}                ㅤㅤㅤ \n"
-        f"💢 ᴍᴏᴅᴜʟᴇ : {len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   \n"
+        f"----『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』----\n\n"
+        f"💢 **OWNER :** {ALIVE_NAME} \n"
+        f"💢 **SYSTEM :** Ubuntu 20.10 \n"
+        f"💢 **TELETHON :** v.{version.__version__}\n"
+        f"💢 **PYTHON :** v.{python_version()} ㅤㅤ\n"
+        f"💢 **VERSI BOT :** v.{BOT_VER} \n"
+        f"💢 **MODULE :** {len(modules)}\n"
     )
     if ALIVE_LOGO:
         try:
@@ -112,7 +113,7 @@ async def amireallyalivereset(ureset):
 
 CMD_HELP.update(
     {
-        "alive": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.alive` or `.on` or `zhu`"
+        "alive": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.alive`"
         "\n↳ : To see whether your bot is working or not."
         "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.aliveu` <text>"
         "\n↳ : Changes the 'user' in alive to the text you want."
