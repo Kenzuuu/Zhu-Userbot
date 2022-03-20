@@ -16,9 +16,9 @@ try:
     for module_name in ALL_MODULES:
         imported_module = import_module("userbot.modules." + module_name)
     bot.start()
-    LOGS.info(f"🧿 『𝐙𝐇𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 🧿 𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝚞𝚙")
-    LOGS.info(f"🧿 『𝐙𝐇𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 🧿 𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝚞𝚙")
-    LOGS.info(f"🧿 『𝐙𝐇𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 🧿 [ 💢TELAH DIAKTIFKAN💢 ] ⚙️ V{BOT_VER}")
+    LOGS.info(f"🧿 『𝐙𝐇𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 🧿 STARTING")
+    LOGS.info(f"🧿 『𝐙𝐇𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 🧿 STARTING")
+    LOGS.info(f"🧿 『𝐙𝐇𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 🧿 [💢TELAH DIAKTIFKAN💢] ⚙️ V{BOT_VER}")
 except BaseException as e:
     LOGS.info(str(e), exc_info=True)
     sys.exit(1)
