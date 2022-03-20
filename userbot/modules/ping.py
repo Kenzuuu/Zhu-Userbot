@@ -61,9 +61,9 @@ async def redis(ping):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     output = (
-        f"𝕻𝖔𝖓𝖌 : `%sms` \n"
-        f"𝖀𝖕𝖙𝖎𝖒𝖊 : `{uptime}` \n"
-        f"𝕭𝖔𝖙 𝕹𝖆𝖒𝖊 : 𝐙𝖍𝖚-𝖀𝖘𝖊𝖗𝖇𝖔𝖙 \n" % (duration))
+        f"𝐏𝐨𝐧𝐠 : `%sms` \n"
+        f"𝐔𝐩𝐭𝐢𝐦𝐞 : `{uptime}` \n"
+        f"𝐎𝐰𝐧𝐞𝐫 : {ALIVE_NAME} \n" % (duration))
     if ZHU_LOGO:
         try:
             logo = ZHU_LOGO
