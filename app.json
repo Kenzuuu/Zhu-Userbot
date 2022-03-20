@@ -1,6 +1,6 @@
 {
-  "name": "👩‍💻ZHU-USERBOT👩‍💻",
-  "description": "⚙️ Zhu-Userbot USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
+  "name": "🧿 𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓 🧿",
+  "description": "🧿 𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓 🧿 ADALAH USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
   "logo": "https://telegra.ph/file/111c4fcb06e9dee2a9c75.jpg",
   "keywords": [
     "telegram",
@@ -42,18 +42,8 @@
       "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh : -1001234567890",
       "required": true
     },
-    "PM_AUTO_BAN": {
-      "description": "PM Auto-Ban Feature Switch. Also known as the 'bleep blop, this is a bot...' module.",
-      "value": "False",
-      "required": true
-    },
     "ALIVE_NAME": {
       "description": "Nama untuk menunjukan pesan .alive",
-      "required": true
-    },
-    "LOGSPAMMER": {
-      "description": "Set this to True in case you want the error logs to be stored in the userbot log group, instead of spitting out the file in the current chat, requires a valid BOTLOG_CHATID to be set.",
-      "value": "True",
       "required": true
     },
     "BOT_TOKEN": {
