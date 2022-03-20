@@ -444,11 +444,11 @@ def paginate_help(page_number, loaded_modules, prefix):
             modulo_page * number_of_rows: number_of_rows * (
                 modulo_page + 1)] + [
             (custom.Button.inline(
-                "•ʙᴀᴄᴋ•​", data="{}_prev({})".format(
+                "••ʙᴀᴄᴋ••​", data="{}_prev({})".format(
                     prefix, modulo_page)), custom.Button.inline(
-                        "•ᴍᴇɴᴜ•", data="{}_close({})".format(
+                        "••❌••", data="{}_close({})".format(
                             prefix, modulo_page)), custom.Button.inline(
-                                "•ɴᴇxᴛ•", data="{}_next({})".format(
+                                "••ɴᴇxᴛ••", data="{}_next({})".format(
                                     prefix, modulo_page)), )]
     return pairs
 
@@ -499,7 +499,7 @@ with bot:
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"{START_WELCOME}\n\n**Powered By** : @triplenineee\n\n",
+                    f"𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓 Start menu\n\n**Powered By** : @triplenineee\n\n",
                     buttons=[
                         [
                             custom.Button.inline("•Group•", "https://t.me/Kenzusupport"),
@@ -519,8 +519,8 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                buttons = paginate_help(0, dugmeler, "helpme")
-                text = f"Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ\n\n🧿 **ʙᴏᴛ ᴏꜰ :** {DEFAULTUSER}\n🧿 **ʙᴏᴛ ᴠᴇʀ :** {BOT_VER}\n🧿 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n🧿 @Kenzusupport "
+                buttons = paginate_help(0, dugmeler, "help")
+                text = f"Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ\n\n👾 **ʙᴏᴛ ᴏꜰ :** {DEFAULTUSER}\n🤖 **ʙᴏᴛ ᴠᴇʀ :** {BOT_VER}\n⚙️ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n👩‍💻 @Kenzusupport "
                 await event.edit(
                     text,
                     file=roselogo,
@@ -538,7 +538,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             current_page_number = int(lockpage)
-            buttons = paginate_help(current_page_number, plugins, "helpme")
+            buttons = paginate_help(current_page_number, plugins, "help")
             await event.edit(
                 file=roselogo,
                 buttons=buttons,
@@ -568,7 +568,7 @@ with bot:
             result = None
             query = event.text
             if event.query.user_id == uid and query.startswith(""):
-                buttons = paginate_help(0, dugmeler, "helpme")
+                buttons = paginate_help(0, dugmeler, "help")
                 result = builder.photo(
                     file=roselogo,
                     link_preview=False,
@@ -639,19 +639,19 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("❈ꜱᴜᴘᴘᴏʀᴛ❈", "t.me/kenzusupport"),
-                            Button.url("❈ᴄʜᴀɴɴᴇʟ❈", "t.me/inibotsaya"),
+                            Button.url("•ꜱᴜᴘᴘᴏʀᴛ•", "t.me/kenzusupport"),
+                            Button.url("•ᴄʜᴀɴɴᴇʟ•", "t.me/inibotsaya"),
                         ],
                         [custom.Button.inline(
-                            "°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="open_plugin")],
-                        [custom.Button.inline("°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", b"close")],
+                            "•ᴏᴘᴇɴ ᴍᴇɴᴜ•", data="open_plugin")],
+                        [custom.Button.inline("•ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ•", b"close")],
                     ],
                 )
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("Open Menu", data="open_plugin"),),
+                (custom.Button.inline("•Open Menu•", data="open_plugin"),),
             ]
             await event.edit(f"Menu Ditutup! ", buttons=buttons)
 
