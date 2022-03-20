@@ -16,7 +16,7 @@ from telethon import __version__, version
 
 from userbot import (
     ALIVE_LOGO,
-    ZHU_LOGO
+    ZHU_LOGO,
     ALIVE_NAME,
     BOT_VER,
     CMD_HELP,
