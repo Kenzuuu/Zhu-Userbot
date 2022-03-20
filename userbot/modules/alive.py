@@ -118,3 +118,5 @@ CMD_HELP.update(
         "\n↳ : Changes the 'user' in alive to the text you want."
         "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.restalive`"
         "\n↳ : Resets the user to default."
+     }
+   )
