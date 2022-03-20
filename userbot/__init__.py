@@ -252,7 +252,7 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = (os.environ.get("ALIVE_LOGO")
-              or "https://telegra.ph/file/111c4fcb06e9dee2a9c75.jpg")
+              or "https://telegra.ph/file/563ef71dbb5711730010c.jpg")
 # Default .ping logo
 ZHU_LOGO = os.environ.get(
     "ZHU_LOGO", "https://telegra.ph/file/563ef71dbb5711730010c.jpg"
@@ -260,10 +260,10 @@ ZHU_LOGO = os.environ.get(
 
 # Default .helpme Logo
 INLINE_PIC = (os.environ.get("INLINE_PIC")
-              or "https://telegra.ph/file/111c4fcb06e9dee2a9c75.jpg")
+              or "https://telegra.ph/file/563ef71dbb5711730010c.jpg")
 
 # Default emoji help
-EMOJI_HELP = os.environ.get("EMOJI_HELP") or "⚙️"
+EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🧿"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
