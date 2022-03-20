@@ -59,22 +59,21 @@ async def get_readable_time(seconds: int) -> str:
 
     return up_time
 
-@register(outgoing=True, pattern=r"^\.(?:alive)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:deploy)\s?(.)?")
 async def amireallyalive(alive):
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
         f"----『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』----\n\n"
-        f"💢 **OWNER :** {ALIVE_NAME} \n"
-        f"💢 **SYSTEM :** Ubuntu 20.10 \n"
-        f"💢 **TELETHON :** v.{version.__version__}\n"
-        f"💢 **PYTHON :** v.{python_version()} ㅤㅤ\n"
-        f"💢 **VERSI BOT :** v.{BOT_VER} \n"
-        f"💢 **MODULE :** {len(modules)}\n"
+        f"★ REPO ➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://github.com/Kenzuuu/Zhu-Userbot) \n"
+        f"★ DEPLOY ➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://telegram.dog/XTZ_HerokuBot?start=S2VuenV1dS9aaHUtVXNlcmJvdCBLZW56aHU)\n"
+        f"★ AMBIL API ➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://t.me/ZhuXScrapperBot)\n"
+        f"★ AMBIL STRING ➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://t.me/ZhuXSessionBot)\n"
+        f"★ ROBOT + MUSIC ➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://t.me/YZXRobot)\n"
     )
-    if ALIVE_LOGO:
+    if ZHU_LOGO:
         try:
-            logo = ALIVE_LOGO
+            logo = ZHU_LOGO
             await alive.delete()
             msg = await bot.send_file(alive.chat_id, logo, caption=output)
             await asyncio.sleep(200)
