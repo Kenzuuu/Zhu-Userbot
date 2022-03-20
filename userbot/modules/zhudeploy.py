@@ -1,25 +1,33 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-# Upload by Kenzuuu/Zhu-Userbot
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
-#
 """ Userbot module for getting information about the server. """
 
-
 import asyncio
+import platform
+import sys
 import time
+from asyncio import create_subprocess_exec as asyncrunapp
+from asyncio.subprocess import PIPE as asyncPIPE
 from datetime import datetime
+from os import remove
+from platform import python_version, uname
+from shutil import which
+
+import psutil
+from telethon import __version__, version
 
 from userbot import (
-    ZHU_LOGO,
-    DEVS,
-    BOT_VER,
+    ALIVE_LOGO,
+    ZHU_LOGO
     ALIVE_NAME,
+    BOT_VER,
     CMD_HELP,
     StartTime,
     bot,
 )
 from userbot.events import register
+
+# ================= CONSTANT =================
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+# ============================================
 
 modules = CMD_HELP
 
@@ -51,36 +59,34 @@ async def get_readable_time(seconds: int) -> str:
 
     return up_time
 
-@register(outgoing=True, pattern=r"^\.userbot$")
-async def redis(versi):
-    user = await bot.get_me()
-    uptime = await get_readable_time((time.time() - StartTime)) 
-    start = datetime.now()
-    await versi.edit("😡")
-    await asyncio.sleep(2)
-    end = datetime.now()
+@register(outgoing=True, pattern=r"^\.(?:alive)\s?(.)?")
+async def amireallyalive(alive):
+    await bot.get_me()
+    await get_readable_time((time.time() - StartTime))
     output = (
-        f"★ REPO ZHU-USERBOT :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://github.com/Kenzuuu/Zhu-Userbot) \n\n"
-        f"★ DEPLOY VIA BOT :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://telegram.dog/XTZ_HerokuBot?start=S2VuenV1dS9aaHUtVXNlcmJvdCBLZW56aHU)\n\n"
-        f"★ DEPLOY VIA WEB :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](heroku.com/deploy?template=https://github.com/Kenzuuu/Zhu-Userbot)\n\n"
-        f"★ AMBIL API KEY :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://t.me/ZhuXScrapperBot)\n\n"
-        f"★ AMBIL STRING :\n➡ [𝗗𝗜𝗦𝗜𝗡𝗜](https://t.me/ZhuXSessionBot)\n"
-        )
-    if ZHU_LOGO:
+        f"----『𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓』----\n\n"
+        f"💢 **OWNER :** {ALIVE_NAME} \n"
+        f"💢 **SYSTEM :** Ubuntu 20.10 \n"
+        f"💢 **TELETHON :** v.{version.__version__}\n"
+        f"💢 **PYTHON :** v.{python_version()} ㅤㅤ\n"
+        f"💢 **VERSI BOT :** v.{BOT_VER} \n"
+        f"💢 **MODULE :** {len(modules)}\n"
+    )
+    if ALIVE_LOGO:
         try:
-            logo = ZHU_LOGO
-            await versi.delete()
-            msg = await bot.send_file(versi.chat_id, logo, caption=output)
-            await asyncio.sleep(500)
+            logo = ALIVE_LOGO
+            await alive.delete()
+            msg = await bot.send_file(alive.chat_id, logo, caption=output)
+            await asyncio.sleep(200)
             await msg.delete()
         except BaseException:
-            await versi.edit(
-                output + "\n\n *Logo Yang Disediakan Tidak Valid."
-                "\nPastikan Tautan Yang Anda Gunakan Valid"
+            await alive.edit(
+                output + "\n\n *`The provided logo is invalid."
+                "\nMake sure the link is directed to the logo picture`"
             )
             await asyncio.sleep(100)
-            await versi.delete()
+            await alive.delete()
     else:
-        await versi.edit(output)
+        await alive.edit(output)
         await asyncio.sleep(100)
-        await versi.delete()
+        await alive.delete()
