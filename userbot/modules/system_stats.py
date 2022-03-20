@@ -372,16 +372,6 @@ CMD_HELP.update(
 )
 CMD_HELP.update(
     {
-        "alive": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.alive` or `.on` or `zhu`"
-        "\n↳ : To see whether your bot is working or not."
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.aliveu` <text>"
-        "\n↳ : Changes the 'user' in alive to the text you want."
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.restalive`"
-        "\n↳ : Resets the user to default."
-    }
-)
-CMD_HELP.update(
-    {
         "botversion": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.botver`"
         "\n↳ : Shows the userbot version."
         "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.pip` <module(s)>"
