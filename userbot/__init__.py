@@ -502,8 +502,8 @@ with bot:
                     f"𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓 Start menu\n\n**Powered By** : @triplenineee\n\n",
                     buttons=[
                         [
-                            custom.Button.inline("•Group•", "https://t.me/Kenzusupport"),
-                            custom.Button.inline("•Channel•", "https://t.me/inibotsaya"),
+                            custom.Button.inline("•Group•", "t.me/Kenzusupport"),
+                            custom.Button.inline("•Channel•", "t.me/inibotsaya"),
                         ],
                         [custom.Button.inline("•Bantuan•", data="open_plugin")],
                     ],
@@ -617,7 +617,7 @@ with bot:
                 current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
                 buttons = paginate_help(
-                    current_page_number + 1, dugmeler, "helpme")
+                    current_page_number + 1, dugmeler, "help")
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
@@ -665,7 +665,7 @@ with bot:
                 current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
                 buttons = paginate_help(
-                    current_page_number - 1, dugmeler, "helpme"  # pylint:disable=E0602
+                    current_page_number - 1, dugmeler, "help"  # pylint:disable=E0602
                 )
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
