@@ -421,7 +421,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 
 def paginate_help(page_number, loaded_modules, prefix):
-    number_of_rows = 3
+    number_of_rows = 5
     number_of_cols = 2
     global lockpage
     lockpage = page_number
