@@ -502,8 +502,8 @@ with bot:
                     f"𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓 Start menu\n\n**Powered By** : @triplenineee\n\n",
                     buttons=[
                         [
-                            custom.Button.inline("•Group•", "t.me/Kenzusupport"),
-                            custom.Button.inline("•Channel•", "t.me/inibotsaya"),
+                            custom.Button.url("•Group•", "t.me/Kenzusupport"),
+                            custom.Button.url("•Channel•", "t.me/inibotsaya"),
                         ],
                         [custom.Button.inline("•Bantuan•", data="open_plugin")],
                     ],
@@ -519,7 +519,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                buttons = paginate_help(0, dugmeler, "help")
+                buttons = paginate_help(0, dugmeler, "helpme")
                 text = f"Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ\n\n👾 **ʙᴏᴛ ᴏꜰ :** {DEFAULTUSER}\n🤖 **ʙᴏᴛ ᴠᴇʀ :** {BOT_VER}\n⚙️ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n👩‍💻 @Kenzusupport "
                 await event.edit(
                     text,
@@ -568,7 +568,7 @@ with bot:
             result = None
             query = event.text
             if event.query.user_id == uid and query.startswith(""):
-                buttons = paginate_help(0, dugmeler, "help")
+                buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=roselogo,
                     link_preview=False,
@@ -617,7 +617,7 @@ with bot:
                 current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
                 buttons = paginate_help(
-                    current_page_number + 1, dugmeler, "help")
+                    current_page_number + 1, dugmeler, "helpme")
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
@@ -665,7 +665,7 @@ with bot:
                 current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
                 buttons = paginate_help(
-                    current_page_number - 1, dugmeler, "help"  # pylint:disable=E0602
+                    current_page_number - 1, dugmeler, "helpme"  # pylint:disable=E0602
                 )
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
