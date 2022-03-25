@@ -69,6 +69,9 @@ YOUTUBE_API_KEY =
 # Default .alive name
 ALIVE_NAME = any name
 
+# Default .alive logo
+ALIVE_LOGO = any logo
+
 # Time & Date - Country and Time Zone
 COUNTRY =
 TZ_NUMBER =
