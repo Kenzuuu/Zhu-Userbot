@@ -453,9 +453,6 @@ except Exception as e:
     print(f"STRING_SESSION - {e}")
     sys.exit()
 
-#ongner
-owner = user.first_name
-
 async def checking():
     gocheck = str(pybase64.b64decode("QGtlbnp1c3VwcG9ydA=="))[2:15]
     checker = str(pybase64.b64decode("QGluaWJvdHNheWE="))[2:16]
