@@ -18,7 +18,7 @@ from userbot import (
     BOT_VER,
     LOGS,
     ALIVE_NAME,
-    kyyblacklist,
+    ZhuUserbot,
     bot,
     call_py,
 )
@@ -29,7 +29,7 @@ try:
     bot.start()
     call_py.start()
     user = bot.get_me()
-    kyyblacklist = requests.get(
+    ZhuUserbot = requests.get(
         "https://raw.githubusercontent.com/Kenzhu02/ZhuBlacklist/Blacklist/ZhuUserbot.json"
     ).json()
     if user.id in ZhuUserbot:
