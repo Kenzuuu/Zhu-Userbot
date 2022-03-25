@@ -7,7 +7,7 @@ RUN apt-get install -y --no-install-recommends \
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
     apt-get install -y nodejs && \
     npm i -g npm
-RUN git clone -b Kenzhu https://github.com/Kenzhu02/Zhu-Userbot /home/Kenzhu/ \
+RUN git clone -b Kenzhu https://github.com/Kenzuuu/Zhu-Userbot /home/Kenzhu/ \
     && chmod 777 /home/Kenzhu \
     && mkdir /home/Kenzhu/bin/
 WORKDIR /home/Kenzhu/
