@@ -52,6 +52,66 @@ CMD_HELP = {}
 INT_PLUG = ""
 LOAD_PLUG = {}
 
+# Global Variables
+COUNT_MSG = 0
+USERS = {}
+COUNT_PM = {}
+ENABLE_KILLME = True
+LASTMSG = {}
+CMD_HELP = {}
+ISAFK = False
+AFKREASON = None
+ZALG_LIST = {}
+CMD_LIST = {}
+CMD_HELP = {}
+SUDO_LIST = {}
+INT_PLUG = ""
+LOAD_PLUG = {}
+
+load_dotenv("config.env")
+
+StartTime = time.time()
+
+# Bot Logs setup:
+logging.basicConfig(
+    format="[%(name)s] - [%(levelname)s] - %(message)s",
+    level=logging.INFO,
+)
+logging.getLogger("asyncio").setLevel(logging.ERROR)
+logging.getLogger("pytgcalls").setLevel(logging.ERROR)
+logging.getLogger("telethon.network.mtprotosender").setLevel(logging.ERROR)
+logging.getLogger(
+    "telethon.network.connection.connection").setLevel(logging.ERROR)
+LOGS = getLogger(__name__)
+
+CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
+
+if CONSOLE_LOGGER_VERBOSE:
+    basicConfig(
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        level=DEBUG,
+    )
+else:
+    basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+                level=INFO)
+LOGS = getLogger(__name__)
+
+if version_info[0] < 3 or version_info[1] < 8:
+    LOGS.info("You MUST have a python version of at least 3.8."
+              "Multiple features depend on this. Bot quitting.")
+    quit(1)
+
+# Check if the config was edited by using the already used variable.
+# Basically, its the 'virginity check' for the config file ;)
+CONFIG_CHECK = os.environ.get(
+    "___________PLOX_______REMOVE_____THIS_____LINE__________", None)
+
+if CONFIG_CHECK:
+    LOGS.info(
+        "Please remove the line mentioned in the first hashtag from the config.env file"
+    )
+    quit(1)
+
 # Bot Logs setup:
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
@@ -112,6 +172,24 @@ DEVS = (
     1923480697,
     1392615244,
 )
+
+# Blacklist User for use Zhu-Userbot
+while 0 < 6:
+    _BLACKLIST = get(
+        "https://raw.githubusercontent.com/muhammadrizky16/Kyyblack/master/kyyblacklist.json"
+    )
+    if _BLACKLIST.status_code != 200:
+        if 0 != 5:
+            continue
+        kyyblacklist = []
+        break
+    kyyblacklist = _BLACKLIST.json()
+    break
+
+del _BLACKLIST
+
+SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
+BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
 
 # LOVE_ID
 LOVE_ID = (
@@ -176,7 +254,7 @@ DB_URI = os.environ.get("DATABASE_URL", None)
 OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
 
 # remove.bg API key
-REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
+REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", "ihAEGNtfnVtCsWnzqiXM1GcS")
 
 # Redis URI & Redis Password
 REDIS_URI = os.environ.get("REDIS_URI", None)
