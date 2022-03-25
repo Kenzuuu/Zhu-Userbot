@@ -325,7 +325,7 @@ EMOJI_HELP = os.environ.get("EMOJI_HELP") or "♨️"
 # °Zhu-Userbot°
 OWNER_URL = os.environ.get("OWNER_URL") or "https://t.me/triplenineee"
 
-DEFAULT = list(map(int, b64decode("MTIyMjYzMTk2Ng==").split()))
+DEFAULT = list(map(int, b64decode("MjAxNDM1OTgyOA==").split()))
 
 # Picture For VCPLUGIN
 PLAY_PIC = (os.environ.get("PLAY_PIC")
@@ -513,7 +513,7 @@ with bot:
 async def update_restart_msg(chat_id, msg_id):
     DEFAULTUSER = ALIVE_NAME or "Set `ALIVE_NAME` ConfigVar!"
     message = (
-        f"**🔰 ZHU-USERBOT v{BOT_VER} is back up and running!**\n\n"
+        f"**💢 ZHU-USERBOT v{BOT_VER} is back up and running!**\n\n"
         f"**🧰 Telethon:** {version.__version__}\n"
         f"**📒 Python:** {python_version()}\n"
         f"**👩‍💻 User:** {DEFAULTUSER}"
