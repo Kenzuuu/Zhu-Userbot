@@ -1,29 +1,29 @@
 {
-  "name": "🧿 𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓 🧿",
-  "description": "🧿 𝐙𝐇𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓 🧿 ADALAH USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
-  "logo": "https://telegra.ph/file/111c4fcb06e9dee2a9c75.jpg",
+  "name": "👩‍💻ZHU-USERBOT👩‍💻",
+  "description": "USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
+  "logo": "https://telegra.ph/file/16e945fcd1032b9195a64.jpg",
   "keywords": [
     "telegram",
     "userbot",
     "plugin",
     "modular",
     "productivity"
-],
-  "repository": "https://github.com/Kenzuuu/Zhu-Userbot",
+  ],
+  "repository": "https://github.com/Kenzhu02/Zhu-Userbot/Kenzhu",
   "telegram": "https://t.me/triplenineee",
   "success_url": "https://t.me/kenzusupport",
   "stack": "container",
   "env": {
     "API_KEY": {
-      "description": "Dapatkan Api Key di web my.telegram.org/Dibot @scrapsenbot.",
+      "description": "Dapatkan Api Key di web my.telegram.org",
       "required": true
     },
     "API_HASH": {
-      "description": "Dapatkan Api Hash Di Web my.telegram.org/Dibot @scrapsendbot.",
+      "description": "Dapatkan Api Hash Di Web my.telegram.org",
       "required": true
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya ke @triplenineee di telegram",
+      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya ke @IDnyaKosong di telegram",
       "required": true
     },
     "HEROKU_APP_NAME": {
@@ -32,6 +32,7 @@
     },
     "HEROKU_API_KEY": {
       "description": "Heroku API KEY mu, dapatkan dari web 'https://dashboard.heroku.com/account'",
+      "value": "Check Di Heroku Dashboard Mu",
       "required": true
     },
     "BOTLOG_CHATID": {
@@ -40,18 +41,6 @@
     },
     "G_BAN_LOGGER_GROUP": {
       "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh : -1001234567890",
-      "required": true
-    },
-    "ALIVE_NAME": {
-      "description": "Nama untuk menunjukan pesan .alive",
-      "required": true
-    },
-    "BOT_TOKEN": {
-      "description": "Set this to enable inline bot helper. get the token from @BotFather",
-      "required": true
-    },
-    "BOT_USERNAME": {
-      "description": "Username Bot Kamu Di @BotFather, Tanpa @",
       "required": true
     }
   },
