@@ -17,10 +17,11 @@ from userbot import (
     SUDO_HANDLER,
     SUDO_USERS,
     bot,
+    tgbot,
 )
 
 
-def skyzu_cmd(
+def kyy_cmd(
     pattern: str = None,
     allow_sudo: bool = True,
     disable_edited: bool = False,
@@ -43,29 +44,32 @@ def skyzu_cmd(
         args["chats"] = black_list_chats
 
     if pattern is not None:
-        global skyzu_reg
+        global kyy_reg
         global sudo_reg
         if (
             pattern.startswith(r"\#")
             or not pattern.startswith(r"\#")
             and pattern.startswith(r"^")
         ):
-            skyzu_reg = sudo_reg = re.compile(pattern)
+            kyy_reg = sudo_reg = re.compile(pattern)
         else:
-            skyzu_ = "\\" + CMD_HANDLER
+            kyy_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
-            skyzu_reg = re.compile(skyzu_ + pattern)
+            kyy_reg = re.compile(kyy_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
             if command is not None:
-                cmd1 = skyzu_ + command
+                cmd1 = kyy_ + command
                 cmd2 = sudo_ + command
             else:
                 cmd1 = (
-                    (skyzu_ + pattern)
-                    .replace("$", "")
-                    .replace("\\", "")
-                    .replace("^", "")
-                )
+                    (kyy_ +
+                     pattern).replace(
+                        "$",
+                        "").replace(
+                        "\\",
+                        "").replace(
+                        "^",
+                        ""))
                 cmd2 = (
                     (sudo_ + pattern)
                     .replace("$", "")
@@ -80,10 +84,10 @@ def skyzu_cmd(
     def decorator(func):
         if not disable_edited:
             bot.add_event_handler(
-                func, events.MessageEdited(**args, outgoing=True, pattern=skyzu_reg)
-            )
+                func, events.MessageEdited(
+                    **args, outgoing=True, pattern=kyy_reg))
         bot.add_event_handler(
-            func, events.NewMessage(**args, outgoing=True, pattern=skyzu_reg)
+            func, events.NewMessage(**args, outgoing=True, pattern=kyy_reg)
         )
         if allow_sudo:
             if not disable_edited:
@@ -108,11 +112,37 @@ def skyzu_cmd(
     return decorator
 
 
-def skyzu_handler(
+def kyy_handler(
     **args,
 ):
     def decorator(func):
         bot.add_event_handler(func, events.NewMessage(**args, incoming=True))
+        return func
+
+    return decorator
+
+
+def asst_cmd(**args):
+    pattern = args.get("pattern", None)
+    r_pattern = r"^[/!]"
+    if pattern is not None and not pattern.startswith("(?i)"):
+        args["pattern"] = "(?i)" + pattern
+    args["pattern"] = pattern.replace("^/", r_pattern, 1)
+
+    def decorator(func):
+        if tgbot:
+            tgbot.add_event_handler(func, events.NewMessage(**args))
+        return func
+
+    return decorator
+
+
+def callback(**args):
+    """Assistant's callback decorator"""
+
+    def decorator(func):
+        if tgbot:
+            tgbot.add_event_handler(func, events.CallbackQuery(**args))
         return func
 
     return decorator
