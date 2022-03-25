@@ -288,9 +288,10 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 ALIVE_LOGO = os.environ.get(
     "ALIVE_LOGO") or "https://telegra.ph/file/16e945fcd1032b9195a64.jpg"
 
+#Default Zhu Logo
 # Default .helpme Logo
-INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/16e945fcd1032b9195a64.jpg"
+ZHU_LOGO = os.environ.get(
+    "ZHU_LOGO") or "https://telegra.ph/file/16e945fcd1032b9195a64.jpg"
 
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "♨️"
