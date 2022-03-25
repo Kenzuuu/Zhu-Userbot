@@ -625,7 +625,7 @@ with bot:
                 current_page_number = int(lockpage)
                 buttons = paginate_help(
                     current_page_number, dugmeler, "helpme")
-                text = f"**✨ ZHU-USERBOT Menu perintah ✨**\n\n👩‍💻 **Owner** [{user.first_name}](tg://user?id={user.id})\n🧰 **Jumlah** `{len(dugmeler)}` Modules"
+                text = f"**💢 ZHU-USERBOT Menu perintah**\n\n👩‍💻 **Owner** [{user.first_name}](tg://user?id={user.id})\n🧰 **Jumlah** `{len(dugmeler)}` Modules"
                 await event.edit(
                     text,
                     file=Zhulogo,
@@ -717,7 +717,7 @@ with bot:
                 result = builder.photo(
                     file=Zhulogo,
                     link_preview=False,
-                    text=f"**🔰 ZHU-USERBOT Menu perintah!**\n\n👩‍💻 **Owner** [{user.first_name}](tg://user?id={user.id})\n🧰 **Jumlah** `{len(dugmeler)}` Modules",
+                    text=f"**💢 ZHU-USERBOT Menu perintah!**\n\n👩‍💻 **Owner** [{user.first_name}](tg://user?id={user.id})\n🧰 **Jumlah** `{len(dugmeler)}` Modules",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
@@ -730,7 +730,7 @@ with bot:
                         0,
                         "image/jpeg",
                         []),
-                    text="**🔰 Zhu - Userbot**\n➖➖➖➖➖➖➖➖➖➖\n👩‍💻 **Owner Repo :** [ZHU](https://t.me/Triplenineee)\n📒 **Support :** @Kenzusupport\n📡 **Repository :** [Zhu-Userbot](https://github.com/Kenzuuu/Zhu-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**💢 Zhu - Userbot**\n➖➖➖➖➖➖➖➖➖➖\n👩‍💻 **Owner Repo :** [ZHU](https://t.me/Triplenineee)\n📒 **Support :** @Kenzusupport\n📡 **Repository :** [Zhu-Userbot](https://github.com/Kenzuuu/Zhu-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
