@@ -8,35 +8,66 @@
 import sys
 from importlib import import_module
 
-from userbot import ALIVE_NAME, BOT_VER, BOTLOG_CHATID, LOGS, UPSTREAM_REPO_BRANCH, bot
+import requests
+from telethon.tl.functions.channels import InviteToChannelRequest as Addbot
+
+from userbot import (
+    BOTLOG_CHATID,
+    BOT_USERNAME,
+    BOT_TOKEN,
+    BOT_VER,
+    LOGS,
+    ALIVE_NAME,
+    kyyblacklist,
+    bot,
+    call_py,
+)
 from userbot.modules import ALL_MODULES
-from userbot.utils.tools import ya_kali_ngga
+from userbot.utils import autobot
 
 try:
-    for module_name in ALL_MODULES:
-        imported_module = import_module("userbot.modules." + module_name)
     bot.start()
-    LOGS.info(f"🧿 『𝐙𝐇𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 🧿 STARTING")
-    LOGS.info(f"🧿 『𝐙𝐇𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 🧿 STARTING")
-    LOGS.info(f"🧿 『𝐙𝐇𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 🧿 [💢TELAH DIAKTIFKAN💢] ⚙️ V{BOT_VER}")
-except BaseException as e:
+    call_py.start()
+    user = bot.get_me()
+    kyyblacklist = requests.get(
+        "https://raw.githubusercontent.com/Kenzhu02/ZhuBlacklist/Blacklist/ZhuUserbot.json"
+    ).json()
+    if user.id in ZhuUserbot:
+        LOGS.warning(
+            "🔰 Zhu-Userbot\nID anda Sudah dilaporkan dan masuk dalam Daftar Hitam/nAjukan banding di @Kenzusupport"
+        )
+        sys.exit(1)
+except Exception as e:
     LOGS.info(str(e), exc_info=True)
     sys.exit(1)
 
+for module_name in ALL_MODULES:
+    imported_module = import_module("userbot.modules." + module_name)
 
-async def userbot_on():
+LOGS.info(
+    f"Jika {ALIVE_NAME} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/Kenzusupport")
+LOGS.info(
+    f"🔰 ZHU-USERBOT  [Telah Aktif]\n\n👾Bot Versi : V{BOT_VER}")
+
+
+async def check_alive():
     try:
         if BOTLOG_CHATID != 0:
-            await bot.send_message(
-                BOTLOG_CHATID,
-                f"🧿 『𝐙𝐇𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓』 🧿 Diaktfikan\n\n**🧰 BOT VERSI :** {BOT_VER} ZHU\n**👩‍💻 OWNER BOT :** [𝗭𝗛𝗨](https://t.me/TripleNineee)\n🏷️** SUPPORT :** [𝗚𝗥𝗢𝗨𝗣](https://t.me/Kenzusupport)\n**🔗 CHANNEL :** [𝗖𝗛𝗔𝗡𝗡𝗘𝗟](https://t.me/inibotsaya)",
-            )
+            await bot.send_message(BOTLOG_CHATID, "**🔰 ZHU USERBOT** Berhasil Diaktifkan!!\n\n **Versi ** : V{BOT_VER}\n📒 **Group support : [𝗚𝗥𝗢𝗨𝗣](https://t.me/Kenzusupport)\n 👩‍💻 **Owner Bot :** [𝗭𝗛𝗨](https://t.me/triplenineee)\n\n🏷️ Gunakan perintah **.help** Untuk mempelajari fitur **🔰 ZHU-USERBOT**")
     except Exception as e:
         LOGS.info(str(e))
+    try:
+        await bot(Addbot(int(BOTLOG_CHATID), [BOT_USERNAME]))
+    except BaseException:
+        pass
 
+bot.loop.run_until_complete(check_alive())
+if not BOT_TOKEN:
+    LOGS.info(
+        "BOT_TOKEN Vars tidak terisi, Memulai Membuat BOT Otomatis di @Botfather..."
+    )
+    bot.loop.run_until_complete(autobot())
 
-bot.loop.run_until_complete(userbot_on())
-bot.loop.run_until_complete(ya_kali_ngga())
 if len(sys.argv) not in (1, 3, 4):
     bot.disconnect()
 else:
