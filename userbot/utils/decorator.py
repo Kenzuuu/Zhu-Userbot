@@ -55,7 +55,7 @@ def Zhu_cmd(
         else:
             Zhu_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
-            kyy_reg = re.compile(Zhu_ + pattern)
+            Zhu_reg = re.compile(Zhu_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
             if command is not None:
                 cmd1 = Zhu_ + command
@@ -87,7 +87,7 @@ def Zhu_cmd(
                 func, events.MessageEdited(
                     **args, outgoing=True, pattern=Zhu_reg))
         bot.add_event_handler(
-            func, events.NewMessage(**args, outgoing=True, pattern=kyy_reg)
+            func, events.NewMessage(**args, outgoing=True, pattern=Zhu_reg)
         )
         if allow_sudo:
             if not disable_edited:
