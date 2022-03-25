@@ -37,7 +37,7 @@ async def autobot():
         return
     await bot.start()
     await bot.send_message(
-        BOTLOG_CHATID, "**SEDANG MEMBUAT BOT TELEGRAM UNTUK ANDA DI @BotFather**"
+        BOTLOG_CHATID, "**🔰 ZHU-USERBOT**\nSedang Membuat assistant bot di @BotFather**"
     )
     who = await bot.get_me()
     name = who.first_name + " Assistant Bot"
@@ -54,7 +54,7 @@ async def autobot():
     await bot.send_message(bf, "/newbot")
     await asyncio.sleep(1)
     isdone = (await bot.get_messages(bf, limit=1))[0].text
-    if isdone.startswith("That I cannot do."):
+    if isdone.startswith("Sepertinya Ada kesalahan."):
         LOGS.info(
             "Silakan buat Bot dari @BotFather dan tambahkan tokennya di var BOT_TOKEN"
         )
@@ -106,7 +106,7 @@ async def autobot():
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
             await bot.send_message(
-                bf, f"👩‍💻 Owner ~ {who.first_name} \n\n💢 Powered By ~ @Kenzusupport "
+                bf, f"👩‍💻 Owner ~ {who.first_name}\n\n🔰 ZHU-USERBOT : @Kenzusupport"
             )
             await bot.send_message(
                 BOTLOG_CHATID,
@@ -114,7 +114,7 @@ async def autobot():
             )
             await bot.send_message(
                 BOTLOG_CHATID,
-                "**Tunggu Sebentar, Sedang MeRestart Heroku untuk Menerapkan Perubahan.**",
+                "**Tunggu Sebentar, Sedang Merestart Heroku untuk Menerapkan Perubahan.**",
             )
             heroku_var["BOT_TOKEN"] = token
             heroku_var["BOT_USERNAME"] = f"@{username}"
@@ -148,7 +148,7 @@ async def autobot():
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
         await bot.send_message(
-            bf, f"👩‍💻 Owner ~ {who.first_name}\n\n💢 Powered By ~ @Kenzusupport"
+            bf, f"👩‍💻 Owner ~ {who.first_name}\n\n🔰 ZHU-USERBOT : @Kenzusupport"
         )
         await bot.send_message(
             BOTLOG_CHATID,
