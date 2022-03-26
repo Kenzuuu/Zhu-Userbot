@@ -19,6 +19,7 @@ from userbot import (
     bot,
 )
 from userbot.events import register
+from userbot.utils import bash, edit_delete, edit_or_reply, Zhu_cmd
 
 modules = CMD_HELP
 
@@ -50,8 +51,7 @@ async def get_readable_time(seconds: int) -> str:
 
     return up_time
 
-@register(outgoing=True, pattern=r"^\.ping$")
-@register(incoming=True, from_users=DEVS, pattern=r"^/ping$")
+@Zhu_cmd(pattern="q( (.*)|$)")
 async def redis(ping):
     user = await bot.get_me()
     uptime = await get_readable_time((time.time() - StartTime)) 
