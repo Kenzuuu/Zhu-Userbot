@@ -81,7 +81,7 @@ async def handler(tele):
                             return
 
 
-@register(outgoing=True, pattern="^.gban(?: |$)(.*)")
+@Zhu_cmd(pattern="gban( (.*)|$)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cgban(?: |$)(.*)")
 async def gben(userbot):
     dc = userbot
@@ -148,14 +148,12 @@ async def gben(userbot):
     return await dark.edit(
         f"**PERINTAH** `{ALIVE_NAME}`\n\n"
         f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
-        f"═════════════\n"
         f"🆔 **ID :** {str(user.id)}\n"
-        f"═════════════\n"
-        f"🤴 **Aksi :** Ban Global  ✅ \n"
+        f"⚙️ **Aksi :** Ban Global  ✅ \n"
     )
 
 
-@register(outgoing=True, pattern="^.ungban(?: |$)(.*)")
+@Zhu_cmd(pattern="ungban( (.*)|$)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cungban(?: |$)(.*)")
 async def gunben(userbot):
     dc = userbot
@@ -224,10 +222,8 @@ async def gunben(userbot):
     return await dark.edit(
         f"**PERINTAH** `{ALIVE_NAME}`\n\n"
         f"🧑‍💻 **Nama :** [{user.first_name}](tg://user?id={user.id})\n"
-        f"══════════════\n"
         f"🆔 **ID :** {str(user.id)}\n"
-        f"══════════════\n"
-        f"🤴 **Aksi :** Melepas Ban ✅ \n"
+        f"⚙️ **Aksi :** Melepas Ban ✅ \n"
     )
 
 CMD_HELP.update(
