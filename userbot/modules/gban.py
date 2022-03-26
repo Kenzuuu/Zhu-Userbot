@@ -4,6 +4,7 @@ from telethon.tl.types import MessageEntityMentionName
 
 from userbot import ALIVE_NAME, CMD_HELP, DEVS, bot
 from userbot.events import register
+from userbot.utils import edit_delete, edit_or_reply, Zhu_cmd
 
 
 async def get_full_user(event):
