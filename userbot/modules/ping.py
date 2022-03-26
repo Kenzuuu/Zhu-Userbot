@@ -51,7 +51,7 @@ async def get_readable_time(seconds: int) -> str:
 
     return up_time
 
-@Zhu_cmd(pattern="q( (.*)|$)")
+@Zhu_cmd(pattern="ping( (.*)|$)")
 async def redis(ping):
     user = await bot.get_me()
     uptime = await get_readable_time((time.time() - StartTime)) 
