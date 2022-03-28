@@ -1,5 +1,5 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
-# Upload by Kenzuuu/Zhu-Userbot
+# Recode by Kenzuuu/Zhu-Userbot 2022
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
