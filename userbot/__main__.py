@@ -34,7 +34,7 @@ try:
     ).json()
     if user.id in ZhuUserbot:
         LOGS.warning(
-            "🔰 Zhu-Userbot\nID anda Sudah dilaporkan dan masuk dalam Daftar Hitam/nAjukan banding di @Kenzusupport"
+            "⚠️ Warning!!\nID anda Sudah dilaporkan dan masuk dalam Daftar Hitam/nAjukan banding di @Kenzusupport"
         )
         sys.exit(1)
 except Exception as e:
@@ -47,13 +47,13 @@ for module_name in ALL_MODULES:
 LOGS.info(
     f"Jika {ALIVE_NAME} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/Kenzusupport")
 LOGS.info(
-    f"🔰 ZHU-USERBOT  [Telah Aktif]\n\n👾Bot Versi : V{BOT_VER}")
+    f"𝗭𝗵𝘂-𝗨𝘀𝗲𝗿𝗯𝗼𝘁 [💢𝗔𝗰𝘁𝗶𝘃𝗮𝘁𝗲𝗱💢]\n\nBot Versi : 1.0.2 ©𝚉𝚑𝚞")
 
 
 async def check_alive():
     try:
         if BOTLOG_CHATID != 0:
-            await bot.send_message(BOTLOG_CHATID, "**🔰 ZHU USERBOT** Berhasil Diaktifkan!!\n\n **Versi ** : V{BOT_VER}\n📒 **Group support : [𝗚𝗥𝗢𝗨𝗣](https://t.me/Kenzusupport)\n 👩‍💻 **Owner Bot :** [𝗭𝗛𝗨](https://t.me/triplenineee)\n\n🏷️ Gunakan perintah **.help** Untuk mempelajari fitur **🔰 ZHU-USERBOT**")
+            await bot.send_message(BOTLOG_CHATID, "**💢 ZHU USERBOT** Berhasil Diaktifkan!!\n\n **Versi ** : V{BOT_VER}\n📒 **Group support :** [💢𝗚𝗥𝗢𝗨𝗣💢](https://t.me/Kenzusupport)\n 👩‍💻 **Owner Bot :** [💢𝗭𝗛𝗨💢](https://t.me/triplenineee)\n\n🏷️ Gunakan perintah **.help** Untuk mempelajari fitur **💢ZHU-USERBOT💢**")
     except Exception as e:
         LOGS.info(str(e))
     try:
