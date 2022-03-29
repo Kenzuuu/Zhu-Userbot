@@ -276,7 +276,7 @@ YOUTUBE_API_KEY = os.environ.get(
     "YOUTUBE_API_KEY") or "AIzaSyACwFrVv-mlhICIOCvDQgaabo6RIoaK8Dg"
 
 # Untuk Perintah .zhualive
-ZHU_TEKS_KUSTOM = os.environ.get("ZHU_TEKS_KUSTOM", "🔰 Saya Menggunakan Zhu-Userbot")
+ZHU_TEKS_KUSTOM = os.environ.get("ZHU_TEKS_KUSTOM", "Saya Menggunakan Zhu-Userbot")
 
 # Untuk Mengubah Pesan Welcome
 START_WELCOME = os.environ.get("START_WELCOME", None)
@@ -302,7 +302,7 @@ BITLY_TOKEN = os.environ.get(
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "Kyy-Userbot")
 
 # Bot Version
-BOT_VER = os.environ.get("BOT_VER", "1.2.0 ©Ubot")
+BOT_VER = os.environ.get("BOT_VER", "1.0.2 ©𝚉𝚑𝚞")
 
 # Default .alive Username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
