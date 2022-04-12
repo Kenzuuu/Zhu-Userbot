@@ -37,7 +37,7 @@ async def logaddjoin(Zhu):
         chat = f"[{chat.title}](https://t.me/{chat.username}/{Zhu.action_message.id})"
     else:
         chat = f"[{chat.title}](https://t.me/c/{chat.id}/{Zhu.action_message.id})"
-    if Zhu.user_added:
+    if kyy.user_added:
         tmp = Zhu.added_by
         text = f"u📩 **#TAMBAH_LOG\n •** {vcmention(tmp)} **Menambahkan** {vcmention(user)}\n **• Ke Group** {chat}"
     elif Zhu.user_joined:
@@ -49,15 +49,15 @@ async def logaddjoin(Zhu):
 
 @bot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 @bot.on(events.MessageEdited(incoming=True, func=lambda e: e.is_private))
-async def monito_p_m_s(Zhu):
+async def monito_p_m_s(Zu):
     if BOTLOG_CHATID == -100:
         return
     if gvarstatus("PMLOG") and gvarstatus("PMLOG") == "false":
         return
-    sender = await Zhu.get_sender()
+    sender = await Zu.get_sender()
     await asyncio.sleep(0.5)
     if not sender.bot:
-        chat = await Zhu.get_chat()
+        chat = await Zu.get_chat()
         if not no_log_pms_sql.is_approved(chat.id) and chat.id != 777000:
             if LOG_CHATS_.RECENT_USER != chat.id:
                 LOG_CHATS_.RECENT_USER = chat.id
@@ -69,14 +69,14 @@ async def monito_p_m_s(Zhu):
                         )
                     )
                     LOG_CHATS_.COUNT = 0
-                LOG_CHATS_.NEWPM = await Zhu.client.send_message(
+                LOG_CHATS_.NEWPM = await Zu.client.send_message(
                     BOTLOG_CHATID,
                     f"**💌 #MENERUSKAN #PESAN_BARU**\n** • Dari : **{_format.mentionuser(sender.first_name , sender.id)}\n** • User ID:** `{chat.id}`",
                 )
             try:
-                if Zhu.message:
-                    await Zhu.client.forward_messages(
-                        BOTLOG_CHATID, Zhu.message, silent=True
+                if Zu.message:
+                    await Zu.client.forward_messages(
+                        BOTLOG_CHATID, Zu.message, silent=True
                     )
                 LOG_CHATS_.COUNT += 1
             except Exception as e:

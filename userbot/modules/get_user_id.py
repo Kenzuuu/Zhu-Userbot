@@ -1,46 +1,45 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+from userbot.utils import edit_or_reply, edit_delete, Zhu_cmd
+from userbot import bot, CMD_HELP, CMD_HANDLER as cmd
 
-from userbot import CMD_HELP, bot
-from userbot.events import register
 
-
-@register(outgoing=True, pattern=r"^\.getid(?: |$)(.*)")
+@Zhu_cmd(pattern="getid(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
     if not event.reply_to_msg_id:
-        await event.edit("`Mohon Reply Ke Pesan`")
+        await edit_delete(event, "Rᴇᴘʟʏ ᴍᴇssᴀɢᴇ ✘")
         return
     reply_message = await event.get_reply_message()
     if not reply_message.text:
-        await event.edit("```Mohon Balas Ke Reply```")
+        await edit_delete(event, "Rᴇᴘʟʏ ᴍᴇssᴀɢᴇ ✘")
         return
     chat = "@getidsbot"
     reply_message.sender
     if reply_message.sender.bot:
-        await event.edit("`Mohon Reply Ke Pesan`")
+        await edit_delete(event, "Rᴇᴘʟʏ ᴍᴇssᴀɢᴇ ✘")
         return
-    await event.edit("`Mencari ID.......`")
+    xx = await edit_or_reply(event, "Fɪɴᴅɪɴɢ ID ✔")
     async with bot.conversation(chat) as conv:
         try:
             response = conv.wait_event(
-                events.NewMessage(incoming=True, from_users=186675376)
-            )
+                events.NewMessage(
+                    incoming=True,
+                    from_users=1663258664))
             await bot.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await event.reply("`Bot Sedang Error`")
+            await event.reply("Usᴇʀʙᴏᴛ ᴇʀʀᴏʀ ✘")
             return
         if response.text.startswith("Forward"):
-            await event.edit("`Mohon Maaf, Orang Ini Tidak Mempunyai ID`")
+            await xx.edit("ID Nᴏᴛ ғɪɴᴅ")
         else:
-            await event.edit(f"{response.message.message}")
+            await xx.edit(f"{response.message.message}")
 
 
-CMD_HELP.update(
-    {
-        "getid": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.gid`"
-        "\n↳ : Balas Ke Pesan Pengguna Untuk Mendapatkan ID Nya."
-    }
-)
+CMD_HELP.update({
+    "getid":
+    f"⦿ Cᴏᴍᴍᴀɴᴅ : `{cmd}getid`"
+    "\n✗ Fᴜɴɢsɪᴏɴ : Balas Ke Pesan Pengguna Untuk Mendapatkan ID Nya."
+})

@@ -135,12 +135,12 @@ async def apiset(event):
         "**Silahkan Pilih VAR yang ingin anda Setting**",
         buttons=[
             [
-                Button.inline("ᴀʟɪᴠᴇ", data="alivemenu"),
-                Button.inline("ɪɴʟɪɴᴇ", data="inlinemenu"),
+                Button.inline("𝗔𝗹𝗶𝘃𝗲", data="alivemenu"),
+                Button.inline("𝗜𝗻𝗹𝗶𝗻𝗲", data="inlinemenu"),
             ],
             [
-                Button.inline("ʜᴀɴᴅʟᴇʀ", data="hndlrmenu"),
-                Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ", data="pmpermitmenu"),
+                Button.inline("𝗛𝗮𝗻𝗱𝗹𝗲𝗿", data="hndlrmenu"),
+                Button.inline("𝗣𝗺𝗽𝗲𝗿𝗺𝗶𝘁", data="pmpermitmenu"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="settings")],
         ],
@@ -153,10 +153,10 @@ async def hndlrmenu(event):
         "**Silahkan Pilih VAR yang ingin anda Setting**",
         buttons=[
             [
-                Button.inline("ᴄᴍᴅ ʜᴀɴᴅʟᴇʀ", data="cmdhndlr"),
-                Button.inline("sᴜᴅᴏ ʜᴀɴᴅʟᴇʀ", data="sdhndlr"),
+                Button.inline("𝗖𝗺𝗱 𝗛𝗮𝗻𝗱𝗹𝗲𝗿", data="cmdhndlr"),
+                Button.inline("𝗦𝘂𝗱𝗼 𝗛𝗮𝗻𝗱𝗹𝗲𝗿", data="sdhndlr"),
             ],
-            [Button.inline("ʙᴀᴄᴋ", data="apiset")],
+            [Button.inline("𝗕𝗮𝗰𝗸", data="apiset")],
         ],
     )
 
@@ -503,7 +503,7 @@ async def bot_start(event):
             start_msg = f"**Users**: {mention}\
                         \n\n**Bot**: [{OWNER}](tg://user?id={OWNER_ID}) \
                         \n**Forward**: True\
-                        \n\n**Powered by**: [Kyy-Userbot](https://github.com/muhammadrizky16/Kyy-Userbot)"
+                        \n\n**Powered by**: [Zhu-Userbot](https://github.com/Kenzuuu/Zhu-Userbot)"
             buttons = [
                 (
                     Button.inline("ɪɴꜰᴏ", data="infor"),
@@ -562,7 +562,7 @@ async def _(event):
 async def infor(event):
     await tgbot.send_message(
         event.chat_id,
-        message=f"**Groups**: [sᴜᴘᴘᴏʀᴛ](t.me/NastySupportt)\n**Github**: [Kyy-Userbot](https://github.com/muhammadrizky16/Kyy-Userbot)\n**Deploy**: [Heroku](https://dashboard.heroku.com/new?template=https://github.com/muhammadrizky16/templat-userbot2)",
+        message=f"**Groups**: [sᴜᴘᴘᴏʀᴛ](t.me/Kenzusupport)\n**Github**: [Zhu-Userbot](https://github.com/Kemzuuu/Zhu-Userbot)\n**Deploy**: [Heroku](https://dashboard.heroku.com/new?template=https://github.com/kenzuuu/Zhu-Userbot)",
         buttons=[
             [
                 custom.Button.inline(

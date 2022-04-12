@@ -1,16 +1,21 @@
+# OWN MY CODE RENDY
+# Credits Rendy
+
 """ Userbot module containing commands related to the \
     Information Superhighway (yes, Internet). """
 
 import random
-
-from userbot import DEVS
 from userbot.events import register
+from userbot import DEVS
+
+# OWN BY RENDY CODE
+# CPING
 
 cping = [
-    "**Hadir bang** `𓆩79.08𓆪` ",
-    "**Hadir kak** `𓆩99.65𓆪` ",
-    "**Hadir om** `𓆩76.89𓆪` ",
-    "**Hadir zhu** `𓆩72.69𓆪` ",
+    "Yᴇs ᴍᴀsᴛᴇʀ `100.699` ",
+    "Mʏ Sᴘᴇᴇᴅ `999.999` ",
+    "Cᴏɴᴛɪɴᴜᴇ Mᴀsᴛᴇʀ `565.930` ",
+    "Pɪɴɢᴇʀ `789.666` ",
 ]
 
 
@@ -41,7 +46,6 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=2014359828,
-          pattern=r"^\.cping(?: |$)(.*)")
-async def _(zhu):
-    await rendy.reply(random.choice(cping))
+@register(incoming=True, from_users=DEVS, pattern=r"^.cping$")
+async def _(Zhu):
+    await Zhu.reply(random.choice(cping))

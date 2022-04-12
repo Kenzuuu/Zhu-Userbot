@@ -1,19 +1,16 @@
+from userbot.utils import edit_or_reply, Zhu_cmd
+from userbot import CMD_HELP, bot, CMD_HANDLER as cmd
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot import CMD_HELP, bot
-from userbot.events import register
 
-
-@register(outgoing=True, pattern=r"^\.detect(?: |$)(.*)")
+@Zhu_cmd(pattern="detect(?: |$)(.*)")
 async def detect(event):
     if event.fwd_from:
         return
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     reply_message = await event.get_reply_message()
     if not event.reply_to_msg_id:
-        await event.edit(
-            "```Please reply to the user or type .detect (ID/Username) that you want to detect.```"
-        )
+        await edit_or_reply(event, "Gɪᴠᴇᴍᴇ Usᴇʀ ID ᴏʀ Rᴇᴘʟʏ Usᴇʀ ✘")
         return
     if input_str:
         try:
@@ -22,32 +19,35 @@ async def detect(event):
             try:
                 u = await event.client.get_entity(input_str)
             except ValueError:
-                await edit.event("`Please Give ID/Username to Find History.`")
+                await edit_or_reply(event, "Gɪᴠᴇᴍᴇ Usᴇʀ ID/ᴜsᴇʀɴᴀᴍᴇ ✘"
+                                    )
             uid = u.id
     else:
         uid = reply_message.sender_id
     chat = "@tgscanrobot"
-    event = await event.edit("`Currently Doing Account Detection...`")
-    event = await event.edit("__Checking.__")
-    event = await event.edit("__Checking..__")
-    event = await event.edit("__Checking...__")
-    event = await event.edit("__Checking.__")
-    event = await event.edit("__Checking..__")
-    event = await event.edit("__Checking...__")
-    event = await event.edit("__Connecting.__")
-    event = await event.edit("__Connecting..__")
-    event = await event.edit("__Connecting...__")
-    event = await event.edit("__Connecting.__")
-    event = await event.edit("__Connecting..__")
-    event = await event.edit("__Connecting...__")
+    await edit_or_reply(event, "Usᴇʀʙᴏᴛ Aᴄᴛɪᴏɴ ✔")
+    await edit_or_reply(event, "__Checking.__")
+    await edit_or_reply(event, "__Checking..__")
+    await edit_or_reply(event, "__Checking...__")
+    await edit_or_reply(event, "__Checking.__")
+    await edit_or_reply(event, "__Checking..__")
+    await edit_or_reply(event, "__Checking...__")
+    await edit_or_reply(event, "__Connecting.__")
+    await edit_or_reply(event, "__Connecting..__")
+    await edit_or_reply(event, "__Connecting...__")
+    await edit_or_reply(event, "__Connecting.__")
+    await edit_or_reply(event, "__Connecting..__")
+    await edit_or_reply(event, "__Connecting...__")
     async with bot.conversation(chat) as conv:
         try:
             await conv.send_message(f"{uid}")
         except YouBlockedUserError:
-            await steal.reply("```Please Unblock @tgscanrobot And Try Again.```")
+            await edit_or_reply(event,
+                                "@tgscanrobot Bʟᴏᴄᴋᴇᴅ, Uɴʙʟᴏᴄᴋ ғɪʀsᴛ."
+                                )
         response = await conv.get_response()
         await event.client.send_read_acknowledge(conv.chat_id)
-        await event.edit(response.text)
+        await edit_or_reply(event, response.text)
 
 
 def inline_mention(user):
@@ -61,9 +61,8 @@ def user_full_name(user):
     return " ".join(names)
 
 
-CMD_HELP.update(
-    {
-        "detection": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.detect`\
-          \n📌 : Melihat Riwayat Grup Yang Pernah/Sedang dimasuki."
-    }
-)
+CMD_HELP.update({
+    "detection":
+        f"⦿ Cᴏᴍᴍᴀɴᴅ : `{cmd}detect`\
+          \n✗ Fᴜɴɢsɪᴏɴ : Melihat Riwayat Grup Yang Pernah/Sedang dimasuki."
+})

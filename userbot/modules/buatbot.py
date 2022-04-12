@@ -1,17 +1,16 @@
 # nyenyenyenye
 # FROM skyzu-userbot <https://github.com/Skyzu/skyzu-userbot>
-# port by koala🐨/@manusiarakitann
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
 
-from userbot import CMD_HELP
-from userbot.events import register
+from userbot import CMD_HELP, CMD_HANDLER as cmd
+from userbot.utils import edit_or_reply, Zhu_cmd
 
 chat = "@BotFather"
 
 
-@register(outgoing=True, pattern="^.botbaru ?(.*)")
+@Zhu_cmd(pattern="botbaru ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -19,7 +18,7 @@ async def _(event):
         text, username = event.pattern_match.group(1).split()
 
     else:
-        await event.edit("**Nama atau Username Tidak Dapat digunakan Mohon Coba Lagi** ")
+        await edit_or_reply(event, "Gɪᴠᴇ ᴍᴇ Bᴏᴛ Nᴀᴍᴇ ᴀɴᴅ Bᴏᴛ Usᴇʀɴᴀᴍᴇ")
         return
 
     async with event.client.conversation(chat) as conv:
@@ -46,7 +45,8 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "botfather": ".botbaru\
-    \nUntuk Membuat Bot Dari Botfather, .botbaru  < bot_name > <bot_username >  ."
-    }
+        "botfather": f"⧉ Mᴏᴅᴜʟᴇ : Bᴏᴛғᴀᴛʜᴇʀ\
+        \n\n⦿ Cᴏᴍᴍᴀɴᴅ : `{cmd}botbaru` <bot_name> <bot_username>\
+        \n  ✗ Fᴜɴɢsɪᴏɴ : Untuk membuat bot di @botfather."
+}
 )

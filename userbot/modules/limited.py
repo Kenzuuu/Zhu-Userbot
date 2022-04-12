@@ -1,11 +1,15 @@
+# Credits By @VckyouuBitch From Geez - Project
+# BUATLO NI ANAK ANAK ANJING YANG KALO NGAMBIL MODUL DENGAN HAPUS CREDITS.
+# INTINYA LO ANJING!!!!!!
+
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot import CMD_HELP, bot
-from userbot.events import register
+from userbot import bot, CMD_HELP, CMD_HANDLER as cmd
+from userbot.utils import Zhu_cmd
 
 
-@register(outgoing=True, pattern=r"^\.limit(?: |$)(.*)")
+@Zhu_cmd(pattern="limit(?: |$)(.*)")
 async def _(event):
     await event.edit("`Checking If You Are Limited...`")
     async with bot.conversation("@SpamBot") as conv:
@@ -22,4 +26,5 @@ async def _(event):
         await event.edit(f"~ {response.message.message}")
 
 
-CMD_HELP.update({"limit": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.limit`" "\n•: ngecek akun kena limit"})
+CMD_HELP.update({"limit": f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}limit`"
+                 "\n•: ngecek akun kena limit"})

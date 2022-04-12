@@ -4,10 +4,9 @@ Available Commands:
 .gban REASON
 .ungban REASON"""
 import asyncio
-
+from userbot import CMD_HELP, CMD_HANDLER as cmd
+from userbot.utils import Zhu_cmd
 from userbot import ALIVE_NAME, G_BAN_LOGGER_GROUP, bot
-from userbot.events import register
-
 # imported from uniborg by @heyworld
 
 # ================= CONSTANT =================
@@ -15,7 +14,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern="^.gbanb(?: |$)(.*)")
+@Zhu_cmd(pattern="gbanb(?: |$)(.*)")
 async def _(event):
     if G_BAN_LOGGER_GROUP is None:
         await event.edit("Set G_BAN_LOGGER_GROUP in vars otherwise module won't work.")
@@ -31,7 +30,7 @@ async def _(event):
             r_from_id = r.from_id
         await bot.send_message(
             G_BAN_LOGGER_GROUP,
-            "/gban [user](tg://user?id={}) {}".format(r_from_id, reason),
+            "/gban [user](tg://user?id={}) {}".format(r_from_id, reason)
         )
     await event.delete()
     await event.reply("**gbanning...**")
@@ -41,7 +40,7 @@ async def _(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern="^.ungbanb(?: |$)(.*)")
+@Zhu_cmd(pattern="ungbanb(?: |$)(.*)")
 async def _(event):
     if G_BAN_LOGGER_GROUP is None:
         await event.edit("Set G_BAN_LOGGER_GROUP in vars otherwise module won't work.")
@@ -54,7 +53,7 @@ async def _(event):
         r_from_id = r.from_id
         await bot.send_message(
             G_BAN_LOGGER_GROUP,
-            "/ungban [user](tg://user?id={}) {}".format(r_from_id, reason),
+            "/ungban [user](tg://user?id={}) {}".format(r_from_id, reason)
         )
     await event.delete()
     await event.reply("**ungbanning...**")
@@ -62,3 +61,10 @@ async def _(event):
     await event.edit(f"**User ungbanned by {DEFAULTUSER}**")
     asyncio.sleep(5)
     await event.delete()
+
+CMD_HELP.update({
+    "gbanbot": f"`{cmd}gbanb`\
+    \nUsage: globally Ban Bot.\
+    \n\n`{cmd}ungbanb` :\
+    \nUsage: Cancel globally Ban Bot."
+})

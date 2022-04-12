@@ -28,7 +28,7 @@ async def _(event):
         markdown_note = "".join(event.text.split(maxsplit=1)[1:])
     if not markdown_note:
         return await edit_delete(
-            event, "**Teks apa yang harus saya gunakan di pesan button?**"
+            event, "Gɪᴠᴇᴍᴇ ᴀɴʏ ᴛᴇxᴛ"
         )
     catinput = "Inline buttons " + markdown_note
     results = await event.client.inline_query(BOT_USERNAME, catinput)
@@ -48,10 +48,10 @@ def build_keyboard(buttons):
 
 CMD_HELP.update(
     {
-        "button": f"**Plugin : **`button`\
-        \n\n  •  **Syntax :** `{cmd}button` <text> [Name on button]<buttonurl:link you want to open>\
-        \n  •  **Function : **Untuk membuat pesan button melalui inline\
-        \n  •  **Examples : **`{cmd}button test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/InfoFlicksUserbot:same> [Support]<buttonurl:https://t.me/FlicksSupport>`\
+        "button": f"⧉ Mᴏᴅᴜʟᴇ : `button`\
+        \n\n  ⦿ Cᴏᴍᴍᴀɴᴅ `{cmd}button` <text> [Name on button]<buttonurl:link you want to open>\
+        \n  ✗ Fᴜɴɢsɪᴏɴ : Untuk membuat pesan button melalui inline\
+        \n  ✔ Exᴀᴍᴘʟᴇs : `{cmd}button test [Rᴇᴘᴏ]<buttonurl:http://github.com/kenzuuu/Zhu-Userbot> [Cʜᴀɴɴᴇʟ]<buttonurl:https://t.me/inibotsaya:same> [Sᴜᴘᴘᴏʀᴛ]<buttonurl:https://t.me/Kenzusupport>`\
     "
     }
 )

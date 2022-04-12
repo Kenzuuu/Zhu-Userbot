@@ -9,13 +9,13 @@
 import io
 import textwrap
 
+
 from PIL import Image, ImageDraw, ImageFont
+from userbot import CMD_HELP, CMD_HANDLER as cmd
+from userbot.utils import Zhu_cmd
 
-from userbot import CMD_HELP
-from userbot.events import register
 
-
-@register(outgoing=True, pattern=r"^\.stick (.*)")
+@Zhu_cmd(pattern="stick (.*)")
 async def stext(event):
     sticktext = event.pattern_match.group(1)
 
@@ -26,7 +26,7 @@ async def stext(event):
     await event.delete()
 
     sticktext = textwrap.wrap(sticktext, width=10)
-    sticktext = "\n".join(sticktext)
+    sticktext = '\n'.join(sticktext)
 
     image = Image.new("RGBA", (512, 512), (255, 255, 255, 0))
     draw = ImageDraw.Draw(image)
@@ -57,9 +57,8 @@ async def stext(event):
     await event.client.send_file(event.chat_id, image_stream)
 
 
-CMD_HELP.update(
-    {
-        "stickertext": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.stick` <text>"
-        "\nUsage: Mengubah Teks/Kata-Kata, Menjadi Stiker Anda."
-    }
-)
+CMD_HELP.update({
+    'stickertext':
+    f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}stick` <text>"
+    "\nUsage: Mengubah Teks/Kata-Kata, Menjadi Stiker Anda."
+})

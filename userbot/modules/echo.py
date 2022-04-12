@@ -1,8 +1,10 @@
 # Thanks Sandy
 # Recode By Apis
+# fixes by : @pikyus1 / sendi
 
-from userbot import CMD_HELP
+from userbot import CMD_HELP, CMD_HANDLER as cmd
 from userbot.events import register
+from userbot.utils import Zhu_cmd
 from userbot.modules.sql_helper.echo_sql import (
     addecho,
     get_all_echos,
@@ -16,12 +18,12 @@ from userbot.utils import edit_delete, edit_or_reply
 from userbot.utils.events import get_user_from_event
 
 
-@register(outgoing=True, pattern=r"^.addecho(?: |$)(.*)")
+@Zhu_cmd(pattern="addecho(?: |$)(.*)")
 async def echo(event):
     if event.reply_to_msg_id is None:
-        return await event.edit("`Balas pesan Pengguna untuk menggemakan pesannya`")
-    roseevent = await event.edit("`Tambahkan Echo ke pengguna...`")
-    user, rank = await get_user_from_event(event, roseevent, nogroup=True)
+        return await event.edit("Rᴇᴘʟʏ ᴍᴇssᴀɢᴇ ✘")
+    kyyevent = await event.edit("Aᴅᴅ ᴇᴄʜᴏ ᴛᴏ ᴜsᴇʀ ✔")
+    user, rank = await get_user_from_event(event, kyyevent, nogroup=True)
     if not user:
         return
     reply_msg = await event.get_reply_message()
@@ -36,7 +38,7 @@ async def echo(event):
     user_name = user.first_name
     user_username = user.username
     if is_echo(chat_id, user_id):
-        return await event.edit("**Pengguna sudah diaktifkan dengan echo**")
+        return await event.edit("Usᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴄᴛɪᴠᴀᴛᴇᴅ ᴡɪᴛʜ ᴇᴄʜᴏ ✔")
     try:
         addecho(
             chat_id,
@@ -46,15 +48,15 @@ async def echo(event):
             user_username,
             chat_type)
     except Exception as e:
-        await edit_delete(roseevent, f"**Error:**\n`{str(e)}`")
+        await edit_delete(roseevent, f"Usᴇʀʙᴏᴛ Eʀʀᴏʀ\n`{str(e)}`")
     else:
-        await edit_or_reply(roseevent, "Berhasil")
+        await edit_or_reply(roseevent, "Sᴜᴄᴄᴇss ✔")
 
 
-@register(outgoing=True, pattern=r"^.rmecho(?: |$)(.*)")
+@Zhu_cmd(pattern="rmecho(?: |$)(.*)")
 async def echo(event):
     if event.reply_to_msg_id is None:
-        return await event.edit("Reply to a User's message to echo his messages")
+        return await event.edit("Rᴇᴘʟʏ ᴜsᴇʀ's Mᴇssᴀɢᴇ ✘")
     reply_msg = await event.get_reply_message()
     user_id = reply_msg.sender_id
     chat_id = event.chat_id
@@ -62,48 +64,48 @@ async def echo(event):
         try:
             remove_echo(chat_id, user_id)
         except Exception as e:
-            await edit_delete(roseevent, f"**Error:**\n`{str(e)}`")
+            await edit_delete(kyyevent, f"Usᴇʀʙᴏᴛ Eʀʀᴏʀ :\n`{str(e)}`")
         else:
-            await event.edit("Echo has been stopped for the user")
+            await event.edit("Eᴄʜᴏ ʜᴀs ʙᴇᴇɴ sᴛᴏᴘᴘᴇᴅ ғᴏʀ ᴛʜᴇ Usᴇʀ ✘")
     else:
-        await event.edit("The user is not activated with echo")
+        await event.edit("Tʜᴇ ᴜsᴇʀ ɪs ɴᴏᴛ Aᴄᴛɪᴠᴀᴛᴇᴅ ᴡɪᴛʜ ᴇᴄʜᴏ")
 
 
-@register(outgoing=True, pattern=r"^.delecho(?: |$)(.*)")
+@Zhu_cmd(pattern="delecho(?: |$)(.*)")
 async def echo(event):
     input_str = event.pattern_match.group(1)
     if input_str:
         lecho = get_all_echos()
         if len(lecho) == 0:
             await event.edit(
-                "Anda belum mengaktifkan echo,setidaknya untuk satu pengguna dalam obrolan apa pun."
+                "Nᴏ Usᴇʀs ʜᴀᴠᴇ ᴇᴄʜᴏ ᴇɴᴀʙʟᴇᴅ ✘"
             )
         try:
             remove_all_echos()
         except Exception as e:
             await edit_delete(event, f"**Error:**\n`{str(e)}`", 10)
         else:
-            await edit_or_reply(event, "`Echo telah di hentikan.`")
+            await edit_or_reply(event, "Eᴄʜᴏ ᴅɪsᴀʙʟᴇᴅ ✘")
     else:
         lecho = get_echos(event.chat_id)
         if len(lecho) == 0:
             return await edit_delete(
                 event,
-                "Anda belum mengaktifkan Echo setidaknya untuk satu pengguna dalam obrolan ini.",
+                "Nᴏ ᴜsᴇʀs ʜᴀᴠᴇ ᴇᴄʜᴏ ᴇɴᴀʙʟᴇᴅ ✘",
             )
         try:
             remove_echos(event.chat_id)
         except Exception as e:
             await edit_delete(event, f"**Error:**\n`{str(e)}`", 10)
         else:
-            await event.edit("Echo telah di hentikan.")
+            await event.edit("Eᴄʜᴏ ᴅɪsᴀʙʟᴇᴅ ✘")
 
 
-@register(outgoing=True, pattern=r"^.echolist(?: |$)(.*)")
+@Zhu_cmd(pattern="echolist(?: |$)(.*)")
 async def echo(event):  # sourcery no-metrics
     input_str = event.pattern_match.group(1)
     private_chats = ""
-    output_str = "**Pengguna yang mengaktifkan Echo:**\n\n"
+    output_str = "Usᴇʀ ᴇᴄʜᴏ ᴇɴᴀʙʟᴇᴅ ✔ :\n\n"
     if input_str:
         lsts = get_all_echos()
         group_chats = ""
@@ -123,16 +125,16 @@ async def echo(event):  # sourcery no-metrics
                         group_chats += f"☞ [{echos.user_name}](tg://user?id={echos.user_id}) in chat {echos.chat_name} of chat id `{echos.chat_id}`\n"
 
         else:
-            return await event.edit("Tidak ada pengguna yang mengaktifkan Echo")
+            return await event.edit("Nᴏ Usᴇʀs ʜᴀᴠᴇ ᴇᴄʜᴏ ᴇɴᴀʙʟᴇᴅ ✘")
         if private_chats != "":
-            output_str += "**Private Chats**\n" + private_chats + "\n\n"
+            output_str += "Pʀɪᴠᴀᴛᴇ ᴄʜᴀᴛs\n" + private_chats + "\n\n"
         if group_chats != "":
-            output_str += "**Group Chats**\n" + group_chats
+            output_str += "Gʀᴏᴜᴘ ᴄʜᴀᴛs\n" + group_chats
     else:
         lsts = get_echos(event.chat_id)
         if len(lsts) <= 0:
             return await event.edit(
-                "Tidak ada pengguna yang mengaktifkan gema dalam obrolan ini"
+                "Nᴏ Usᴇʀs ʜᴀᴠᴇ ᴇᴄʜᴏ ᴇɴᴀʙʟᴇᴅ ✘"
             )
 
         for echos in lsts:
@@ -145,7 +147,7 @@ async def echo(event):  # sourcery no-metrics
                     f"☞ [{echos.user_name}](tg://user?id={echos.user_id})\n"
                 )
         output_str = (
-            f"**Pengguna yang mengaktifkan Echo dalam obrolan ini adalah:**\n"
+            f"Lɪsᴛ Usᴇʀ ᴇᴄʜᴏ ᴇɴᴀʙʟᴇᴅ ✔ :\n"
             + private_chats
         )
 
@@ -160,9 +162,7 @@ async def samereply(event):
         await event.reply(event.message)
 
 
-CMD_HELP.update(
-    {
-        "echo": "`.addecho` ; `.delecho` ; `.echolist`\
-    \nUsage: Untuk Menambahkan Followers Chat Kamu."
-    }
-)
+CMD_HELP.update({
+    "echo": f"⦿ Cᴏᴍᴍᴀɴᴅ :`{cmd}addecho` ; `{cmd}delecho` ; `{cmd}echolist`\
+    \n✗ Fᴜɴɢsɪᴏɴ : Untuk Menambahkan Followers Chat Kamu."
+})

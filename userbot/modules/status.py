@@ -5,14 +5,19 @@ import os
 import urllib
 
 from telethon.tl import functions
-
-from userbot import ALIVE_NAME, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
+from userbot import (
+    CMD_HELP,
+    bot,
+    ALIVE_NAME,
+)
+from userbot import TEMP_DOWNLOAD_DIRECTORY
+
 
 OFFLINE_TAG = f"{ALIVE_NAME} #OFFLINE"
 ONLINE_TAG = f"{ALIVE_NAME} #ONLINE"
 PROFILE_IMAGE = os.environ.get(
-    "PROFILE_IMAGE", "https://telegra.ph/file/249f27d5b52a87babcb3f.jpg"
+    "PROFILE_IMAGE", "https://telegra.ph/file/10976ca079f5e04dfd169.jpg"
 )
 
 
@@ -30,7 +35,7 @@ async def _(event):
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):  # pylint:disable=E0602
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)  # pylint:disable=E0602
     urllib.request.urlretrieve(
-        "https://telegra.ph/file/249f27d5b52a87babcb3f.jpg", "donottouch.jpg"
+        "https://telegra.ph/file/10976ca079f5e04dfd169.jpg", "donottouch.jpg"
     )
     photo = "donottouch.jpg"
     if photo:

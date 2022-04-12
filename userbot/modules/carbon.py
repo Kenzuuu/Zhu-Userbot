@@ -167,7 +167,7 @@ all_col = [
 @Zhu_cmd(pattern="(rc|c)arbon")
 async def crbn(event):
     from_user = vcmention(event.sender)
-    xxxx = await edit_or_reply(event, "`Processing...`")
+    xxxx = await edit_or_reply(event, "Usᴇʀʙᴏᴛ Aᴄᴛɪᴏɴ ✔")
     te = event.text
     col = random.choice(all_col) if te[1] == "r" else "Grey"
     if event.reply_to_msg_id:
@@ -184,12 +184,12 @@ async def crbn(event):
             code = event.text.split(" ", maxsplit=1)[1]
         except IndexError:
             return await edit_delete(
-                xxxx, "**Balas ke pesan atau file yang dapat dibaca**", 30
+                xxxx, "Rᴇᴘʟʏ ᴛᴇxᴛ ғᴏʀ ᴄᴀʀʙᴏɴɪsᴇᴅ", 30
             )
     xx = await Carbon(code=code, file_name="carbon_man", backgroundColor=col)
     await xxxx.delete()
     await event.reply(
-        f"**Carbonised by** {from_user}",
+        f"Cᴀʀʙᴏɴɪsᴇᴅ Bʏ : {from_user}",
         file=xx,
     )
 
@@ -200,9 +200,9 @@ async def crbn(event):
     match = event.pattern_match.group(1).strip()
     if not match:
         return await edit_or_reply(
-            event, "**Berikan Warna Custom untuk Membuat Carbon**"
+            event, "Cᴏʟᴏʀ Nᴏᴛ ғᴏᴜɴᴅ ✘"
         )
-    msg = await edit_or_reply(event, "`Processing...`")
+    msg = await edit_or_reply(event, "Usᴇʀʙᴏᴛ Aᴄᴛɪᴏɴ ✔")
     if event.reply_to_msg_id:
         temp = await event.get_reply_message()
         if temp.media:
@@ -219,25 +219,25 @@ async def crbn(event):
             match = match[0]
         except IndexError:
             return await edit_delete(
-                msg, "**Balas pesan atau file yang dapat dibaca**", 30
+                msg, "Rᴇᴘʟʏ ᴛᴇxᴛ ғᴏʀ ᴄᴀʀʙᴏɴɪsᴇᴅ", 30
             )
     xx = await Carbon(code=code, backgroundColor=match)
     await msg.delete()
     await event.reply(
-        f"**Carbonised by** {from_user}",
+        f"Cᴀʀʙᴏɴɪsᴇᴅ Bʏ : {from_user}",
         file=xx,
     )
 
 
 CMD_HELP.update(
     {
-        "carbon": f"**Plugin : **`carbon`\
-        \n\n  •  **Syntax :** `{cmd}carbon` <text/reply>\
-        \n  •  **Function : **Carbonisasi teks dengan pengaturan default.\
-        \n\n  •  **Syntax :** `{cmd}rcarbon` <text/reply>\
-        \n  •  **Function : **Carbonisasi teks, dengan warna background acak.\
-        \n\n  •  **Syntax :** `{cmd}ccarbon` <warna> <text/reply>\
-        \n  •  **Function : **Carbonisasi teks, dengan warna background custom.\
+        "carbon": f"⧉ Mᴏᴅᴜʟᴇ : `carbon`\
+        \n\n⦿ Cᴏᴍᴍᴀɴᴅ : `{cmd}carbon` <text/reply>\
+        \n  ✗ Fᴜɴɢsɪᴏɴ : Carbonisasi teks dengan pengaturan default.\
+        \n\n⦿ Cᴏᴍᴍᴀɴᴅ : `{cmd}rcarbon` <text/reply>\
+        \n  ✗ Fᴜɴɢsɪᴏɴ : Carbonisasi teks, dengan warna background acak.\
+        \n\n⦿ Cᴏᴍᴍᴀɴᴅ : `{cmd}ccarbon` <warna> <text/reply>\
+        \n  ✗ Fᴜɴɢsɪᴏɴ : Carbonisasi teks, dengan warna background custom.\
     "
     }
 )
