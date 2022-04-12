@@ -19,6 +19,7 @@ from userbot import (
     UPSTREAM_REPO_URL,
     UPSTREAM_REPO_BRANCH)
 from userbot.utils import edit_or_reply, edit_delete, Zhu_cmd
+from userbot.events import register
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), 'requirements.txt')
