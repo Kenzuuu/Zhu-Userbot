@@ -580,11 +580,11 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "««", data="{}_prev({})".format(prefix, modulo_page)
+                    "⫷", data="{}_prev({})".format(prefix, modulo_page)
                 ),
-                custom.Button.inline("••Tutup••", b"close"),
+                custom.Button.inline("Tutup", b"close"),
                 custom.Button.inline(
-                    "»»", data="{}_next({})".format(prefix, modulo_page)
+                    "⫸", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
@@ -612,7 +612,7 @@ with bot:
         uid = user.id
         owner = user.first_name
         logo = ALIVE_LOGO
-        Zhulogo = INLINE_PIC
+        ilogo = INLINE_PIC
         tgbotusername = BOT_USERNAME
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
@@ -621,18 +621,18 @@ with bot:
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                current_page_number = int(lockpage)
+                current_page_number = int(looters)
                 buttons = paginate_help(
                     current_page_number, dugmeler, "helpme")
-                text = f"**💢 ZHU-USERBOT Menu perintah**\n\n👩‍💻 **Owner** [{user.first_name}](tg://user?id={user.id})\n🧰 **Jumlah** `{len(dugmeler)}` Modules"
+                text = f"**🌸 Zhubot Inline Menu 🌸**\n\n👮 **Owner :** [{user.first_name}](tg://user?id={user.id})\n📚 **Jumlah** `{len(dugmeler)}` Modules"
                 await event.edit(
                     text,
-                    file=Zhulogo,
+                    file=ilogo,
                     buttons=buttons,
                     link_preview=False,
                 )
             else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                reply_pop_up_alert = f"🚫 ini userbot milik {owner}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.NewMessage(incoming=True,
@@ -711,37 +711,38 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@KyyUserbot"):
+            if event.query.user_id == uid and query.startswith("@ZhuUserbot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
-                result = builder.photo(
-                    file=Zhulogo,
+                result = await event.builder.photo(
+                    file=xalogo,
                     link_preview=False,
-                    text=f"**💢 ZHU-USERBOT Menu perintah!**\n\n👩‍💻 **Owner** [{user.first_name}](tg://user?id={user.id})\n🧰 **Jumlah** `{len(dugmeler)}` Modules",
+                    text=f"**🌸 Zhubot inline menu 🌸**\n\n👮 **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n📚 **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository Zhu - Userbot",
-                    url="https://t.me/randomajaboss",
+                    description="Repository Xa - Userbot",
+                    url="https://t.me/tirexgugel",
                     thumb=InputWebDocument(
                         INLINE_PIC,
                         0,
                         "image/jpeg",
                         []),
-                    text="**💢 Zhu - Userbot**\n➖➖➖➖➖➖➖➖➖➖\n👩‍💻 **Owner Repo :** [ZHU](https://t.me/Triplenineee)\n📒 **Support :** @Kenzusupport\n📡 **Repository :** [Zhu-Userbot](https://github.com/Kenzuuu/Zhu-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**Zhubot**\n═════════\n👮 **ᴏᴡɴᴇʀ ʀᴇᴘᴏ :** [Zhu](https://t.me/TripleNineee)\n🏷️ **sᴜᴘᴘᴏʀᴛ :** @kenzusupport\n🌐 **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Zhu-Userbot](https://github.com/kenzuuu/Zhu-Userbot)\n═════════",
                     buttons=[
                         [
                             custom.Button.url(
-                                "••GROUP••",
-                                "https://t.me/kenzusupport"),
+                                "ɢʀᴏᴜᴘ",
+                                "https://t.me/Kenzusupport"),
                             custom.Button.url(
-                                "••REPO••",
-                                "https://github.com/kenzuuu/Zhu-Userbot"),
+                                "ʀᴇᴘᴏ",
+                                "https://github.com/Kenzuuu/Zhu-Userbot"),
                         ],
                     ],
                     link_preview=False,
                 )
+
             elif query.startswith("Inline buttons"):
                 markdown_note = query[14:]
                 prev = 0
@@ -776,23 +777,23 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    title="🔰 Zhu-Userbot 🔰",
-                    description="Zhu - Userbot | Telethon",
-                    url="https://t.me/randomajaboss",
+                    title="🏷️ Zhubot",
+                    description="Userbot | Telethon",
+                    url="https://t.me/Kenzusupport",
                     thumb=InputWebDocument(
-                        INLINE_PIC,
+                        ALIVE_LOGO,
                         0,
                         "image/jpeg",
                         []),
-                    text=f"**🔰 Zhu - Userbot**\n➖➖➖➖➖➖➖➖➖➖\n👩‍💻 **Owner:** [{user.first_name}](tg://user?id={user.id})\n👾 **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n⚙️ **Updates:** @Kenzusupport\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**Zhubot**\n➖➖➖➖➖➖➖➖➖➖\n👮 **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n🤖 **ᴀssɪsᴛᴀɴᴛ:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n🌐 **ᴜᴘᴅᴀᴛᴇs:** @kenzusupport\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
-                                "••GROUP••",
+                                "📚 ɢʀᴏᴜᴘ",
                                 "https://t.me/Kenzusupport"),
                             custom.Button.url(
-                                "••REPO••",
-                                "https://github.com/Kenzuuu/Zhu-Userbot"),
+                                "🌐 ʀᴇᴘᴏ",
+                                "https://github.com/kenzuuu/Zhu-Userbot"),
                         ],
                     ],
                     link_preview=False,
