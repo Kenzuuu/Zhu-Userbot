@@ -722,8 +722,8 @@ with bot:
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository Xa - Userbot",
-                    url="https://t.me/tirexgugel",
+                    description="Repository Zhu - Userbot",
+                    url="https://t.me/kenzuuu",
                     thumb=InputWebDocument(
                         INLINE_PIC,
                         0,
