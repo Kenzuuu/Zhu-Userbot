@@ -12,7 +12,7 @@ import redis
 
 from datetime import datetime
 from speedtest import Speedtest
-from userbot import CMD_HELP, StartTime, ALIVE_NAME, ALIVE_LOGO, ZHU_LOGO, bot, CMD_HANDLER as cmd
+from userbot import CMD_HELP, StartTime, ALIVE_NAME, DEVS, ALIVE_LOGO, ZHU_LOGO, bot, CMD_HANDLER as cmd
 from userbot.events import register
 from userbot.utils import edit_or_reply, Zhu_cmd
 
@@ -60,12 +60,12 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=2014359828, pattern=r"^.absen$")
+@register(incoming=True, from_users=DEVS, pattern=r"^.absen$")
 async def _(Zhu):
     await Zhu.reply(random.choice(absen))
 
 
-@register(incoming=True, from_users=2014359828, pattern=r"^.kyy$")
+@register(incoming=True, from_users=2014359828, pattern=r"^.zhu$")
 async def _(Zhu):
     await Zhu.reply(random.choice(pacar))
 
